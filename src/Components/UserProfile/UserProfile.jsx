@@ -25,10 +25,10 @@ const UserProfile = () => {
             <p>Location</p>
           </div>
 
-          <div className='flex flex-row gap-1 text-[13px] items-center text-gray-400'>
+          {/* <div className='flex flex-row gap-1 text-[13px] items-center text-gray-400'>
             <CiCalendar />
             <p>Joined On 2024</p>
-          </div>
+          </div> */}
 
           <div className='flex flex-row gap-1 text-[13px] items-center text-gray-400'>
             <MdWorkspacePremium />
