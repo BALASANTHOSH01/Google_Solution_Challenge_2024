@@ -12,6 +12,9 @@ export default {
         'lg': {'max': '1023px'},
         'xl': {'max': '1279px'},
       },
+      fontFamily:{
+        Roboto:["Roboto","sans-serif"],
+      }
     },
   },
   plugins: [],

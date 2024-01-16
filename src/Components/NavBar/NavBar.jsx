@@ -11,12 +11,13 @@ const NavBar = () => {
 
   const handleUser = () => {
     setAuth(!auth);
+    setTimeout(()=>!auth,2000);
   };
 
   return (
     <div className="p-3">
       <div className="flex flex-row justify-around sm:justify-between">
-        <div className="flex box-border justify-center items-center p-3 rounded-[50%] hover:bg-gray-200 cursor-pointer">
+        <div className="flex box-border justify-center items-center p-3 rounded-[50%]  hover:bg-green-500 hover:text-white cursor-pointer">
           <CiMenuBurger className="text-xl" />
         </div>
 
@@ -37,21 +38,22 @@ const NavBar = () => {
 
         </div>
 
-        <div className="flex flex-row w-[10%] sm:w-[50%] items-center justify-around">
+        <div className="flex flex-row w-[13%] sm:w-[50%] items-center justify-around">
 
-          <div className="hidden sm:block box-border justify-center items-center p-3 sm:p-2 rounded-[50%] bg-gray-200 sm:hover:bg-gray-200  sm:bg-transparent cursor-pointer">
-            <CiSearch className=" text-black text-2xl mx-auto" />
+          <div className="hidden sm:block box-border justify-center items-center p-3 sm:p-2 rounded-[50%]  hover:bg-green-500 hover:text-white  cursor-pointer">
+            <CiSearch className=" text-2xl mx-auto" />
           </div>
 
-          <div className="hidden sm:block box-border justify-center items-center p-3 sm:p-2 rounded-[50%] bg-gray-200 sm:hover:bg-gray-200  sm:bg-transparent cursor-pointer">
+          <div className="hidden sm:block box-border justify-center items-center p-3 sm:p-2 rounded-[50%]  hover:bg-green-500 hover:text-white  cursor-pointer">
             <IoMdMic className="text-xl sm:text-2xl" />
           </div>
 
-          <div className="flex box-border justify-center items-center p-2 sm:p-2 rounded-[50%] bg-gray-200 sm:hover:bg-gray-200  sm:bg-transparent cursor-pointer relative">
+          {/**Notification */}
+          <div className=" sm:block box-border justify-center items-center p-2 sm:p-2 rounded-[50%] bg-gray-200 sm:bg-transparent  sm:hover:bg-green-500 sm:hover:text-white  cursor-pointer relative">
             <IoIosNotifications className="text-2xl sm:text-2xl" />
           </div>
 
-          <div className="sm:hidden flex justify-center items-center w-[15px] h-[15px] absolute text-[12px] text-white bg-green-500 top-[2%] right-[12%] p-[10px] rounded-[50%]">
+          <div className="sm:hidden flex justify-center items-center w-[15px] h-[15px] absolute text-[12px] text-white bg-green-500 top-[2%] right-[14%] p-[10px] rounded-[50%]">
 
             <p >2</p>
           </div>
@@ -63,6 +65,10 @@ const NavBar = () => {
             {
               auth === true && <div className="absolute flex flex-col p-1 border border-grey-300 bg-white rounded-[10px] my-[2%] right-[2%]" id="dropdown">
 
+                <Link to={'/userprofile'}>
+                  <p className="hover:bg-gray-200 text-black text-lg rounded-[10px] p-2 px-14 sm:px-8 ">User</p>
+                </Link>
+
                 <Link to={'/AuthSignUp'}>
                   <p className="hover:bg-gray-200 text-black text-lg rounded-[10px] p-2 px-14 sm:px-8">Signup</p>
                 </Link>
@@ -70,6 +76,7 @@ const NavBar = () => {
                 <Link to={'/AuthLogIn'}>
                   <p className="hover:bg-gray-200 text-black text-lg rounded-[10px] p-2 px-14 sm:px-8 ">Login</p>
                 </Link>
+
               </div>
             }
 
