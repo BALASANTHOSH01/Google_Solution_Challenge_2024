@@ -27,37 +27,37 @@ const CropPage = () => {
       <div>
         <div className="my-[5%]">
 
-          <h2 className="text-black text-2xl block text-center mx-auto my-[4%] font-semibold uppercase">{title}</h2>
-          <img src={image} alt="image" className="block w-[80%] h-[300px] rounded-[10px] object-cover mx-auto" />
+          <h2 className="text-black text-2xl block text-center mx-auto my-[2%] font-semibold uppercase">{title}</h2>
+          <img src={image} alt="image" className="block w-[80%] sm:w-[90%] h-[300px] rounded-[10px] object-cover mx-auto my-[4%]"/>
 
-          <div className="w-[80%] mx-auto">
+          <div className="w-[80%] sm:w-[90%] mx-auto">
 
-            <h2 className="text-black font-semibold text-[20px] uppercase tracking-wide my-[2%]">How it was achieved ?</h2>
-            <p className=" block mx-auto my-[2%] text-[18px] tracking-wider">{description}</p>
+            <h2 className="text-black font-semibold text-[20px] uppercase tracking-wide my-[4%]">How it was achieved ?</h2>
+            <p className=" block mx-auto my-[4%] text-[18px] tracking-wider">{description}</p>
 
           </div>
 
 
-          <iframe width="80%" height="400" src="https://www.youtube.com/embed/J_mMS3EkHok?si=-c-RgQd5VnaddlyQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className="mx-auto rounded-[10px]"></iframe>
+          <iframe width="80%" height="400" src="https://www.youtube.com/embed/J_mMS3EkHok?si=-c-RgQd5VnaddlyQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className="mx-auto rounded-[10px] sm:w-[90%] my-[4%]"></iframe>
 
-          <h2 className="text-black text-[16px] w-[80%] mx-auto font-semibold my-[2%] uppercase">Tags :</h2>
+          <h2 className="text-black text-[16px] sm:w-[90%] w-[80%] mx-auto font-semibold my-[3%] uppercase">Tags :</h2>
 
-          <div className="flex flex-row w-[80%] mx-auto">
+          <div className="flex flex-row sm:flex-col w-[80%] sm:w-[90%] mx-auto items-center">
 
-          <div className="flex flex-row w-[60%] mx-auto gap-4">
-            {
-              tags.map((tag) => (
-                <div key={tag} className="bg-green-500 p-1 px-2 rounded-[25px] ">
-                  <p className="text-black ">#{tag}</p>
-                </div>
-              ))
-            }
-          </div>
+            <div className="flex flex-row w-[60%] sm:w-[100%] gap-4">
+              {
+                tags.map((tag) => (
+                  <div key={tag} className=" text-green-500 p-1 px-2 rounded-[25px] ">
+                    <p>#{tag}</p>
+                  </div>
+                ))
+              }
+            </div>
 
-          <div className="flex flex-row text-gray-500 justify-around w-[40%]">
-            <p>{userId}</p>
-            <p className="text-black">Created at: <span className="text-gray-500">{createdAt}</span></p>
-          </div>
+            <div className="flex flex-row justify-between  text-gray-500 sm:w-[100%]  w-[40%] my-[2%]">
+              <p>{userId}</p>
+              <p  className="text-gray-500">{createdAt}</p>
+            </div>
           </div>
 
 

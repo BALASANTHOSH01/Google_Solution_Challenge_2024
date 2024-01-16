@@ -9,6 +9,7 @@ import Home from './Pages/Home/Home.jsx'
 import UserProfile from './Components/UserProfile/UserProfile.jsx'
 import About from './Components/About/About.jsx'
 import CropPage from './Pages/CropPage/CropPage.jsx'
+import EventPage from './Pages/EventPage/EventPage.jsx'
 
 
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/croppage/:cropid",
         element: <CropPage />
+      },
+      {
+        path:"/event",
+        element:<EventPage/>
       }
     ]
   }
