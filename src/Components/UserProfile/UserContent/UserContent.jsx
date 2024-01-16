@@ -55,14 +55,14 @@ const UserContent = () => {
                         <div className="flex flex-row gap-3 items-start ">
 
                             {/**User Profile */}
-                            <img src={user} alt="user" className="w-[6%] rounded-[50%]" />
+                            <img src={user} alt="user" className="w-[8%] rounded-[50%]" />
 
                             <div className="w-[90%] flex flex-row mx-[1%] justify-between items-center">
 
                                 {/**User Name */}
                                 <div className="flex flex-col items-center">
                                     <h1 className="text-[18px] font-semibold">User&#160;Name</h1>
-                                    <h2 className="text-gray-400 text-[15px]">@username</h2>
+                                    <h2 className="text-gray-400 text-[12px]">@username</h2>
                                 </div>
 
                                 {/**Post setting */}
@@ -76,7 +76,7 @@ const UserContent = () => {
 
 
                         {/**Post Description */}
-                        <div className="flex flex-col mx-[1%]">
+                        <div className="flex flex-col mx-[1%] text-[13px]">
                             <p className="text-gray-600 my-[2%]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo reiciendis molestiae odio blanditiis placeat vero provident necessitatibus repellendus reprehenderit, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt obcaecati unde temporibus porro sunt non architecto veritatis debitis maiores ea, id provident aut sed magni repellendus reiciendis vero. Ratione, accusantium? </p>
                         </div> 
 
