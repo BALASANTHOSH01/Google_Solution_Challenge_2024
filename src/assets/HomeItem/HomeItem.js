@@ -7,7 +7,7 @@ export const HomeItem = [
         image:paddy01,
         title:"Low Cost paddy cultivation",
         description:"Explore our comprehensive guide on cultivating low-cost paddy, tailored to support traditional farmers. Learn innovative yet cost-effective techniques, optimizing resources without compromising yield quality. From selecting budget-friendly seeds to efficient water management, our article empowers farmers to enhance productivity sustainably. Discover practical insights on organic pest control and soil enrichment, minimizing expenses while prioritizing environmental stewardship. With this valuable resource, traditional farmers can harness the wisdom of age-old practices combined with modern efficiency, creating a harmonious approach for a successful and economical paddy cultivation. Elevate your farming experience with our expert advice tailored for affordability and sustainability.",
-        youtubelink:"https://youtu.be/J_mMS3EkHok?si=AUk0jGjIe2vkCvxG",
+        youtubelink:"https://www.youtube.com/embed/J_mMS3EkHok?si=-c-RgQd5VnaddlyQ",
         userId:"@username01",
         createdAt:"Jan 17,2024",
         tags:["paddy","rice","agriculture"]

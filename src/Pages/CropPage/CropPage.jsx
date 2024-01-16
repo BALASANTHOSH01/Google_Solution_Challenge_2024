@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 const CropPage = () => {
 
-  const [cropcontent,setCropContent]=useState(false);
+  const [cropcontent, setCropContent] = useState(false);
   const { cropid } = useParams();
 
   useEffect(() => {
@@ -22,23 +22,45 @@ const CropPage = () => {
     const description = cropcontent.description;
     const createdAt = cropcontent.createdAt;
     const tags = cropcontent.tags;
-    const Ylink = cropcontent.youtubelink;
 
     return (
       <div>
         <div className="my-[5%]">
-          <img src={image} alt="image" className="block w-[80%] h-[300px] rounded-[10px] object-cover mx-auto"/>
-          <h2>{title}</h2>
-          <p>{description}</p>
-          <p>Created at: {createdAt}</p>
-          <p>{
-            tags.map((tag)=>(
-              <p key={tag}>{tag}</p>
-            ))
-          }</p>
 
-          <p>{userId}</p>
-          <p>{Ylink}</p>
+          <h2 className="text-black text-2xl block text-center mx-auto my-[4%] font-semibold uppercase">{title}</h2>
+          <img src={image} alt="image" className="block w-[80%] h-[300px] rounded-[10px] object-cover mx-auto" />
+
+          <div className="w-[80%] mx-auto">
+
+            <h2 className="text-black font-semibold text-[20px] uppercase tracking-wide my-[2%]">How it was achieved ?</h2>
+            <p className=" block mx-auto my-[2%] text-[18px] tracking-wider">{description}</p>
+
+          </div>
+
+
+          <iframe width="80%" height="400" src="https://www.youtube.com/embed/J_mMS3EkHok?si=-c-RgQd5VnaddlyQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className="mx-auto rounded-[10px]"></iframe>
+
+          <h2 className="text-black text-[16px] w-[80%] mx-auto font-semibold my-[2%] uppercase">Tags :</h2>
+
+          <div className="flex flex-row w-[80%] mx-auto">
+
+          <div className="flex flex-row w-[60%] mx-auto gap-4">
+            {
+              tags.map((tag) => (
+                <div key={tag} className="bg-green-500 p-1 px-2 rounded-[25px] ">
+                  <p className="text-black ">#{tag}</p>
+                </div>
+              ))
+            }
+          </div>
+
+          <div className="flex flex-row text-gray-500 justify-around w-[40%]">
+            <p>{userId}</p>
+            <p className="text-black">Created at: <span className="text-gray-500">{createdAt}</span></p>
+          </div>
+          </div>
+
+
         </div>
       </div>
     )

@@ -44,8 +44,9 @@ const NavBar = () => {
           leftmenu === true ?
             <div className="absolute flex flex-col gap-2 p-1 bg-white rounded-[10px] text-[20px] left-0 top-[20%] duration-700 translate-x-1">
               <Link to={'/'} className="hover:bg-gray-300 text-black rounded-[10px] p-4 px-20" onClick={()=>handleLeftMenuElement()}>Home</Link>
+              <Link className="hover:bg-gray-300 text-black rounded-[10px] p-4 px-20" onClick={()=>handleLeftMenuElement()}>Events</Link>
+              <Link className="hover:bg-gray-300 text-black rounded-[10px] p-4 px-20" onClick={()=>handleLeftMenuElement()}>Camping</Link>
               <Link className="hover:bg-gray-300 text-black rounded-[10px] p-4 px-20" onClick={()=>handleLeftMenuElement()}>Agro&#160;News</Link>
-              <Link className="hover:bg-gray-300 text-black rounded-[10px] p-4 px-20" onClick={()=>handleLeftMenuElement()}>Popular</Link>
               <Link className="hover:bg-gray-300 text-black rounded-[10px] p-4 px-20" onClick={()=>handleLeftMenuElement()}>Mentor</Link>
             </div> :
             <></>
