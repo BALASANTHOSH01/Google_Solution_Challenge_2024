@@ -73,9 +73,9 @@ const NavBar = () => {
                   <p className="hover:bg-gray-200 text-black text-lg rounded-[10px] p-2 px-14 sm:px-8">Signup</p>
                 </Link>
 
-                <Link to={'/AuthLogIn'}>
+                {/* <Link to={'/AuthLogIn'}>
                   <p className="hover:bg-gray-200 text-black text-lg rounded-[10px] p-2 px-14 sm:px-8 ">Login</p>
-                </Link>
+                </Link> */}
 
               </div>
             }

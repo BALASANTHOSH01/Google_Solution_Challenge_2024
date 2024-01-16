@@ -19,7 +19,7 @@ const LogIn = () => {
 
   }
   return (
-    <div className=" w-[30%] block mx-auto sm:w-[90%] md:w-[60%]  bg-white border rounded-[15px] p-2 px-5 mt-14">
+    <div className=" w-[30%] block mx-auto sm:w-[100%] md:w-[75%]   bg-white border rounded-[15px] p-2 px-5 mt-14">
       <div className="flex flex-col justify-evenly">
         <h2 className="text-[20px] text-center my-5">Login</h2>
 
