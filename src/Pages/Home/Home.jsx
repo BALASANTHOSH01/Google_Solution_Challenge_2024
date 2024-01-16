@@ -42,7 +42,7 @@ const Home = () => {
 
       {
         HomeItem.map((item) => (
-          <Link key={item.id} to={`/croppage/:${item.id}`} onChange={window.scrollTo(0,0)}>
+          <Link key={item.id} to={`/croppage/:${item.id}`} onChange={window.scrollTo(0,0)} className="hidden sm:block">
             <div key={item.id} className="w-[90%] rounded-[10px] p-2 my-[10%] hover:shadow-2xl mx-auto">
               <img src={item.image} alt="img" className="w-[65%] rounded-[10px] my-[1%] block mx-auto" />
               <p className="text-black uppercase my-[3%] text-center font-semibold text-[20px]">{item.title}</p>
