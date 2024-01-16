@@ -42,7 +42,7 @@ const NavBar = () => {
 
         {
           leftmenu === true ?
-            <div className="absolute w-[90%] flex flex-col gap-2 p-1 bg-white rounded-[10px] text-[20px] left-3 top-[18%] duration-700 translate-x-1">
+            <div className="absolute sm:w-[90%] w-[40%] flex flex-col gap-2 p-1 bg-white rounded-[10px] text-[20px] left-3 top-[18%] duration-700 translate-x-1">
               <Link to={'/'} className="hover:bg-gray-300 text-black rounded-[10px] p-4 px-20 text-center" onClick={()=>handleLeftMenuElement()}>Home</Link>
               <Link to={"/event"} className="hover:bg-gray-300 text-black rounded-[10px] p-4 px-20 text-center" onClick={()=>handleLeftMenuElement()}>Events</Link>
               <Link className="hover:bg-gray-300 text-black rounded-[10px] p-4 px-20 text-center" onClick={()=>handleLeftMenuElement()}>Camping</Link>
@@ -95,7 +95,7 @@ const NavBar = () => {
             <img src={user} alt="user" className="w-[40px] h-[40px] sm:w-[35px] sm:h-[35px] cursor-pointer relative" onClick={() => handleUser()} />
 
             {
-              auth === true && <div className="absolute w-[80%] flex flex-col p-2 border border-grey-300 bg-white rounded-[10px] my-[4%] right-[4%] text-center" id="dropdown">
+              auth === true && <div className="absolute sm:w-[80%] w-[40%] flex flex-col p-2 border border-grey-300 bg-white rounded-[10px] my-[4%] right-[4%] text-center" id="dropdown">
 
                 <Link to={'/userprofile'}>
                   <p className="hover:bg-gray-200 text-black text-lg rounded-[10px] p-3 px-14 sm:px-14 ">User</p>
