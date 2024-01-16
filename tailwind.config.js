@@ -14,6 +14,11 @@ export default {
       },
       fontFamily:{
         Roboto:["Roboto","sans-serif"],
+      },
+      textColor:{
+        bronze:"#CD7F32",
+        silver:	"rgb(192, 192, 192)",
+        gold:"#FFD700",
       }
     },
   },

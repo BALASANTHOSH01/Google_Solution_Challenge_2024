@@ -8,10 +8,10 @@ const UserContent = () => {
     const [contentselect, setContentSelect] = useState("posts");
     return (
         <div>
-            <div className="my-[8%]">
+            <div className="my-[4%] sm:my-[8%]">
 
                 {/**Post Menu Items */}
-                <div className="flex flex-row text-black font-semibold justify-around w-[100%] sm:text-[16px]">
+                <div className="flex flex-row text-black font-semibold justify-around w-[100%] sm:text-[16px] text-[20px]">
                     {
                         contentselect === "posts" ?
                             <h1 onClick={() => setContentSelect("posts")} className="cursor-pointer font-bold">Posts<hr className="w-[100%] bg-green-500 h-[2px]" /></h1>
@@ -66,8 +66,8 @@ const UserContent = () => {
                                 </div>
 
                                 {/**Post setting */}
-                                <div className="flex flex-col mr-[2%] text-xl">
-                                    <HiOutlineDotsHorizontal className="text-gray-400" />
+                                <div className="flex flex-col mr-[2%] text-xl cursor-pointer ">
+                                    <HiOutlineDotsHorizontal className="text-gray-400 hover:text-green-600" />
                                 </div>
 
                             </div>

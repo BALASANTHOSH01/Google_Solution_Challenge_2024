@@ -2,6 +2,7 @@ import { CiMenuBurger } from "react-icons/ci";
 import { IoMdMic } from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
 import { IoIosNotifications } from "react-icons/io";
+import { RxCross2 } from "react-icons/rx";
 import user from '../../assets/Images/man.png';
 import { Link } from 'react-router-dom'
 import { useState } from "react";
@@ -11,15 +12,45 @@ const NavBar = () => {
 
   const handleUser = () => {
     setAuth(!auth);
-    setTimeout(()=>!auth,2000);
+    setTimeout(() => !auth, 2000);
   };
+
+  const [leftmenu, setLeftMenu] = useState(false);
+  const handleLeftMenu = () => {
+    setLeftMenu(!leftmenu);
+  }
+
+  const handleLeftMenuElement = ()=>{
+    setTimeout(()=>setLeftMenu(false),30);
+  }
 
   return (
     <div className="p-3">
       <div className="flex flex-row justify-around sm:justify-between">
-        <div className="flex box-border justify-center items-center p-3 rounded-[50%]  hover:bg-green-500 hover:text-white cursor-pointer">
-          <CiMenuBurger className="text-xl" />
-        </div>
+
+        {
+          leftmenu === true ?
+            <div className="flex box-border justify-center items-center p-3 rounded-[50%]  hover:bg-red-500 sm:focus:bg-red-500 hover:text-white cursor-pointer" onClick={() => handleLeftMenu()} >
+              <RxCross2 className="text-xl"/>
+            </div>
+            :
+
+            <div className="flex box-border justify-center items-center p-3 rounded-[50%]  hover:bg-green-500 sm:focus:bg-green-500 hover:text-white cursor-pointer" onClick={() => handleLeftMenu()} >
+              <CiMenuBurger className="text-xl"/>
+            </div>
+        }
+
+        {
+          leftmenu === true ?
+            <div className="absolute flex flex-col gap-2 p-1 bg-white rounded-[10px] text-[20px] left-0 top-[20%] duration-700 translate-x-1">
+              <Link to={'/'} className="hover:bg-gray-300 text-black rounded-[10px] p-4 px-20" onClick={()=>handleLeftMenuElement()}>Home</Link>
+              <Link className="hover:bg-gray-300 text-black rounded-[10px] p-4 px-20" onClick={()=>handleLeftMenuElement()}>Agro&#160;News</Link>
+              <Link className="hover:bg-gray-300 text-black rounded-[10px] p-4 px-20" onClick={()=>handleLeftMenuElement()}>Popular</Link>
+              <Link className="hover:bg-gray-300 text-black rounded-[10px] p-4 px-20" onClick={()=>handleLeftMenuElement()}>Mentor</Link>
+            </div> :
+            <></>
+        }
+
 
         <div className="flex flex-row sm:hidden justify-around w-[50%]">
 
@@ -63,14 +94,14 @@ const NavBar = () => {
             <img src={user} alt="user" className="w-[40px] h-[40px] sm:w-[35px] sm:h-[35px] cursor-pointer relative" onClick={() => handleUser()} />
 
             {
-              auth === true && <div className="absolute flex flex-col p-1 border border-grey-300 bg-white rounded-[10px] my-[2%] right-[2%]" id="dropdown">
+              auth === true && <div className="absolute flex flex-col p-1 border border-grey-300 bg-white rounded-[10px] my-[2%] right-[4%]" id="dropdown">
 
                 <Link to={'/userprofile'}>
-                  <p className="hover:bg-gray-200 text-black text-lg rounded-[10px] p-2 px-14 sm:px-8 ">User</p>
+                  <p className="hover:bg-gray-200 text-black text-lg rounded-[10px] p-3 px-14 sm:px-14 ">User</p>
                 </Link>
 
                 <Link to={'/AuthSignUp'}>
-                  <p className="hover:bg-gray-200 text-black text-lg rounded-[10px] p-2 px-14 sm:px-8">Signup</p>
+                  <p className="hover:bg-gray-200 text-black text-lg rounded-[10px] p-3 px-14 sm:px-14">Signup</p>
                 </Link>
 
                 {/* <Link to={'/AuthLogIn'}>

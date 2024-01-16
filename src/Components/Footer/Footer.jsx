@@ -14,14 +14,19 @@ const Footer = () => {
                 <p className=' font-Mochiy font-semibold my-[1%]'>Agro<span className=' font-Mochiy text-green-500'> Uzhagam</span></p>
 
                 <div className='flex gap-[7%] text-base font-medium items-center mt-7 mx-auto justify-center'>
-                    <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>Company</motion.li>
-                    <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>Products</motion.li>
-                    <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>About</motion.li>
-                    <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>Offices</motion.li>
 
-                    <Link to={'/Conduct'} >
-                        <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>Contact&#160;Us</motion.li>
+                    <Link>
+                        <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>Home</motion.li>
                     </Link>
+
+                    <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>Agro&#160;News</motion.li>
+                    <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>Popular</motion.li>
+                    <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>Mentor</motion.li>
+
+                    <Link to={'/about'} >
+                        <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>About&#160;Us</motion.li>
+                    </Link>
+                    
                 </div>
 
                 <div className='flex gap-[4%] mx-auto justify-center mt-7 mb-7'>

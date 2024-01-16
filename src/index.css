@@ -9,3 +9,10 @@ body{
     overflow-x: hidden;
     height: 100vh;
 }
+
+.Custom-truncate{
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Adjust the number of lines you want to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
