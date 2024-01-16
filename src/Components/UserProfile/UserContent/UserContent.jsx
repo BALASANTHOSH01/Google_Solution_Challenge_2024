@@ -11,7 +11,7 @@ const UserContent = () => {
             <div className="my-[8%]">
 
                 {/**Post Menu Items */}
-                <div className="flex flex-row text-black font-semibold justify-around">
+                <div className="flex flex-row text-black font-semibold justify-around w-[100%] sm:text-[15px]">
                     {
                         contentselect === "posts" ?
                             <h1 onClick={() => setContentSelect("posts")} className="cursor-pointer">Posts<hr className="w-[100%] bg-green-500 h-[2px]" /></h1>
@@ -27,17 +27,17 @@ const UserContent = () => {
                     }
 
                     {
-                        contentselect === "achievments" ?
-                            <h1 onClick={() => setContentSelect("achievments")} className="cursor-pointer">Achievments<hr className="w-[100%] bg-green-500 h-[2px] " /></h1>
+                        contentselect === "awards" ?
+                            <h1 onClick={() => setContentSelect("awards")} className="cursor-pointer">Awards<hr className="w-[100%] bg-green-500 h-[2px] " /></h1>
                             :
-                            <h1 onClick={() => setContentSelect("achievments")} className="cursor-pointer text-gray-400">Achievments</h1>
+                            <h1 onClick={() => setContentSelect("awards")} className="cursor-pointer text-gray-400">Awards</h1>
                     }
 
                     {
-                        contentselect === "recommendations" ?
-                            <h1 onClick={() => setContentSelect("recommendations")} className="cursor-pointer">Recommendations<hr className="w-[100%] bg-green-500 h-[2px] " /></h1>
+                        contentselect === "completed" ?
+                            <h1 onClick={() => setContentSelect("completed")} className="cursor-pointer">Completed<hr className="w-[100%] bg-green-500 h-[2px] " /></h1>
                             :
-                            <h1 onClick={() => setContentSelect("recommendations")} className="cursor-pointer text-gray-400">Recommendations</h1>
+                            <h1 onClick={() => setContentSelect("completed")} className="cursor-pointer text-gray-400">Completed</h1>
                     }
 
                 </div>

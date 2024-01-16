@@ -16,7 +16,7 @@ const UserNavBar = () => {
             </Link>
 
             {/**Nav Elements */}
-            <div className="flex flex-row justify-between mr-[5%] w-[10%] sm:w-[20%]">
+            <div className="flex flex-row justify-between mr-[5%] w-[10%] sm:w-[35%]">
 
                 <div className=" sm:block box-border justify-center items-center p-3 sm:p-2 rounded-[50%] bg-gray-200  hover:bg-green-500 hover:text-white sm:hover:bg-green-500  sm:bg-transparent cursor-pointer sm:text-[22px]">
                     <CiSearch />

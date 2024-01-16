@@ -19,18 +19,18 @@ const UserProfile = () => {
         <h1 className='text-2xl font-semibold'>User Name</h1>
         <p className='text-gray-400'>@Username</p>
 
-        <div className='flex flex-row mx-auto justify-center gap-[7%] my-[2%]'>
-          <div className='flex flex-row gap-2 items-center text-gray-400'>
+        <div className='flex flex-row mx-auto sm:w-[100%] justify-center gap-[7%] my-[2%]'>
+          <div className='flex flex-row gap-1 text-[13px] items-center text-gray-400'>
             <IoLocationOutline />
             <p>Location</p>
           </div>
 
-          <div className='flex flex-row gap-2 items-center text-gray-400'>
+          <div className='flex flex-row gap-1 text-[13px] items-center text-gray-400'>
             <CiCalendar />
             <p>Joined On 2024</p>
           </div>
 
-          <div className='flex flex-row gap-2 items-center text-gray-400'>
+          <div className='flex flex-row gap-1 text-[13px] items-center text-gray-400'>
             <MdWorkspacePremium />
             <p>Profession of the user</p>
           </div>
