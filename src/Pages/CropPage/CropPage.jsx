@@ -23,6 +23,7 @@ const CropPage = () => {
     const createdAt = cropcontent.createdAt;
     const tags = cropcontent.tags;
 
+    document.documentElement.scrollTop = 0;
     return (
       <div>
         <div className="my-[5%]">

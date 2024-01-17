@@ -4,6 +4,7 @@ import { TbAward } from "react-icons/tb";
 import { Link } from "react-router-dom";
 
 const MentorPage = () => {
+    document.documentElement.scrollTop = 0;
     return (
         <div>
             <div className="grid grid-cols-[1fr,1fr,1fr] sm:grid-cols-[1fr] sm:mt-[20%] cursor-pointer">

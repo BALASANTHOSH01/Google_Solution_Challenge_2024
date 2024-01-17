@@ -20,7 +20,8 @@ const MentorProfile = () => {
         const banner = MentorDetails.banner;
         const tags = MentorDetails.tags;
         const username = MentorDetails.username;
-
+        
+        document.documentElement.scrollTop = 0;
         return (
             <div className="w-[75%] sm:w-[100%] mx-auto my-[5%] sm:mt-[0px]  relative h-full text-black ">
                 <div className=" bg-white overflow-hidden sm:rounded-[0px] rounded-[10px]">

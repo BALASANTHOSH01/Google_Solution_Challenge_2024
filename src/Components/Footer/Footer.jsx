@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div className='w-screen text-center mt-5 font-Roboto'>
+        <div className='w-screen text-center mt-5 font-Nunito'>
 
             <div className='w-[80%] items-center text-center mx-auto'>
                 <img src={logo} alt='Logo' className='w-[15%] mx-auto rounded-[50%]' />
@@ -20,8 +20,12 @@ const Footer = () => {
                     </Link>
 
                     <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>Agro&#160;News</motion.li>
-                    <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>Popular</motion.li>
+                    <Link to={'/event'}>
+                    <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>Event</motion.li>
+                    </Link>
+                    <Link to={'/mentor'}>
                     <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>Mentor</motion.li>
+                    </Link>
 
                     <Link to={'/about'} >
                         <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>About&#160;Us</motion.li>

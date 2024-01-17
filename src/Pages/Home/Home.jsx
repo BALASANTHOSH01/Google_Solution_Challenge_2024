@@ -3,7 +3,7 @@ import { HomeItem } from "../../assets/HomeItem/HomeItem"
 import { LuDot } from "react-icons/lu";
 
 const Home = () => {
-
+  document.documentElement.scrollTop = 0;
   return (
     <div className="sm:mt-[20%]">
      

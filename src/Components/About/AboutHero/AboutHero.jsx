@@ -19,8 +19,8 @@ const AboutHero = () => {
         </p>
       </div>
 
-      <div className='my-[3%] w-[90%] mx-auto'>
-        <p className='text-[25px] block mx-auto my-[2%]'>Goals&#160;:</p>
+      <div className='my-[3%] w-[80%] mx-auto'>
+        <p className='text-[30px] block mx-auto my-[2%] underline'>Goals&#160;:</p>
         <ul>
           <li className='text-[22px] block mx-auto underline'>1.Modern&#160;Agriculture&#160;Practice&#160;:</li>
           <img src={modernAgriculture} alt='modernAgricultureImage' className='w-[70%] h-[320px] sm:h-[200px] sm:w-[80%] block mx-auto my-[2%]' />
@@ -74,7 +74,8 @@ const AboutHero = () => {
 
         <div className='text-[20px] block mx-auto w-[75%] sm:w-[100%] pb-[5%] my-[10%]'>
         <p className=' font-medium text-center mx-auto text-green-500'>WE ARE STILL IN PROGRESS ....</p>
-        <p className='w-[70%] sm:w-[100%]  text-[20px] sm:text-[15px] text-gray-600 mx-auto my-[2%]'>This project is for the 2024 Google Solution Challenge.</p>
+        <p className='w-[70%] sm:w-[100%]  text-[20px] sm:text-[15px] text-gray-600 mx-auto my-[2%]'>This project is for the <span className='underline'>2024 Google Solution Challenge.</span></p>
+        <p className='w-[70%] sm:w-[100%]  text-[20px] sm:text-[15px] text-gray-600 mx-auto my-[2%]'>The Source code is in my Github Repository.</p>
         </div>
       </div>
     </div>

@@ -19,8 +19,9 @@ const EventPage = () => {
     setSelectLocation(e.target.value);
   }
 
+  document.documentElement.scrollTop = 0;
   return (
-    <div className="sm:mt-[20%]">
+    <div className="sm:mt-[20%]" >
       <div className="w-[90%] ml-[7%] ">
         <h2 className="text-[28px] sm:text-[20px] my-[4%] text-black mx-auto flex flex-row items-center gap-2 font-semibold">Events near
         <span className="text-green-500">{selectlocation}</span>& Remote</h2>
