@@ -1,0 +1,76 @@
+
+
+const MentorsPage = [
+    {
+        id:1,
+        name:"",
+        profile:"",
+        areaOfExpert:"",
+        banner:"",
+    },
+    {
+        id:1,
+        name:"",
+        profile:"",
+        areaOfExpert:"",
+        banner:"",
+    },
+    {
+        id:1,
+        name:"",
+        profile:"",
+        areaOfExpert:"",
+        banner:"",
+    },
+    {
+        id:1,
+        name:"",
+        profile:"",
+        areaOfExpert:"",
+        banner:"",
+    },
+    {
+        id:1,
+        name:"",
+        profile:"",
+        areaOfExpert:"",
+        banner:"",
+    },
+    {
+        id:1,
+        name:"",
+        profile:"",
+        areaOfExpert:"",
+        banner:"",
+    },
+    {
+        id:1,
+        name:"",
+        profile:"",
+        areaOfExpert:"",
+        banner:"",
+    },
+    {
+        id:1,
+        name:"",
+        profile:"",
+        areaOfExpert:"",
+        banner:"",
+    },
+    {
+        id:1,
+        name:"",
+        profile:"",
+        areaOfExpert:"",
+        banner:"",
+    },
+    {
+        id:1,
+        name:"",
+        profile:"",
+        areaOfExpert:"",
+        banner:"",
+    },
+];
+
+export default MentorsPage;

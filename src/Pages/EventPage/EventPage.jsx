@@ -22,7 +22,7 @@ const EventPage = () => {
   return (
     <div>
       <div className="w-[90%] ml-[7%]">
-        <h2 className="text-[28px] my-[4%] text-black mx-auto flex flex-row items-center gap-2 font-semibold">Events near
+        <h2 className="text-[28px] sm:text-[20px] my-[4%] text-black mx-auto flex flex-row items-center gap-2 font-semibold">Events near
         <span className="text-green-500">{selectlocation}</span>& Remote</h2>
         <div className="flex flex-row w-[70%] sm:w-[100%] justify-between">
           <div className="flex flex-row gap-10 text-[20px] sm:text-[18px] text-gray-500">

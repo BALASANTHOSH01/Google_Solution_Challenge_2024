@@ -1,15 +1,22 @@
 import { Link } from "react-router-dom";
 import { HomeItem } from "../../assets/HomeItem/HomeItem"
 import { LuDot } from "react-icons/lu";
+import MovingNotification from "../../Components/MovingNotification/MovingNotification";
+import { LuPlus } from "react-icons/lu";
+
 
 const Home = () => {
 
   return (
     <div>
+      {/* <MovingNotification/> */}
+      <div className="fixed cursor-pointer bg-green-500 p-2 rounded-[50%] right-6 bottom-4">
+        <LuPlus className="text-white text-[25px] font-bold"/>
+      </div>
       <div className="w-[80%] sm:hidden sm:w-[100%] block mx-auto my-[5%]">
         {
           HomeItem.map((crop) => (
-            <Link to={`/croppage/:${crop.id}`} key={crop.id}>
+            <Link to={`/croppage/:${crop.id}`} key={crop.id} >
               <div className="flex flex-row mx-auto  p-4 gap-2 border border-gray-400 rounded-[10px] my-[2%] w-[100%] sm:w-[95%] h-[200px] justify-between hover:shadow-gray-400 cursor-pointer">
                 <img src={crop.image} alt="CropImage" className="w-[35%] rounded-[10px] h-full object-cover" />
 
