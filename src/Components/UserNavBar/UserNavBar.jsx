@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const UserNavBar = () => {
     return (
-        <div className="flex flex-row justify-between p-2 my-2">
+        <div className=" flex flex-row justify-between p-2 my-2 sm:my-[1px] sm:shadow-md">
 
             {/**Left arrow ("/") */}
             <Link to={'/'} className="ml-[5%]">

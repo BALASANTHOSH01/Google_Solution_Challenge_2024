@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { HomeItem } from "../../assets/HomeItem/HomeItem"
 import { LuDot } from "react-icons/lu";
-import MovingNotification from "../../Components/MovingNotification/MovingNotification";
+// import MovingNotification from "../../Components/MovingNotification/MovingNotification";
 import { LuPlus } from "react-icons/lu";
 
 

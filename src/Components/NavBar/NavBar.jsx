@@ -42,12 +42,12 @@ const NavBar = () => {
 
         {
           leftmenu === true ?
-            <div className="absolute sm:w-[90%] w-[40%] flex flex-col gap-2 p-1 bg-white rounded-[10px] text-[20px] left-3 top-[18%] duration-700 translate-x-1">
+            <div className="absolute sm:w-[90%] w-[40%] flex flex-col gap-2 p-1 bg-white rounded-[10px] text-[20px] left-3 top-[18%] duration-700 translate-x-1 z-50">
               <Link to={'/'} className="hover:bg-gray-300 text-black rounded-[10px] p-4 px-20 text-center" onClick={()=>handleLeftMenuElement()}>Home</Link>
               <Link to={"/event"} className="hover:bg-gray-300 text-black rounded-[10px] p-4 px-20 text-center" onClick={()=>handleLeftMenuElement()}>Events</Link>
               <Link className="hover:bg-gray-300 text-black rounded-[10px] p-4 px-20 text-center" onClick={()=>handleLeftMenuElement()}>Camping</Link>
               <Link className="hover:bg-gray-300 text-black rounded-[10px] p-4 px-20 text-center" onClick={()=>handleLeftMenuElement()}>Agro&#160;News</Link>
-              <Link className="hover:bg-gray-300 text-black rounded-[10px] p-4 px-20 text-center" onClick={()=>handleLeftMenuElement()}>Mentor</Link>
+              <Link to={"/mentor"} className="hover:bg-gray-300 text-black rounded-[10px] p-4 px-20 text-center" onClick={()=>handleLeftMenuElement()}>Mentor</Link>
             </div> :
             <></>
         }

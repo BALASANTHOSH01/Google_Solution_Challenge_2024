@@ -14,6 +14,7 @@ export default {
       },
       fontFamily:{
         Roboto:["Roboto","sans-serif"],
+        Manrope:["Manrope","sans-serif"]
       },
       textColor:{
         bronze:"#CD7F32",

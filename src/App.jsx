@@ -5,17 +5,19 @@ import UserNavBar from "./Components/UserNavBar/UserNavBar";
 
 const App = () => {
   const location = useLocation();
-  const { cropid } = useParams();
-  const currentlocation = location.pathname;
-  console.log(currentlocation);
+  const { cropid,mentorid } = useParams();
+  const cropcurrentlocation = location.pathname;
+  console.log(cropcurrentlocation);
 
   const Footerfun = () => {
-    return currentlocation === "/userprofile" ? null : <Footer />;
+    return cropcurrentlocation === "/userprofile" ? null : <Footer />;
   };
 
   const NavBarfun = () => {
-    switch (currentlocation) {
+    switch (cropcurrentlocation) {
       case "/userprofile":
+      case "/mentor":
+      case `/mentor/${mentorid}`:
       case `/croppage/${cropid}`:
         return <UserNavBar />;
       default:

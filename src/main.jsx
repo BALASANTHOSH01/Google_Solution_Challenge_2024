@@ -6,10 +6,11 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import SignUp from './Components/Auth/SignUp/SignUp.jsx'
 import LogIn from './Components/Auth/LogIn/LogIn.jsx'
 import Home from './Pages/Home/Home.jsx'
-import UserProfile from './Components/UserProfile/UserProfile.jsx'
 import About from './Components/About/About.jsx'
 import CropPage from './Pages/CropPage/CropPage.jsx'
 import EventPage from './Pages/EventPage/EventPage.jsx'
+import MentorPage from './Pages/MentorPage/MentorPage.jsx'
+import MentorProfile from './Pages/MentorPage/MentorProfile/MentorProfile.jsx'
 
 
 const router = createBrowserRouter([
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/userprofile",
-        element: <UserProfile />
+        element: <MentorPage />
       },
       {
         path: "/about",
@@ -44,6 +45,14 @@ const router = createBrowserRouter([
       {
         path:"/event",
         element:<EventPage/>
+      },
+      {
+        path:"/mentor",
+        element:<MentorPage/>
+      },
+      {
+        path:"/mentor/:mentorid",
+        element:<MentorProfile/>
       }
     ]
   }
