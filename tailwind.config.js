@@ -14,7 +14,8 @@ export default {
       },
       fontFamily:{
         Roboto:["Roboto","sans-serif"],
-        Manrope:["Manrope","sans-serif"]
+        Manrope:["Manrope","sans-serif"],
+        Nunito:["Nunito"],
       },
       textColor:{
         bronze:"#CD7F32",

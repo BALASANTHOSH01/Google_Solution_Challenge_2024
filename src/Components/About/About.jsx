@@ -1,7 +1,12 @@
+import AboutHero from "./AboutHero/AboutHero";
 
 const About = () => {
   return (
-    <div>About</div>
+    <div>
+      <div>
+        <AboutHero/>
+      </div>
+    </div>
   )
 }
 

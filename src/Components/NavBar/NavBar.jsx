@@ -47,9 +47,9 @@ const NavBar = () => {
         {
           leftmenu === true ?
             <div className="absolute sm:w-[90%] w-[40%] flex flex-col gap-2 p-1 bg-white rounded-[10px] text-[20px] left-3 top-[20%] sm:top-[150%] duration-700 translate-x-1 z-50">
-              <Link className="hover:bg-gray-300 hidden sm:block text-black rounded-[10px] p-4 px-20 text-center" onClick={() => handleLeftMenuElement()}>Search</Link>
-              <Link className="hover:bg-gray-300 text-black rounded-[10px] p-4 px-20 text-center" onClick={() => handleLeftMenuElement()}>Camping</Link>
               <Link className="hover:bg-gray-300 text-black rounded-[10px] p-4 px-20 text-center" onClick={() => handleLeftMenuElement()}>Agro&#160;News</Link>
+              <Link className="hover:bg-gray-300 hidden sm:block text-black rounded-[10px] p-4 px-20 text-center" onClick={() => handleLeftMenuElement()}>Camping</Link>
+              <Link to={"/about"} className="hover:bg-gray-300 text-black rounded-[10px] p-4 px-20 text-center" onClick={() => handleLeftMenuElement()}>About&#160;Us</Link>
 
             </div> :
             <></>
@@ -119,10 +119,6 @@ const NavBar = () => {
                 <Link to={'/AuthSignUp'}>
                   <p className="hover:bg-gray-200 text-black text-lg rounded-[10px] p-3 px-14 sm:px-14">Signup</p>
                 </Link>
-
-                {/* <Link to={'/AuthLogIn'}>
-                  <p className="hover:bg-gray-200 text-black text-lg rounded-[10px] p-2 px-14 sm:px-8 ">Login</p>
-                </Link> */}
 
               </div>
             }
