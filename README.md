@@ -22,15 +22,15 @@
 
 ### Reason :
 #### 1. Limited Learning Channels: 
-    - Currently, there are limited avenues for farmers to learn about new agricultural methods directly from experts or institutions.
+- Currently, there are limited avenues for farmers to learn about new agricultural methods directly from experts or institutions.
 
 #### 2. Lack of a Comprehensive Platform:
-    - There is a notable absence of a single, comprehensive platform offering valuable resources such as agricultural training, news, expert interaction, and networking.
+- There is a notable absence of a single, comprehensive platform offering valuable resources such as agricultural training, news, expert interaction, and networking.
 
 #### 3. Media Focus:
-    - Mainstream media tends to overlook agricultural topics, with a majority of people consuming news related to entertainment and technology.
+- Mainstream media tends to overlook agricultural topics, with a majority of people consuming news related to entertainment and technology.
 
 #### 4. Online Information Gap:
-    -  Agricultural news and resources are scarce on both mainstream and social media platforms. Many individuals lack access to online platforms providing agricultural training, news, and connections.
+-  Agricultural news and resources are scarce on both mainstream and social media platforms. Many individuals lack access to online platforms providing agricultural training, news, and connections.
 
 
