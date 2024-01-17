@@ -78,11 +78,11 @@ const NavBar = () => {
 
         <div className="flex flex-row w-[25%] sm:w-[50%] items-center justify-around sm:mt-[1%]">
 
-          <Link to={"/"}>
-            <div className="hidden sm:block box-border justify-center items-center p-3 sm:p-2 rounded-[50%]  hover:bg-green-500 hover:text-white  cursor-pointer">
-              <RiHome2Fill className=" text-2xl mx-auto" />
-              <p className="text-gray-400 text-[13px] sm:hidden">Home</p>
+          <Link to={"/"} className="text-center">
+            <div className="block box-border justify-center items-center p-3 sm:p-2 rounded-[50%] bg-gray-200 sm:bg-transparent  hover:bg-green-500 hover:text-white  cursor-pointer">
+              <RiHome2Fill className=" text-xl sm:text-2xl mx-auto" />
             </div>
+              <p className="text-gray-400 text-[13px] sm:hidden">Home</p>
           </Link>
 
           <Link to={'/mentor'} className="text-center">
@@ -97,7 +97,7 @@ const NavBar = () => {
 
           <Link to={"/event"} className="text-center">
             <div className="block box-border justify-center items-center p-3  rounded-[50%] sm:bg-transparent bg-gray-200  hover:bg-green-500 hover:text-white  cursor-pointer relative">
-              <MdEventNote className=" sm:text-2xl text-xl mx-auto" />
+              <MdEventNote className=" text-xl sm:text-2xl mx-auto" />
             </div>
             <p className="text-gray-400 text-[13px] sm:hidden">Event</p>
           </Link>
