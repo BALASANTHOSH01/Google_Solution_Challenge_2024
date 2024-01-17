@@ -1,18 +1,12 @@
 import { Link } from "react-router-dom";
 import { HomeItem } from "../../assets/HomeItem/HomeItem"
 import { LuDot } from "react-icons/lu";
-// import MovingNotification from "../../Components/MovingNotification/MovingNotification";
-import { LuPlus } from "react-icons/lu";
-
 
 const Home = () => {
 
   return (
-    <div>
-      {/* <MovingNotification/> */}
-      <div className="fixed cursor-pointer bg-green-500 p-2 rounded-[50%] right-6 bottom-4">
-        <LuPlus className="text-white text-[25px] font-bold"/>
-      </div>
+    <div className="sm:mt-[20%]">
+     
       <div className="w-[80%] sm:hidden sm:w-[100%] block mx-auto my-[5%]">
         {
           HomeItem.map((crop) => (

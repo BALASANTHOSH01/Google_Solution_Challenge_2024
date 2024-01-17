@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const MentorPage = () => {
     return (
         <div>
-            <div className="grid grid-cols-[1fr,1fr,1fr] sm:grid-cols-[1fr] sm:mt-[5%] cursor-pointer">
+            <div className="grid grid-cols-[1fr,1fr,1fr] sm:grid-cols-[1fr] sm:mt-[20%] cursor-pointer">
                 <h1 className="hidden sm:block ml-[18%] text-left text-black font-medium uppercase">Recommended Mentors</h1>
                 {
                     MentorsPages.map((mentor) => (

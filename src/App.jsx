@@ -16,7 +16,6 @@ const App = () => {
   const NavBarfun = () => {
     switch (cropcurrentlocation) {
       case "/userprofile":
-      case "/mentor":
       case `/mentor/${mentorid}`:
       case `/croppage/${cropid}`:
         return <UserNavBar />;
