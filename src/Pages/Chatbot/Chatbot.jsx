@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Chatbot = () => {
   return (
-    <div className='w-[400px] sm:w-screen sm:h-screen h-[500px] my-[1%] mx-auto  bg-gray-100 p-2 font-Nunito rounded-[10px] flex flex-col relative '>
+    <div className='w-[400px] sm:w-screen sm:h-[90vh] h-[500px] my-[1%] mx-auto  bg-gray-100 p-2 font-Nunito rounded-[10px] flex flex-col relative '>
 
       <div className=' absolute w-screen h-screen flex flex-col justify-center items-center'>
         <div className='bg-botLogo bg-cover object-cover rounded-[50%] w-[100px] h-[100px] opacity-70 blur-[0.3px]'>
