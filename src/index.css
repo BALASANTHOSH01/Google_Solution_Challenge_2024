@@ -42,29 +42,20 @@ body{
     animation: moveInOut 30s linear infinite;
 }
 
-@keyframes moveInOut {
+/**Bot Animation*/
+.bot-motion{
+    animation: Botanimation 2s infinite;
+}
+
+@keyframes Botanimation {
     0%{
-        transform: translateX(-100%);
-    }
-    20%{
-        transform: translateX(-10%);
-    }
-    40%{
-        transform: translateX(50%);
-    }
+        transform: translateY(-15%);
+    } 
     50%{
-        transform: translateX(100%);
-    }
-    60%{
-        transform: translateX(200%);
-    }
-    70%{
-        transform: translateX(100%);
-    }
-    90%{
-        transform: translateX(50%);
+        transform: translateY(15%);
     }
     100%{
-        transform: translateX(-100%);
+        transform: translateY(-15%);
     }
+    
 }

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { HomeItem } from "../../assets/HomeItem/HomeItem"
 import { LuDot } from "react-icons/lu";
+import botIcon from '../../assets/Images/Chatbot/botIcon.jpg';
 
 const Home = () => {
   document.documentElement.scrollTop = 0;
@@ -39,6 +40,13 @@ const Home = () => {
             </Link>
           ))
         }
+      </div>
+
+      <div  className="fixed bottom-[5%] right-[2%]  cursor-pointer text-center bot-motion z-50">
+        <div className="rounded-[50%] cursor-pointer border overflow-hidden border-gray-400">
+          <img src={botIcon} alt="botIcon" className="w-[70px] h-[70px] object-cover"/>
+        </div>
+          <p className="text-[14px] text-green-600">Agro&#160;Bot</p>
       </div>
 
       {
