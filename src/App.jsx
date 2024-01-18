@@ -9,17 +9,24 @@ const App = () => {
   const cropcurrentlocation = location.pathname;
   console.log(cropcurrentlocation);
 
-  const Footerfun = () => {
-    return cropcurrentlocation === "/userprofile" ? null : <Footer />;
-  };
+  const Footerfun = () =>{
+    switch (cropcurrentlocation){
+      case "/userprofile":
+      case "/bot":
+        return;
+      default:
+        return <Footer/>
+    }
+  }
 
   const NavBarfun = () => {
     switch (cropcurrentlocation) {
       case "/userprofile":
-      case "/bot":
       case `/mentor/${mentorid}`:
       case `/croppage/${cropid}`:
         return <UserNavBar />;
+      case "/bot":
+        return;
       default:
         return <NavBar />;
     }

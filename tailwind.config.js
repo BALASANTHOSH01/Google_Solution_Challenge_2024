@@ -24,6 +24,7 @@ export default {
       },
       backgroundImage:{
         bgwave:"url('./src/assets/Images/Chatbot/img.png')",
+        botLogo:"url('./src/assets/Images/Chatbot/botIcon.jpg')",
       }
     },
   },
