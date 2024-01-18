@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import run from './Chatbot.js';
 import LogoImg from '../../assets/Images/Chatbot/botIcon.jpg';
+import userImg from '../../assets/Images/Chatbot/user.jpg';
 import Markdown from 'react-markdown';
 
 const Chatbot = () => {
@@ -100,8 +101,24 @@ const Chatbot = () => {
       </div>
     }
 
+    {/**User PArt */}
+    <div className="flex  justify-start w-[80%] md:w-[90%] my-[2%]">
+      <div className="flex flex-row gap-2 sm:gap-1 items-center sm:items-start w-[80%] sm:w-[100%] ">
+        <img src={userImg} alt="userPart" className="w-[70px] h-[70px]"/>
+        <p className="text-[18px] p-2 rounded-[10px] text-black bg-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem maxime explicabo accusamus atque, quibusdam quaerat corrupti praesentium? Optio, hic nam dolorum rem quam doloribus earum maxime placeat, possimus soluta illum?</p>
+      </div>
+    </div>
+
+    {/**AI PArt */}
+    <div className="flex  justify-end w-[80%] md:w-[90%] my-[2%]">
+      <div className="flex flex-row gap-2 sm:gap-1 items-center sm:items-start w-[80%] sm:w-[100%] ">
+        <p className="text-[18px] p-2 rounded-[10px] text-black bg-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem maxime explicabo accusamus atque, quibusdam quaerat corrupti praesentium? Optio, hic nam dolorum rem quam doloribus earum maxime placeat, possimus soluta illum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam ullam repellat quae est accusantium quibusdam? Soluta consectetur culpa doloremque iusto! Incidunt molestias soluta nostrum quidem modi aliquid tempora aut molestiae!</p>
+        <img src={LogoImg} alt="userPart" className="w-[70px] h-[70px]"/>
+      </div>
+    </div>
+
     {/**User Input */}
-    <div className=' fixed pb-3 sm:w-[97%] w-[60%] bg-white flex flex-col bottom-0 rounded-t-[25px]'>
+    <div className=' sticky pb-3 sm:w-[97%] w-[80%] bg-white flex flex-col bottom-0 rounded-t-[25px]'>
 
       <div className='flex flex-row rounded-[25px] overflow-hidden h-fit items-center justify-between border p-1 border-gray-400 bg-white w-[100%] '>
 

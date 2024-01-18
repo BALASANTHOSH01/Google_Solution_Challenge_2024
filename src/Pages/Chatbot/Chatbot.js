@@ -13,6 +13,8 @@ const MODEL_NAME = "gemini-pro";
 const API_KEY = import.meta.env.VITE_API_KEY;
 
 const run = async (usermsg) => {
+
+    // const userPart =
     const genAI = new GoogleGenerativeAI(API_KEY);
     const model = genAI.getGenerativeModel({ model: MODEL_NAME });
 
