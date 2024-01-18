@@ -10,8 +10,9 @@ import Markdown from 'react-markdown';
 
 const Chatbot = () => {
 
-  const [outputValue, setOutputValue] = useState("");
+  const [outputValue, setOutputValue] = useState(""); //State for "outputValue"
 
+  //Adjust the textarea's row depends upon the words & characters
   const handleTextRows = (event) => {
     const textValue = event.target.value;
     const Charlength = textValue.length;
@@ -33,23 +34,30 @@ const Chatbot = () => {
     }
   }
 
+  //Handling the submission
   const handleSubmit = async () => {
     let Input = document.querySelector("textarea").value;
     const Output = await run(Input);
     setOutputValue(Output);
   }
 
+  //Generate response if I press "Enter" key
   document.addEventListener("keyup", () => {
     if (event.key === "Enter") {
       handleSubmit();
     }
   })
 
+  //For correct space and gap in the output
   const CustomMarkdown = {
-    heading: ({ level, children }) => {
-      const space = level === 1 ? "mb-3" : level === 2 ? "mb-2" : "mb-2";
-      return React.createElement(`h${level}`, { className: space }, children)
+    //Heading method
+    heading: ({ level }) => {
+      const space = level === 1 ? "mb-4" : level === 2 ? "mb-4" : "mb-4";
+      const heading = React.createElement(`h${level}`)
+      heading.className=space;
+      return heading;
     },
+    //Paragraph method
     paragraph: ({ children }) => {
       return <p className="mb-2">{children}</p>
     }
@@ -74,6 +82,7 @@ const Chatbot = () => {
       </motion.div>
     </div>
 
+    {/**AI OUTPUT */}
     <div className="text-16px text-black mx-auto font-Nunito flex flex-col justify-center p-2 w-[80%] sm:w-[95%] mt-[8%] sm:mt-[14%] sm:pb-[28%] pb-[15%]" >
       <Markdown components={CustomMarkdown}>
         {outputValue}
@@ -81,6 +90,7 @@ const Chatbot = () => {
     </div>
 
 
+    {/**AI ICON */}
     {
       outputValue === "" && <div className='fixed w-[100%] h-[100%] sm:w-screen sm:h-screen flex flex-col justify-center items-center z-0'>
 
@@ -96,7 +106,6 @@ const Chatbot = () => {
       <div className='flex flex-row rounded-[25px] overflow-hidden h-fit items-center justify-between border p-1 border-gray-400 bg-white w-[100%] '>
 
         <textarea cols={30} rows={1} onChange={handleTextRows} className='w-[95%] resize-none p-2 focus:outline-none ml-[5px] focus:row-span-4 text-[18px] scrollbar-none' placeholder='Enter your query...' id="input"></textarea>
-
 
         <motion.div whileTap={{ scale: 0.6 }}>
           <MdArrowCircleRight onClick={handleSubmit} className="cursor-pointer text-[35px] mr-[1%]" />

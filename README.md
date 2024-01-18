@@ -1,6 +1,7 @@
 # 2024 Google Solution Challenge
 
 - Prototype Website [Link](https://agro-assistant-official.netlify.app/)
+- Try our "Agro Bot" [Link](https://agro-assistant-official.netlify.app/bot)
 
 ## Goal :
 
