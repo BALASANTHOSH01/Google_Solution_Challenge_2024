@@ -17,11 +17,11 @@ import markdown from 'markdown-it';
     const model =  genAI.getGenerativeModel({ model: MODEL_NAME });
   
     const generationConfig = {
-      temperature: 0.35,
-      topK: 1,
-      topP: 1,
-      maxOutputTokens: 2048,
-    };
+        temperature: 0.4,
+        topK: 1,
+        topP: 1,
+        maxOutputTokens: 2048,
+      };
   
     const safetySettings = [
       {
@@ -59,8 +59,8 @@ import markdown from 'markdown-it';
   
     const response = result.response.text();
     console.log(response);
-    const correctText = markdown().render(response);
-    return correctText;
+    // const correctText = markdown().render(response);
+    return response;
     
   }
   
