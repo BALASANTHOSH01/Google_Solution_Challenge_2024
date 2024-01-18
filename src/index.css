@@ -13,7 +13,9 @@ body{
     overflow-x: hidden;
     height: 100vh;
 }
-
+textarea{
+    scrollbar-width: none;
+}
 ::-webkit-scrollbar{
     width: 8px;
 }

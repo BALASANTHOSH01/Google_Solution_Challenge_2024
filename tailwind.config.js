@@ -21,6 +21,9 @@ export default {
         bronze:"#CD7F32",
         silver:	"rgb(192, 192, 192)",
         gold:"#FFD700",
+      },
+      backgroundImage:{
+        bgwave:"url('./src/assets/Images/Chatbot/img.png')",
       }
     },
   },
