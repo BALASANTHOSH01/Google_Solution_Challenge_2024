@@ -7,7 +7,7 @@ const Home = () => {
   document.documentElement.scrollTop = 0;
   return (
     <div className="sm:mt-[20%]">
-     
+
       <div className="w-[80%] sm:hidden sm:w-[100%] block mx-auto my-[5%]">
         {
           HomeItem.map((crop) => (
@@ -42,16 +42,18 @@ const Home = () => {
         }
       </div>
 
-      <div  className="fixed bottom-[5%] right-[2%]  cursor-pointer text-center bot-motion z-50">
-        <div className="rounded-[50%] cursor-pointer border overflow-hidden border-gray-400">
-          <img src={botIcon} alt="botIcon" className="w-[70px] h-[70px] object-cover"/>
-        </div>
+      <Link to={"/bot"}>
+        <div className="fixed bottom-[5%] right-[2%]  cursor-pointer text-center bot-motion z-50">
+          <div className="rounded-[50%] cursor-pointer border overflow-hidden border-gray-400">
+            <img src={botIcon} alt="botIcon" className="w-[70px] h-[70px] object-cover" />
+          </div>
           <p className="text-[14px] text-green-600">Agro&#160;Bot</p>
-      </div>
+        </div>
+      </Link>
 
       {
         HomeItem.map((item) => (
-          <Link key={item.id} to={`/croppage/:${item.id}`} onChange={window.scrollTo(0,0)} className="hidden sm:block">
+          <Link key={item.id} to={`/croppage/:${item.id}`} onChange={window.scrollTo(0, 0)} className="hidden sm:block">
             <div key={item.id} className="w-[90%] rounded-[10px] p-2 my-[10%] hover:shadow-2xl mx-auto">
               <img src={item.image} alt="img" className="w-[65%] rounded-[10px] my-[1%] block mx-auto" />
               <p className="text-black uppercase my-[3%] text-center font-semibold text-[20px]">{item.title}</p>

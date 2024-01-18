@@ -11,6 +11,7 @@ import CropPage from './Pages/CropPage/CropPage.jsx'
 import EventPage from './Pages/EventPage/EventPage.jsx'
 import MentorPage from './Pages/MentorPage/MentorPage.jsx'
 import MentorProfile from './Pages/MentorPage/MentorProfile/MentorProfile.jsx'
+import Chatbot from './Pages/Chatbot/Chatbot.jsx'
 
 
 const router = createBrowserRouter([
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
       {
         path:"/mentor/:mentorid",
         element:<MentorProfile/>
+      },
+      {
+        path:"/bot",
+        element:<Chatbot/>
       }
     ]
   }
