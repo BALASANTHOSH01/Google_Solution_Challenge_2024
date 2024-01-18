@@ -27,6 +27,7 @@ export default {
         botLogo:"url('./src/assets/Images/Chatbot/botIcon.jpg')",
       }
     },
+    
   },
   plugins: [],
 }
