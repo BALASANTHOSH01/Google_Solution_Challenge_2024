@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {  useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { MdArrowCircleRight } from "react-icons/md";
 import { RiHome2Fill } from "react-icons/ri";
@@ -13,6 +13,8 @@ const Chatbot = () => {
 
   const [outputValue, setOutputValue] = useState(""); //State for "outputValue"
   const [chatHistory, setChatHistory] = useState([]);
+  const [isloading,setIsLoading] =  useState(false);
+
   //Adjust the textarea's row depends upon the words & characters
   const handleTextRows = (event) => {
     const textValue = event.target.value;
@@ -73,13 +75,7 @@ const Chatbot = () => {
 
   //Ai Part Div
   const aiDiv = (data) => {
-
-    // const autoscroll = useRef();
     
-    // useEffect(()=>{
-    //   autoscroll.current.scrollTop = autoscroll.current.scrollHeight;
-    // },[data]);
-
     console.log("aiDIV fun", data);
     return (
       <div className="w-[100%] md:w-[100%] my-[3%] block mx-aut0">
@@ -102,10 +98,12 @@ const Chatbot = () => {
 
   //Handling the submission
   const handleSubmit = async () => {
+    setIsLoading(true);
     let Input = document.querySelector("textarea").value;
     const trimmedInput = Input.trim();
 
     if (trimmedInput === "") {
+      setIsLoading(false);
       return;
     }
 
@@ -118,6 +116,7 @@ const Chatbot = () => {
 
     setOutputValue(Output);
 
+    setIsLoading(false);
   }
 
   const chatHistoryFun = () => {
@@ -160,18 +159,24 @@ const Chatbot = () => {
 
       {/**AI OUTPUT ----------->   */}
       <div className="mt-[8%] sm:mt-[13%] w-[85%] sm:w-[95%] mx-auto sm:pb-[25%] pb-[14%]">
-
         {chatHistoryFun()}
       </div>
 
+      {/**Loader */}
+      {/* <div className=" absolute flex justify-center items-center mx-auto">
+        {isloading && <Loader/>}
+      </div> */}
+
       {/**AI ICON */}
       {
-        outputValue === "" && <div className='fixed w-[100%] h-[100%] sm:w-screen sm:h-screen flex flex-col justify-center items-center z-0'>
+        outputValue === "" && !isloading && (
+          <div className='fixed w-[100%] h-[100%] sm:w-screen sm:h-screen flex flex-col justify-center items-center z-0'>
 
           <img src={LogoImg} alt="LogoImg" className=" rounded-[50%] w-[100px] h-[100px] opacity-90 blur-[0.3px]" />
           <p className="text-[14px] my-[2px] text-gray-400 mx-auto text-center">In fields of green, where crops are seen.</p>
 
         </div>
+        )
       }
 
       {/**User Input */}
@@ -183,6 +188,7 @@ const Chatbot = () => {
             if (event.key === "Enter") {
               event.preventDefault();
               handleSubmit();
+              document.querySelector("textarea").value = "";
             }
           }} onChange={handleTextRows} className='w-[95%] resize-none p-2 focus:outline-none ml-[5px] focus:row-span-4 text-[18px] scrollbar-none' placeholder='Enter your query...' id="input"></textarea>
 
