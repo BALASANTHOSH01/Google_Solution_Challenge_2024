@@ -58,13 +58,13 @@ const Chatbot = () => {
         <div className="flex justify-start gap-2 sm:gap-1 items-end sm:items-start w-[90%] sm:w-[100%] ">
 
           <div className="text-center">
-            <img src={userImg} alt="userPart" className="w-[55px] h-[55px]" />
+            <img src={userImg} alt="userPart" className="w-[55px] sm:w-[30px] sm:h-[30px] h-[55px]" />
             <p className=" text-gray-400 text-[12px]">User</p>
           </div>
 
           <div className="max-w-[80%]">
 
-          <p className="sm:text-[18px] p-2 rounded-[10px] text-black bg-gray-200" id="userPart">{data}</p>
+          <p className="sm:text-[15px] p-2 rounded-[10px] text-black bg-gray-200" id="userPart">{data}</p>
           </div>
         </div>
       </div>
@@ -82,17 +82,17 @@ const Chatbot = () => {
 
     console.log("aiDIV fun", data);
     return (
-      <div className="w-[100%] md:w-[100%] my-[3%] ml-[3%] block mx-aut0">
-        <div className="flex justify-end gap-2 sm:gap-1 items-start sm:items-start w-[90%] sm:w-[100%] ">
+      <div className="w-[100%] md:w-[100%] my-[3%] block mx-aut0">
+        <div className="flex justify-end gap-2 sm:gap-1 items-start sm:items-start w-[90%] sm:w-[100%]">
 
           <div className="max-w-[80%]">
-            <Markdown components={CustomMarkdown} className="sm:text-[18px]  p-2 rounded-[10px] text-black bg-gray-200">
+            <Markdown components={CustomMarkdown} className="sm:text-[15px]  p-2 rounded-[10px] text-black bg-gray-200">
               {data}
             </Markdown>
           </div>
 
           <div className="text-center">
-            <img src={LogoImg} alt="userPart" className="w-[60px] h-[60px]" />
+            <img src={LogoImg} alt="userPart" className="w-[60px] sm:w-[30px] sm:h-[30px] h-[60px]" />
             <p className=" text-gray-400 text-[12px]">Agro</p>
           </div>
         </div>
@@ -169,7 +169,7 @@ const Chatbot = () => {
         outputValue === "" && <div className='fixed w-[100%] h-[100%] sm:w-screen sm:h-screen flex flex-col justify-center items-center z-0'>
 
           <img src={LogoImg} alt="LogoImg" className=" rounded-[50%] w-[100px] h-[100px] opacity-90 blur-[0.3px]" />
-          <p className="text-[14px] my-[2px] text-gray-400 mx-auto text-center">I&apos;m&#160;Here&#160;Assiste&#160;You&#160;body feel free to ask your doubts !</p>
+          <p className="text-[14px] my-[2px] text-gray-400 mx-auto text-center">In fields of green, where crops are seen.</p>
 
         </div>
       }
