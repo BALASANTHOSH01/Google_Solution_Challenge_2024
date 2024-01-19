@@ -12,7 +12,7 @@ import Markdown from 'react-markdown';
 const Chatbot = () => {
 
   const [outputValue, setOutputValue] = useState(""); //State for "outputValue"
-
+  const [chatHistory, setChatHistory] = useState([]);
   //Adjust the textarea's row depends upon the words & characters
   const handleTextRows = (event) => {
     const textValue = event.target.value;
@@ -35,20 +35,6 @@ const Chatbot = () => {
     }
   }
 
-  //Handling the submission
-  const handleSubmit = async () => {
-    let Input = document.querySelector("textarea").value;
-    const Output = await run(Input);
-    setOutputValue(Output);
-  }
-
-  //Generate response if I press "Enter" key
-  document.addEventListener("keyup", () => {
-    if (event.key === "Enter") {
-      handleSubmit();
-    }
-  })
-
   //For correct space and gap in the output
   const CustomMarkdown = {
     //Heading method
@@ -64,8 +50,88 @@ const Chatbot = () => {
     }
   }
 
+  //UserPart Div
+  const userDiv = (data) => {
+    console.log("userDiv fun", data);
+    return (
+      <div className=" w-[100%] md:w-[100%] my-[2%] block mx-aut0">
+        <div className="flex justify-start gap-2 sm:gap-1 items-end sm:items-start w-[90%] sm:w-[100%] ">
+
+          <div className="text-center">
+            <img src={userImg} alt="userPart" className="w-[70px] h-[70px]" />
+            <p className=" text-gray-400 text-[14px]"></p>
+          </div>
+
+          <div className="max-w-[80%]">
+
+          <p className="sm:text-[18px] p-2 rounded-[10px] text-black bg-gray-200" id="userPart">{data}</p>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  //Ai Part Div
+  const aiDiv = (data) => {
+    console.log("aiDIV fun", data);
+    return (
+      <div className="w-[100%] md:w-[100%] my-[3%] ml-[3%] block mx-aut0">
+        <div className="flex justify-end gap-2 sm:gap-1 items-end sm:items-start w-[90%] sm:w-[100%] ">
+
+          <div className="max-w-[80%]">
+            <Markdown components={CustomMarkdown} className="sm:text-[18px]  p-2 rounded-[10px] text-black bg-gray-200">
+              {data}
+            </Markdown>
+          </div>
+
+          <div>
+            <img src={LogoImg} alt="userPart" className="w-[70px] h-[70px]" />
+            <p className=" text-gray-400 text-[14px]"></p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  //Handling the submission
+  const handleSubmit = async () => {
+    let Input = document.querySelector("textarea").value;
+    const trimmedInput = Input.trim();
+
+    if (trimmedInput === "") {
+      return;
+    }
+
+    const Output = await run(trimmedInput);
+    console.log("handlesubmit Output :", Output);
+
+    setChatHistory((prehistory) => [
+      ...prehistory, { user: Input }, { model: Output },
+    ]);
+
+    setOutputValue(Output);
+
+  }
+
+  const chatHistoryFun = () => {
+    return chatHistory.map((msg, index) => {
+      const isUser = index % 2 === 0;
+      const isAi = index % 2 === 1;
+
+      return (
+        <div key={index}>
+          <div>
+            {isUser && userDiv(msg.user)}
+            {isAi && aiDiv(msg.model)}
+          </div>
+        </div>
+      );
+    });
+
+  }
+
   return (
-    <div className='w-[70%] sm:w-screen sm:h-[94vh] h-screen my-[1%] mx-auto   p-2 font-Nunito rounded-[10px] flex flex-col items-center relative scrollbar-none'>
+    <div className='w-[70%] sm:w-screen sm:h-[94vh] h-screen my-[1%] mx-auto   p-2 font-Nunito rounded-[10px] flex flex-col items-center relative scrollbar-none' id="main-div">
 
       {/**Header */}
       <div className={`flex flex-row w-[65%] sm:w-[95%]  justify-between items-center z-50 p-3 sm:p-2 fixed top-0 bg-white overflow-hidden rounded-b-[25px] border border-gray-300`}>
@@ -81,37 +147,15 @@ const Chatbot = () => {
         <motion.div whileTap={{ scale: 0.6 }} className=' cursor-pointer' id="enter-key">
           <BsThreeDotsVertical />
         </motion.div>
-        
-      </div>
-
-
-      {/**AI OUTPUT ----------->   */} 
-      <div className="text-16px text-black font-Nunito p-2 w-[90%] sm:w-[95%] mt-[6%] sm:mt-[14%] sm:pb-[28%] pb-[15%]" >
-
-        {/**User PArt */}
-        <div className="flex justify-start w-[80%] md:w-[90%] my-[2%]">
-          <div className="flex gap-2 sm:gap-1 items-end sm:items-start w-[90%] sm:w-[100%] ">
-            <img src={userImg} alt="userPart" className="w-[70px] h-[70px]" />
-            <p className="sm:text-[18px] p-2 rounded-[10px] text-black bg-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem maxime explicabo accusamus atque, quibusdam quaerat corrupti praesentium? Optio, hic nam dolorum rem quam doloribus earum maxime placeat, possimus soluta illum?</p>
-          </div>
-        </div>
-
-        {/**AI PArt */}
-        <div className="flex justify-end w-[80%] md:w-[90%] my-[2%] ml-[3%]">
-          <div className="flex gap-2 sm:gap-1 items-end sm:items-start w-[90%] sm:w-[100%] ">
-            <p className="sm:text-[18px] p-2 rounded-[10px] text-black bg-gray-200">
-              {/* <Markdown components={CustomMarkdown}>
-              {outputValue}
-            </Markdown> */}
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque ab officiis voluptatibus reprehenderit optio, nostrum voluptatem magni voluptates dignissimos ea perferendis dolore, repellendus laborum commodi deleniti natus odit. Molestiae, facilis?
-            </p>
-            <img src={LogoImg} alt="userPart" className="w-[70px] h-[70px]" />
-          </div>
-        </div>
 
       </div>
 
 
+      {/**AI OUTPUT ----------->   */}
+      <div className="mt-[8%] sm:mt-[13%] w-[85%] sm:w-[95%] mx-auto sm:pb-[25%] pb-[14%]">
+
+        {chatHistoryFun()}
+      </div>
 
       {/**AI ICON */}
       {
@@ -123,14 +167,17 @@ const Chatbot = () => {
         </div>
       }
 
-
-
       {/**User Input */}
       <div className=' fixed pb-3 sm:w-[97%] w-[60%] bg-white flex flex-col bottom-0 rounded-t-[25px]'>
 
         <div className='flex flex-row rounded-[25px] overflow-hidden h-fit items-center justify-between border p-1 border-gray-400 bg-white w-[100%] '>
 
-          <textarea cols={30} rows={1} onChange={handleTextRows} className='w-[95%] resize-none p-2 focus:outline-none ml-[5px] focus:row-span-4 text-[18px] scrollbar-none' placeholder='Enter your query...' id="input"></textarea>
+          <textarea cols={30} rows={1} onKeyUp={(event) => {
+            if (event.key === "Enter") {
+              event.preventDefault();
+              handleSubmit();
+            }
+          }} onChange={handleTextRows} className='w-[95%] resize-none p-2 focus:outline-none ml-[5px] focus:row-span-4 text-[18px] scrollbar-none' placeholder='Enter your query...' id="input"></textarea>
 
           <motion.div whileTap={{ scale: 0.6 }}>
             <MdArrowCircleRight onClick={handleSubmit} className="cursor-pointer text-[35px] mr-[1%]" />
