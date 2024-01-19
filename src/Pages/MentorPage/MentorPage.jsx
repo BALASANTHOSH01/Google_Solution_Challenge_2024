@@ -48,7 +48,7 @@ const MentorPage = () => {
                                 </div>
 
                                 <div className="bg-green-500 text-white text-[17px] p-2 text-center w-[100%] mx-auto rounded-[10px] ">
-                                    <p>Reach&#160;Me</p>
+                                    <p>Connect</p>
                                 </div>
 
 

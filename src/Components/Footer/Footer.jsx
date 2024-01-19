@@ -2,7 +2,7 @@ import { AiFillLinkedin } from 'react-icons/ai';
 import { AiFillInstagram } from 'react-icons/ai';
 import { RiTwitterXLine } from 'react-icons/ri';
 import { motion } from 'framer-motion';
-import logo from '../../assets/Images/logo.jpg';
+import logo from '../../assets/Images/logo.png';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -11,7 +11,7 @@ const Footer = () => {
 
             <div className='w-[80%] items-center text-center mx-auto'>
                 <img src={logo} alt='Logo' className='w-[15%] mx-auto rounded-[50%]' />
-                <p className=' font-Mochiy font-semibold my-[1%]'>Agro<span className=' font-Mochiy text-green-500'> Uzhagam</span></p>
+                <p className=' font-Mochiy font-semibold  text-green-500 my-[1%]'>Green<span className=' font-Mochiy text-black'> Organic</span></p>
 
                 <div className='flex gap-[7%] text-base font-medium items-center mt-7 mx-auto justify-center'>
 

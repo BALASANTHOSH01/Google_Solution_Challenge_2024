@@ -12,6 +12,7 @@ import EventPage from './Pages/EventPage/EventPage.jsx'
 import MentorPage from './Pages/MentorPage/MentorPage.jsx'
 import MentorProfile from './Pages/MentorPage/MentorProfile/MentorProfile.jsx'
 import Chatbot from './Pages/Chatbot/Chatbot.jsx'
+import EventProfile from './Pages/EventPage/EventProfile/EventProfile.jsx'
 
 
 const router = createBrowserRouter([
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path:"/event",
         element:<EventPage/>
+      },
+      {
+        path:"/event/:eventid",
+        element:<EventProfile/>
       },
       {
         path:"/mentor",

@@ -5,7 +5,7 @@ import UserNavBar from "./Components/UserNavBar/UserNavBar";
 
 const App = () => {
   const location = useLocation();
-  const { cropid,mentorid } = useParams();
+  const { cropid,mentorid,eventid } = useParams();
   const cropcurrentlocation = location.pathname;
   console.log(cropcurrentlocation);
 
@@ -24,6 +24,7 @@ const App = () => {
       case "/userprofile":
       case `/mentor/${mentorid}`:
       case `/croppage/${cropid}`:
+      case `/event/${eventid}`:
         return <UserNavBar />;
       case "/bot":
         return;
