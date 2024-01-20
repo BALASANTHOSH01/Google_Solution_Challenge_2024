@@ -17,8 +17,8 @@ const Nav = () => {
         setNav(element);
     }
     return (
-        <div>
-            <div className="flex flex-row items-center justify-around bg-white p-2 fixed top-0 w-[100%] shadow-md">
+        <div className="h-screen">
+            <div className="flex flex-row items-center justify-around sm:justify-between bg-white p-2 fixed top-0  w-[100%]  shadow-md">
                 
                 <div className=" sm:hidden flex flex-row justify-around w-[30%]">
                 <div className="  flex flex-row gap-0  box-border overflow-hidden ">
@@ -32,20 +32,20 @@ const Nav = () => {
                 {/* <img src={botIcon} alt="botIcon" className="w-[42px] h-[42px] object-cover cursor-pointer border border-gray-500 rounded-[50%]" /> */}
                 </div>
 
-                <div className="flex flex-row w-[40%] sm:w-[95%] md:w-[60%] items-center justify-evenly sm:justify-between">
+                <div className="flex flex-row sm:gap-7 w-[40%] sm:w-[90%] md:w-[60%] items-center justify-evenly sm:justify-between sm:ml-[2%]">
 
                     <Link to={"/"}>
                         {
                             nav === "home" ?
                                 <div>
                                     <div className="flex flex-col text-center items-center text-black cursor-pointer" onClick={() => handleNav("home")}>
-                                        <HiHome className=" text-[22px]" />
+                                        <HiHome className=" text-[21px]" />
                                         <p className=" text-[13px]">Home</p>
                                     </div>
                                     <hr className="w-[100%] h-[2.5px] bg-black " />
                                 </div>
                                 : <div className="flex flex-col text-center items-center hover:text-green-100 cursor-pointer" onClick={() => handleNav("home")}>
-                                    <HiHome className="text-gray-500 text-[23px]" />
+                                    <HiHome className="text-gray-500 text-[22px]" />
                                     <p className="text-gray-500 text-[13px]">Home</p>
                                 </div>
 
@@ -113,11 +113,11 @@ const Nav = () => {
                     
 
                 </div>
-                <Link to={'/bot'} className="">
+                <Link to={'/bot'} className="w-[20%]">
                    
-                         <div className="flex flex-col text-center items-center text-black cursor-pointer hover:text-gray-400" onClick={() => handleNav("bot")}>
+                         <div className="flex flex-col text-center items-center text-green-600  cursor-pointer hover:text-gray-400" onClick={() => handleNav("bot")}>
                         <FaRobot className=" text-[20px]" />
-                        <p className=" text-[13px] md:text-[11px] mt-[2px]">Bot</p>
+                        <p className=" text-[13px] text-black md:text-[11px] mt-[2px] ">Bot</p>
                        
                     </div> 
                     </Link>
