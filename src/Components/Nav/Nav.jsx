@@ -17,7 +17,7 @@ const Nav = () => {
         setNav(element);
     }
     return (
-        <div className="h-screen">
+        <div >
             <div className="flex flex-row items-center justify-around sm:justify-between bg-white p-2 fixed top-0  w-[100%]  shadow-md">
                 
                 <div className=" sm:hidden flex flex-row justify-around w-[30%]">
