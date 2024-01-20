@@ -15,6 +15,8 @@ const App = () => {
     switch (cropcurrentlocation){
       case "/userprofile":
       case `/message/mobile/${mobilemessageid}`:
+      case "/market":
+      case "/training":
       case "/bot":
         return;
       default:
