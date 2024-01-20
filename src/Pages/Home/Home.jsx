@@ -42,14 +42,14 @@ const Home = () => {
         }
       </div>
 
-      {/* <Link to={"/bot"}>
-        <div className="fixed bottom-[5%] right-[1%]  cursor-pointer text-center bot-motion z-50">
+      <Link to={"/bot"}>
+        <div className="fixed hidden sm:block bottom-[5%] right-[1%]  cursor-pointer text-center bot-motion z-50">
           <div className="rounded-[50%] cursor-pointer border overflow-hidden border-gray-400">
             <img src={botIcon} alt="botIcon" className="w-[100px] h-[100px] object-cover" />
           </div>
           <p className="text-[14px] text-green-600">Agro&#160;Bot</p>
         </div>
-      </Link> */}
+      </Link>
 
       {
         HomeItem.map((item) => (

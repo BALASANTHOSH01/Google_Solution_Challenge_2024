@@ -18,7 +18,7 @@ const Nav = () => {
     }
     return (
         <div >
-            <div className="flex flex-row items-center justify-around sm:justify-between bg-white p-2 fixed top-0  w-[100%]  shadow-md">
+            <div className="flex flex-row items-center justify-around sm:justify-between bg-white p-2 fixed top-0 w-[100%]  shadow-md">
                 
                 <div className=" sm:hidden flex flex-row justify-around w-[30%]">
                 <div className="  flex flex-row gap-0  box-border overflow-hidden ">
@@ -32,7 +32,7 @@ const Nav = () => {
                 {/* <img src={botIcon} alt="botIcon" className="w-[42px] h-[42px] object-cover cursor-pointer border border-gray-500 rounded-[50%]" /> */}
                 </div>
 
-                <div className="flex flex-row sm:gap-7 w-[40%] sm:w-[90%] md:w-[60%] items-center justify-evenly sm:justify-between sm:ml-[2%]">
+                <div className="flex flex-row sm:gap-7 w-[40%] sm:w-[100%] md:w-[70%] items-center justify-evenly sm:justify-between sm:ml-[2%]">
 
                     <Link to={"/"}>
                         {
@@ -109,11 +109,8 @@ const Nav = () => {
                     </div>
                     }
 
-                    
-                    
-
                 </div>
-                <Link to={'/bot'} className="w-[20%]">
+                <Link to={'/bot'} className="sm:w-[20%]  sm:hidden">
                    
                          <div className="flex flex-col text-center items-center text-green-600  cursor-pointer hover:text-gray-400" onClick={() => handleNav("bot")}>
                         <FaRobot className=" text-[20px]" />
