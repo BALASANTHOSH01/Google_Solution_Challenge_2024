@@ -3,16 +3,18 @@ import Footer from "./Components/Footer/Footer";
 import Nav from "./Components/Nav/Nav";
 import { Outlet, useLocation, useParams } from "react-router-dom";
 import UserNavBar from "./Components/UserNavBar/UserNavBar";
+import MessageNav from "./Components/MessageComponents/MessageNav/MessageNav";
 
 const App = () => {
   const location = useLocation();
-  const { cropid,mentorid,eventid } = useParams();
+  const { cropid,mentorid,eventid,mobilemessageid } = useParams();
   const cropcurrentlocation = location.pathname;
   console.log(cropcurrentlocation);
 
   const Footerfun = () =>{
     switch (cropcurrentlocation){
       case "/userprofile":
+      case `/message/mobile/${mobilemessageid}`:
       case "/bot":
         return;
       default:
@@ -29,6 +31,8 @@ const App = () => {
         return <UserNavBar />;
       case "/bot":
         return;
+      case `/message/mobile/${mobilemessageid}`:
+        return <MessageNav/>;
       default:
         return <Nav />;
     }
@@ -38,7 +42,7 @@ const App = () => {
     <div>
       {NavBarfun()}
 
-      <div className="mt-[7%]">
+      <div className="mt-[7%] md:mt-[10%]">
       <Outlet />
       </div>
 

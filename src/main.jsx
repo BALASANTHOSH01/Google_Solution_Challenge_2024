@@ -13,6 +13,14 @@ import MentorPage from './Pages/MentorPage/MentorPage.jsx'
 import MentorProfile from './Pages/MentorPage/MentorProfile/MentorProfile.jsx'
 import Chatbot from './Pages/Chatbot/Chatbot.jsx'
 import EventProfile from './Pages/EventPage/EventProfile/EventProfile.jsx'
+import Message from './Pages/Message/Message.jsx'
+import PostPage from './Pages/PostPage/PostPage.jsx'
+import Market from './Pages/Market/Market.jsx'
+import Training from './Pages/Training/Training.jsx'
+import PeoplePage from './Pages/PeoplePage/PeoplePage.jsx'
+import MessagePanel from './Components/MessageComponents/MessagePanel/MessagePanel.jsx'
+import PeopleProfile from './Components/PeopleComponents/PeopleProfile/PeopleProfile.jsx'
+import MobileMessage from './Pages/Message/MobileMessage/MobileMessage.jsx'
 
 
 const router = createBrowserRouter([
@@ -45,31 +53,57 @@ const router = createBrowserRouter([
         element: <CropPage />
       },
       {
-        path:"/event",
-        element:<EventPage/>
+        path: "/event",
+        element: <EventPage />
       },
       {
-        path:"/event/:eventid",
-        element:<EventProfile/>
+        path: "/event/:eventid",
+        element: <EventProfile />
       },
       {
-        path:"/mentor",
-        element:<MentorPage/>
+        path: "/bot",
+        element: <Chatbot />
       },
       {
-        path:"/mentor/:mentorid",
-        element:<MentorProfile/>
+        path: "/message",
+        element: <Message />,
+        children: [
+          {
+            path: "/message/:messageid",
+            element: <MessagePanel />
+          }
+        ]
       },
       {
-        path:"/bot",
-        element:<Chatbot/>
+        path: "/message/mobile/:mobilemessageid",
+        element: <MobileMessage />
+      },
+      {
+        path: "/post",
+        element: <PostPage />
+      },
+      {
+        path: "/market",
+        element: <Market />
+      },
+      {
+        path: "/training",
+        element: <Training />
+      },
+      {
+        path: "/people",
+        element: <PeoplePage />
+      },
+      {
+        path:"/people/:peopleid",
+        element:<PeopleProfile/>
       }
     ]
   }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <React.StrictMode>
-      <RouterProvider router={router} />
-    </React.StrictMode>
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
 )

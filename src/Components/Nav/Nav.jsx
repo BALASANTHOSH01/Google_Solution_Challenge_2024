@@ -1,34 +1,55 @@
 import { HiHome } from "react-icons/hi2"; //Home Icon
 import { MdOutlineOndemandVideo } from "react-icons/md"; //video icon
-import { RiMessage2Fill } from "react-icons/ri"; //Message icon
+import { IoIosPeople } from "react-icons/io"; //People icon
 import { FaCartArrowDown } from "react-icons/fa6"; //Buy icon
 import user from "../../assets/Images/man.png"; //user Image
 import { CiSearch } from "react-icons/ci"; //Seach icon
-import { SiAddthis } from "react-icons/si"; //plus icon
+import { RiMessage2Fill } from "react-icons/ri";//Message icon
 import { FaRobot } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useLocation, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { CiMenuFries } from "react-icons/ci";
 
 // import botIcon from "../../assets/Images/Chatbot/botIcon.jpg"; //bot icon
 const Nav = () => {
 
-    const [nav, setNav] = useState("home");
+    const location = useLocation();
+    const {messageid,peopleid}=useParams();
 
+    useEffect(()=>{
+        if(location.pathname==="/"){
+            setNav("home");
+        } else if(location.pathname===`/message/${messageid}`){
+            setNav("message");
+        } else if(location.pathname==="/training"){
+            setNav("training");
+        } else if(location.pathname==="/people"){
+            setNav("people");
+        } else if(location.pathname==="/market"){
+            setNav("market");
+        } else if(location.pathname===`/people/${peopleid}`){
+            setNav("people");
+        }
+
+    },[location.pathname])
+
+    const [nav, setNav] = useState("home");
     const handleNav = (element) => {
         setNav(element);
     }
     return (
         <div >
-            <div className="flex flex-row items-center justify-around sm:justify-between bg-white p-2 fixed top-0 w-[100%]  shadow-md">
+            <div className="flex flex-row items-center justify-around sm:justify-between bg-white p-2 fixed top-0 w-[100%] z-50 shadow-md">
 
                 <div className=" sm:hidden flex flex-row justify-around w-[30%]">
-                    <div className="  flex flex-row gap-0  box-border overflow-hidden ">
-                        <input type="search" id="search" placeholder="search" className=" p-2 px-3 border border-gray-400 rounded-l-[10px] w-[80%] focus:outline-none focus:border-green-500 focus:border-[1px]" />
+                    <div className="  flex flex-row  items-center box-border  border overflow-hidden border-gray-400 rounded-[10px] ">
+                        <CiSearch className=" text-gray-500 text-[20px] ml-[2%] mx-auto" />
+                        <input type="search" id="search" placeholder="search" className=" p-2 px-3 w-[90%] ml-[2%] focus:outline-none focus:border-green-500 focus:border-[1px] rounded-[10px]" />
 
-                        <div className="border border-gray-400 px-5 p-2 bg-gray-200 rounded-r-[10px] cursor-pointer w-[20%] block mx-auto left-0  ">
-                            <CiSearch className=" text-black text-2xl mx-auto" />
-                        </div>
+
+                        {/* <div className="border border-gray-400 px-5 p-2 bg-gray-200 rounded-r-[10px] cursor-pointer w-[20%] block mx-auto left-0  ">
+                           
+                        </div> */}
 
                     </div>
                     {/* <img src={botIcon} alt="botIcon" className="w-[42px] h-[42px] object-cover cursor-pointer border border-gray-500 rounded-[50%]" /> */}
@@ -40,13 +61,13 @@ const Nav = () => {
                         {
                             nav === "home" ?
                                 <div>
-                                    <div className="flex flex-col text-center items-center text-black cursor-pointer" onClick={() => handleNav("home")}>
+                                    <div className="flex flex-col text-center items-center text-black cursor-pointer"  onClick={() => handleNav("home")}>
                                         <HiHome className=" text-[21px]" />
                                         <p className=" text-[13px]">Home</p>
                                     </div>
                                     <hr className="w-[100%] h-[2.5px] bg-black " />
                                 </div>
-                                : <div className="flex flex-col text-center items-center hover:text-green-100 cursor-pointer" onClick={() => handleNav("home")}>
+                                : <div className="flex flex-col text-center items-center cursor-pointer" onClick={() => handleNav("home")}>
                                     <HiHome className="text-gray-500 text-[22px]" />
                                     <p className="text-gray-500 text-[13px]">Home</p>
                                 </div>
@@ -54,6 +75,7 @@ const Nav = () => {
                         }
                     </Link>
 
+                    <Link to={"/training"}>
                     {
                         nav === "training" ? <div className="flex flex-col text-center items-center text-black cursor-pointer" onClick={() => handleNav("training")}>
                             <MdOutlineOndemandVideo className=" text-[23px]" />
@@ -65,7 +87,9 @@ const Nav = () => {
                                 <p className="text-gray-500 text-[13px] md:text-[11px]">Training</p>
                             </div>
                     }
+                    </Link>
 
+                    <Link to={"/market"}>
                     {
                         nav === "market" ? <div className="flex flex-col text-center items-center text-black cursor-pointer" onClick={() => handleNav("market")}>
                             <FaCartArrowDown className=" text-[23px]" />
@@ -76,29 +100,34 @@ const Nav = () => {
                             <p className="text-gray-500 text-[13px] md:text-[11px]">Market</p>
                         </div>
                     }
+                    </Link>
 
+                    <Link to={"/people"}>
                     {
-                        nav === "message" ?
-                            <div className="flex flex-col text-center items-center text-black" onClick={() => handleNav("message")}>
-                                <RiMessage2Fill className=" text-[23px]" />
-                                <p className=" text-[13px] md:text-[11px]">Message</p>
+                        nav === "people" ?
+                            <div className="flex flex-col text-center items-center text-black" onClick={() => handleNav("people")}>
+                                <IoIosPeople className=" text-[23px]" />
+                                <p className=" text-[13px] md:text-[11px]">People</p>
                                 <hr className="w-[100%] h-[2.5px] bg-black " />
-                            </div> : <div className="flex flex-col text-center items-center cursor-pointer" onClick={() => handleNav("message")}>
-                                <RiMessage2Fill className="text-gray-500 text-[23px]" />
-                                <p className="text-gray-500 text-[13px] md:text-[11px]">Message</p>
+                            </div> : <div className="flex flex-col text-center items-center cursor-pointer" onClick={() => handleNav("people")}>
+                                <IoIosPeople className="text-gray-500 text-[23px]" />
+                                <p className="text-gray-500 text-[13px] md:text-[11px]">People</p>
                             </div>
                     }
+                    </Link>
 
+                    <Link to={"/message"}>
                     {
-                        nav === "post" ? <div className="flex flex-col text-center items-center text-black cursor-pointer" onClick={() => handleNav("post")}>
-                            <SiAddthis className=" text-[20px]" />
-                            <p className=" text-[13px] md:text-[11px] mt-[2px]">Post</p>
+                        nav === "message" ? <div className="flex flex-col text-center items-center text-black cursor-pointer" onClick={() => handleNav("message")}>
+                            <RiMessage2Fill className=" text-[20px]" />
+                            <p className=" text-[13px] md:text-[11px] mt-[2px]">Message</p>
                             <hr className="w-[100%] h-[2.5px] bg-black " />
-                        </div> : <div className="flex flex-col text-center items-center cursor-pointer" onClick={() => handleNav("post")}>
-                            <SiAddthis className="text-gray-500 text-[20px]" />
-                            <p className="text-gray-500 text-[13px] md:text-[11px] mt-[2px]">Post</p>
+                        </div> : <div className="flex flex-col text-center items-center cursor-pointer" onClick={() => handleNav("message")}>
+                            <RiMessage2Fill className="text-gray-500 text-[20px]" />
+                            <p className="text-gray-500 text-[13px] md:text-[11px] mt-[2px]">Message</p>
                         </div>
                     }
+                    </Link>
 
                     <div className="sm:hidden">
                         {
@@ -126,6 +155,10 @@ const Nav = () => {
                                </Link>
                                 
                                 <Link to={"/bot"}>
+                                <p className="text-[17px] text-gray-600 py-3 px-10 my-[4px] hover:bg-gray-200 rounded-[10px]">Bot</p>
+                                </Link>
+
+                                <Link to={"/message"}>
                                 <p className="text-[17px] text-gray-600 py-3 px-10 my-[4px] hover:bg-gray-200 rounded-[10px]">Bot</p>
                                 </Link>
                             </div>
