@@ -1,5 +1,6 @@
 import Footer from "./Components/Footer/Footer";
-import NavBar from "./Components/NavBar/NavBar";
+// import NavBar from "./Components/NavBar/NavBar";
+import Nav from "./Components/Nav/Nav";
 import { Outlet, useLocation, useParams } from "react-router-dom";
 import UserNavBar from "./Components/UserNavBar/UserNavBar";
 
@@ -29,14 +30,18 @@ const App = () => {
       case "/bot":
         return;
       default:
-        return <NavBar />;
+        return <Nav />;
     }
   };
 
   return (
     <div>
       {NavBarfun()}
+
+      <div className="mt-[7%]">
       <Outlet />
+      </div>
+
       {Footerfun()}
     </div>
   );
