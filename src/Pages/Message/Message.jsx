@@ -8,7 +8,7 @@ const Message = () => {
     return (
         <div className="flex flex-row gap-2 h-screen">
 
-            <div className="w-[35%] sm:w-[90%] sm:mx-auto overflow-auto sm:scrollbar-none my-[5%]">
+            <div className="w-[35%] sm:w-[90%] sm:mx-auto overflow-auto  my-[5%]">
 
                 <h2 className=" text-[19px] ml-[5%] text-black mb-[5%]">Recent&#160;List</h2>
 

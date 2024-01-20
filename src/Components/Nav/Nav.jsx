@@ -14,21 +14,32 @@ import { CiMenuFries } from "react-icons/ci";
 const Nav = () => {
 
     const location = useLocation();
-    const {messageid,peopleid}=useParams();
+    const {messageid,peopleid,mobilemessageid}=useParams();
 
     useEffect(()=>{
-        if(location.pathname==="/"){
-            setNav("home");
-        } else if(location.pathname===`/message/${messageid}`){
-            setNav("message");
-        } else if(location.pathname==="/training"){
-            setNav("training");
-        } else if(location.pathname==="/people"){
-            setNav("people");
-        } else if(location.pathname==="/market"){
-            setNav("market");
-        } else if(location.pathname===`/people/${peopleid}`){
-            setNav("people");
+        const Path = location.pathname;
+        switch (Path){
+            case "/":
+                setNav("home");
+                break;
+            case "/message":
+            case `/message/${messageid}`:
+            case `/message/mobile/${mobilemessageid}`:
+                setNav("message");
+                break;
+            case `/people/${peopleid}`:
+            case "/people":
+                setNav("people");
+                break;
+            case "/market":
+                setNav("market");
+                break;
+            case "/training":
+                setNav("training");
+                break;
+            case "menu":
+                setNav("menu");
+                break;
         }
 
     },[location.pathname])
@@ -37,6 +48,7 @@ const Nav = () => {
     const handleNav = (element) => {
         setNav(element);
     }
+
     return (
         <div >
             <div className="flex flex-row items-center justify-around sm:justify-between bg-white p-2 fixed top-0 w-[100%] z-50 shadow-md">
@@ -46,13 +58,7 @@ const Nav = () => {
                         <CiSearch className=" text-gray-500 text-[20px] ml-[2%] mx-auto" />
                         <input type="search" id="search" placeholder="search" className=" p-2 px-3 w-[90%] ml-[2%] focus:outline-none focus:border-green-500 focus:border-[1px] rounded-[10px]" />
 
-
-                        {/* <div className="border border-gray-400 px-5 p-2 bg-gray-200 rounded-r-[10px] cursor-pointer w-[20%] block mx-auto left-0  ">
-                           
-                        </div> */}
-
                     </div>
-                    {/* <img src={botIcon} alt="botIcon" className="w-[42px] h-[42px] object-cover cursor-pointer border border-gray-500 rounded-[50%]" /> */}
                 </div>
 
                 <div className="flex flex-row sm:gap-7 w-[40%] sm:w-[100%] md:w-[70%] items-center justify-evenly sm:justify-between sm:ml-[2%]">
@@ -148,7 +154,7 @@ const Nav = () => {
                             <p className=" text-gray-500 text-[13px] md:text-[11px]">Menu</p>
                             <hr className="w-[100%] h-[2.5px] bg-black " />
 
-                            <div className="flex flex-col p-2 bg-white rounded-[10px] absolute top-[60px] right-[5%]">
+                            <div className="flex flex-col p-2 bg-white rounded-[10px] absolute top-[60px] right-[5%] border">
 
                                <Link to={"/userprofile"}>
                                <p className="text-[17px] text-gray-600 py-3 px-10 my-[4px] hover:bg-gray-200 rounded-[10px]">User</p>
@@ -158,8 +164,12 @@ const Nav = () => {
                                 <p className="text-[17px] text-gray-600 py-3 px-10 my-[4px] hover:bg-gray-200 rounded-[10px]">Bot</p>
                                 </Link>
 
-                                <Link to={"/message"}>
-                                <p className="text-[17px] text-gray-600 py-3 px-10 my-[4px] hover:bg-gray-200 rounded-[10px]">Bot</p>
+                                <Link to={"/AuthSignUp"}>
+                                <p className="text-[17px] text-gray-600 py-3 px-10 my-[4px] hover:bg-gray-200 rounded-[10px]">Signup</p>
+                                </Link>
+
+                                <Link to={"/about"}>
+                                <p className="text-[17px] text-gray-600 py-3 px-10 my-[4px] hover:bg-gray-200 rounded-[10px]">About</p>
                                 </Link>
                             </div>
                         </div> : <div className="sm:block hidden items-center relative cursor-pointer" onClick={() => handleNav("usermenu")}>

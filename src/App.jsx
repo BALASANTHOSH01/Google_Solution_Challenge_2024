@@ -7,7 +7,7 @@ import MessageNav from "./Components/MessageComponents/MessageNav/MessageNav";
 
 const App = () => {
   const location = useLocation();
-  const { cropid,mentorid,eventid,mobilemessageid } = useParams();
+  const { cropid,peopleid,eventid,mobilemessageid } = useParams();
   const cropcurrentlocation = location.pathname;
   console.log(cropcurrentlocation);
 
@@ -25,7 +25,7 @@ const App = () => {
   const NavBarfun = () => {
     switch (cropcurrentlocation) {
       case "/userprofile":
-      case `/mentor/${mentorid}`:
+      case `/people/${peopleid}`:
       case `/croppage/${cropid}`:
       case `/event/${eventid}`:
         return <UserNavBar />;

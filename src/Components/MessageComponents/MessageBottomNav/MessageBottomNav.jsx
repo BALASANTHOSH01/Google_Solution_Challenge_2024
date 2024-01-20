@@ -18,7 +18,6 @@ const MessageBottomNav = () => {
     }
 
     const [inputvalue,setInputValue] = useState("");
-
     const InputChange = (event)=>{
         setInputValue(event.target.value)
     }
