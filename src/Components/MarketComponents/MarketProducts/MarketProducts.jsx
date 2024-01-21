@@ -3,6 +3,7 @@ import ItemData from "../AddItem/ItemData/ItemData.js";
 import { RxCross2 } from "react-icons/rx";
 
 const MarketProducts = () => {
+  document.documentElement.scrollTop = 0;
   return (
     <div>
       <div className=" flex flex-wrap sm:flex-col justify-evenly sm:my-[5%] sm:mx-auto " >

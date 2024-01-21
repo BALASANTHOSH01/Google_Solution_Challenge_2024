@@ -3,7 +3,6 @@ import peoples from "../../../Pages/PeoplePage/PeopleData/Peoples.js";
 import { FaStar } from "react-icons/fa";
 import { TbAward } from "react-icons/tb";
 import { BsThreeDots } from "react-icons/bs";
-import peopleActivity from "../PeopleActivity/PeopleActivity.jsx"
 import PeopleActivity from "../PeopleActivity/PeopleActivity.jsx";
 
 const PeopleProfile = () => {

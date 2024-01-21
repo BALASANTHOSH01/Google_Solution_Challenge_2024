@@ -9,7 +9,6 @@ import Home from './Pages/Home/Home.jsx'
 import About from './Components/About/About.jsx'
 import CropPage from './Pages/CropPage/CropPage.jsx'
 import EventPage from './Pages/EventPage/EventPage.jsx'
-import MentorPage from './Pages/MentorPage/MentorPage.jsx'
 import Chatbot from './Pages/Chatbot/Chatbot.jsx'
 import EventProfile from './Pages/EventPage/EventProfile/EventProfile.jsx'
 import Message from './Pages/Message/Message.jsx'
@@ -23,6 +22,7 @@ import MobileMessage from './Pages/Message/MobileMessage/MobileMessage.jsx'
 import AddItem from './Components/MarketComponents/AddItem/AddItem.jsx'
 import MarketCart from './Components/MarketComponents/MarketCart/MarketCart.jsx'
 import MarketProducts from './Components/MarketComponents/MarketProducts/MarketProducts.jsx'
+import UserProfile from './Components/UserProfile/UserProfile.jsx'
 
 
 const router = createBrowserRouter([
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/userprofile",
-        element: <MentorPage />
+        element: <UserProfile />
       },
       {
         path: "/about",

@@ -139,7 +139,7 @@ const Nav = () => {
                     }
                     </Link>
 
-                    <div className="sm:hidden">
+                    <Link to={"/userprofile"} className="sm:hidden">
                         {
                             nav === "user" ? <div className="flex flex-col text-center items-center text-black cursor-pointer" onClick={() => handleNav("user")}>
                                 <img src={user} alt="user" className="w-[25px] h-[25px] sm:w-[25px] sm:h-[25px] cursor-pointer relative" />
@@ -150,7 +150,7 @@ const Nav = () => {
                                 <p className=" text-gray-500 text-[13px] md:text-[11px] ">Profile</p>
                             </div>
                         }
-                    </div>
+                    </Link>
 
                     {
                         nav === "usermenu" ? <div className="sm:block hidden items-center relative cursor-pointer" onClick={() => handleNav("usermenu")}>

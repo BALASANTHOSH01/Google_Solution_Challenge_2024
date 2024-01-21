@@ -1,6 +1,7 @@
 
 
 const AddItem = () => {
+    document.documentElement.scrollTop = 0;
   return (
     <div>
         <div className="flex flex-col justify-center mx-auto items-center sm:pb-[10%] my-[30%] mt-[10%] ml-[5%]">

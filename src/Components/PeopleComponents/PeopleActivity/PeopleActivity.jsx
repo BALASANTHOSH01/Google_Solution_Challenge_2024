@@ -4,7 +4,7 @@ import UserContent from "../../UserProfile/UserContent/UserContent.jsx";
 
 const PeopleActivity = ({props}) => {
   const Profile = props.profile;
-  const Name = props.name;
+  const Name = props.Name;
   const Username = props.username;
   const About = props.about;
   const [profileactivity, setProfileActivity] = useState("posts");
@@ -12,9 +12,9 @@ const PeopleActivity = ({props}) => {
     setProfileActivity(activity);
   }
   return (
-    <div className="my-[1%]">
+    <div className="my-[1%] pb-[10%]">
 
-      <div className="flex flex-col  bg-white rounded-[10px]  pt-[4%]">
+      <div className="flex flex-col  bg-white rounded-[10px]  pt-[4%] border">
         {/**Activity Nav elements */}
         <div className="flex flex-row justify-around sm:w-[80%] w-[50%]">
           {
@@ -40,7 +40,7 @@ const PeopleActivity = ({props}) => {
         <UserContent profile={Profile} name={Name} username={Username} />
       </div>
 
-      <div className="mt-[2%] py-[4%]  bg-white rounded-[10px]">
+      <div className="mt-[2%] py-[4%]  bg-white rounded-[10px] border ">
         <div className="w-[90%] sm:w-[95%] block mx-auto">
           <h1 className="text-[20px] font-medium">About&#160;</h1>
 

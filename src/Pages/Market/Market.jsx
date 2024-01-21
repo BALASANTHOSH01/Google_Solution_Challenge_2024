@@ -13,7 +13,7 @@ const Market = () => {
     }
   },[location.pathname]);
 
-
+  document.documentElement.scrollTop = 0;
   return (
     <div>
       <div className="flex flex-row w-[100%] justify-center">
