@@ -18,7 +18,7 @@ const Market = () => {
     <div>
       <div className="flex flex-row w-[100%] justify-center">
 
-        <div className="30% block relative">
+        <div className=" block sm:bottom-0 sm:absolute sm:w-[100%] relative">
           <MarketSideNav/>
         </div>
 
