@@ -16,13 +16,13 @@ const Market = () => {
 
   return (
     <div>
-      <div className="flex flex-row w-[100%] ">
+      <div className="flex flex-row w-[100%] justify-center">
 
         <div className="30% block relative">
           <MarketSideNav/>
         </div>
 
-        <div className="w-[90%] ml-[15%] sm:ml-[0] sm:mx-auto">
+        <div className="w-[90%] ml-[15%] sm:ml-[0] ">
           <Outlet/>
         </div>
 
