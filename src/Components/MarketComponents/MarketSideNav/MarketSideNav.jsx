@@ -36,13 +36,13 @@ const MarketSideNav = () => {
 
   return (
     <div>
-      <div className="fixed left-0 top-[calc(100vh-90vh)] sm:top-[86%] bg-white z-20 sm:w-[100%] sm:bottom-0 flex flex-col sm:flex-row sm:justify-evenly justify-around items-center h-[60vh] sm:h-[15vh] mt-[2%] p-2 sm:p-1 sm:px-5 pt-[5%] sm:pt-[0%]">
+      <div className="fixed left-0 top-[calc(100vh-90vh)] sm:top-[90%] bg-white z-20 sm:w-[100%] sm:bottom-[0px] flex flex-col sm:flex-row sm:justify-evenly justify-around items-center h-[60vh] sm:h-[10vh] mt-[2%] p-2 sm:p-1 sm:px-5 pt-[5%] sm:pt-1 sm:py-3">
 
         <Link to={"/market/buy"}>
           <div className={
             sideNav === "buy"
-              ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-5 cursor-pointer`
-              : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-5 cursor-pointer`
+              ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
+              : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
           } onClick={() => setSideNav("buy")}>
             <Bag className="text-[18px] sm:text-[16px]" />
             <p className=" text-[14px] sm:text-[12px]">Products</p>
@@ -53,8 +53,8 @@ const MarketSideNav = () => {
         <Link to={"/market/additem"}>
           <div className={
             sideNav === "add"
-              ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-5 cursor-pointer`
-              : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-5 cursor-pointer`
+              ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
+              : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
           } onClick={() => setSideNav("add")}>
             <Add className="text-[18px] sm:text-[16px]" />
             <p className=" text-[14px] sm:text-[12px]">Add</p>
@@ -66,8 +66,8 @@ const MarketSideNav = () => {
           <div
             className={
               sideNav === "cart"
-                ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-5 cursor-pointer`
-                : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-5 cursor-pointer`
+                ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
+                : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
             }
             onClick={() => setSideNav("cart")}
           >
@@ -79,8 +79,8 @@ const MarketSideNav = () => {
 
         <div className={
           sideNav === "order"
-            ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-5 sm:p-5 cursor-pointer`
-            : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-5 sm:p-5 cursor-pointer`
+            ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
+            : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
         } onClick={() => setSideNav("order")}>
           <Order className="text-[20px] sm:text-[18px]" />
           <p className=" text-[14px] sm:text-[12px]">Orders</p>
@@ -89,8 +89,8 @@ const MarketSideNav = () => {
 
         <div className={
           sideNav === "menu"
-            ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-5 cursor-pointer`
-            : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-5 cursor-pointer`
+            ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
+            : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
         } onClick={() => setSideNav("menu")}>
           <Menu className="text-[20px] sm:text-[18px]" />
           <p className=" text-[14px] sm:text-[12px]">Menu</p>
