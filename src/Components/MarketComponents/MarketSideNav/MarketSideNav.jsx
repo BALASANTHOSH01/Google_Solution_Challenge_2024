@@ -36,7 +36,7 @@ const MarketSideNav = () => {
 
   return (
     <div>
-      <div className="fixed left-0 top-[calc(100vh-90vh)] sm:top-[95%] bg-white z-20 sm:w-[100%] sm:bottom-[0px] flex flex-col sm:flex-row sm:justify-evenly justify-around items-center h-[60vh] sm:h-[10vh] mt-[2%] p-2 sm:p-1 sm:px-5 pt-[5%] sm:pt-1 sm:py-3">
+      <div className="fixed left-0 top-[calc(100vh-90vh)] sm:top-[calc(100vh-10vh)] bg-white z-20 sm:w-[100%] sm:bottom-[0px] flex flex-col sm:flex-row sm:justify-evenly justify-around items-center h-[60vh] sm:h-[10vh] mt-[2%] p-2 sm:p-1 sm:px-5 pt-[5%] sm:pt-1 sm:py-3">
 
         <Link to={"/market/buy"}>
           <div className={
