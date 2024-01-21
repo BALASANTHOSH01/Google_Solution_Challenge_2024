@@ -4,7 +4,7 @@ import { TbAward } from "react-icons/tb"
 import { FaStar } from "react-icons/fa6"
 import userImg from "../../assets/Images/man.png";
 import banner from "../../assets/Images/banner.jpg";
-import Peoples from "../../Pages/PeoplePage/PeopleData/Peoples.js";
+
 
 const UserProfile = () => {
 
