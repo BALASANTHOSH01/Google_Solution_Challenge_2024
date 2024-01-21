@@ -5,7 +5,7 @@ const UserList = ({ props }) => {
   const User = props;
   return (
     <div >
-      <div className="sm:hidden block">
+      <div className="sm:hidden block ">
         <Link to={`/message/${User.id}`}>
           <div className="flex flex-row gap-2 items-center">
             <img src={User.Image} alt="userImg" className="rounded-[50%] w-[50px] h-[50px]" />

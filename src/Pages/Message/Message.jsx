@@ -16,9 +16,9 @@ const Message = () => {
     },[location.pathname])
     document.documentElement.scrollTop = 0;
     return (
-        <div className="flex flex-row gap-2 h-screen">
+        <div className="flex flex-row gap-2 h-screen p-2 pb-5 ">
 
-            <div className="w-[35%] sm:w-[90%] sm:mx-auto overflow-auto  my-[5%]">
+            <div className="w-[35%] sm:w-[90%] sm:mx-auto overflow-scroll small-scrollbar my-[1%]">
 
                 <h2 className=" text-[19px] ml-[5%] text-black mb-[5%]">Recent&#160;List</h2>
 

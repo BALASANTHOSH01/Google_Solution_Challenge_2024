@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { HomeItem } from "../../assets/HomeItem/HomeItem.js";
+import { HomeItem } from "../Home/HomeItem/HomeItem";
 import { useParams } from "react-router-dom";
 
 const CropPage = () => {

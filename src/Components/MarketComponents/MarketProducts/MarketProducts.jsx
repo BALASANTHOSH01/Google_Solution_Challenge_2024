@@ -5,9 +5,10 @@ import { RxCross2 } from "react-icons/rx";
 const MarketProducts = () => {
   return (
     <div>
-      <div className=" flex flex-wrap justify-evenly" >
+      <div className=" flex flex-wrap sm:flex-col justify-evenly sm:my-[5%] sm:mx-auto" >
+        <h2 className="text-gray-700 sm:block hidden font-medium text-[20px] my-[3%]">Products</h2>
         {ItemData.map((item) => (
-          <div key={item.id} className="w-[26%] my-[2%] hover:shadow-lg rounded-[10px] cursor-pointer">
+          <div key={item.id} className="w-[26%] sm:w-[80%] my-[2%] hover:shadow-lg rounded-[10px] cursor-pointer">
             <div className="p-2 rounded-[10px] border border-gray-200">
                 <img src={item.file} alt="ProductImage" className="w-[100%]rounded-[10px]"/>
                 <h2 className="text-black text-[17px] mt-[2%] font-medium">{item.name}</h2>

@@ -3,11 +3,11 @@
 const AddItem = () => {
   return (
     <div>
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center mx-auto items-center sm:pb-[10%] my-[30%] mt-[10%]">
             <div>
-                <h2 className="text-gray-700 font-medium my-[2%]">Add Your Item</h2>
+                <h2 className="text-gray-700 sm:text-[20px] font-medium my-[2%]">Add Your Item</h2>
             </div>
-            <form method="POST" className="w-[50%] md:w-[70%] mx-auto text-left">
+            <form method="POST" className="w-[50%] sm:w-[95%] md:w-[95%] mx-auto text-left">
                 <label htmlFor="item-name" className="text-gray-500">Product&#160;Name&#160;:</label><br/>
                 <input type="text" className="p-2 rounded-[10px] focus:outline-none mb-[2%] w-[95%] border border-gray-400" placeholder="Enter your name" id="item-name" required/><br/>
 

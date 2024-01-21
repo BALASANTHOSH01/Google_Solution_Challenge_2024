@@ -7,7 +7,7 @@ import MessageNav from "./Components/MessageComponents/MessageNav/MessageNav";
 
 const App = () => {
   const location = useLocation();
-  const { cropid,peopleid,eventid,mobilemessageid } = useParams();
+  const { cropid,peopleid,eventid,mobilemessageid,messageid } = useParams();
   const cropcurrentlocation = location.pathname;
   console.log(cropcurrentlocation);
 
@@ -15,12 +15,14 @@ const App = () => {
     switch (cropcurrentlocation){
       case "/userprofile":
       case `/message/mobile/${mobilemessageid}`:
+      case `/message/${messageid}`:
       case "/market":
       case "/training":
       case "/bot":
       case `/market/cart`:
       case `/market/additem`:
       case `/market/buy`:
+      case `/training/event/${eventid}`:
         return;
       default:
         return <Footer/>

@@ -20,7 +20,7 @@ const EventProfile = () => {
 
   return (
     <div>
-      <div className="flex flex-row sm:flex-col mt-[5%]">
+      <div className="flex flex-row sm:flex-col mt-[5%] pb-[10%]">
         <div className="w-[50%] sm:w-[95%] sm:mt-[5%] rounded-[10px] overflow-hidden">
           <div className="flex flex-row sm:flex-col justify-evenly items-center p-2">
             <img src={selectedEvent.thumbnail} alt="thumbnail" className="w-[38%] rounded-[10px] sm:w-[80%]" />
@@ -55,10 +55,6 @@ const EventProfile = () => {
 
           </div>
 
-          <iframe>
-
-          </iframe>
-
           <div className="flex flex-row mx-auto justify-center my-[6%]">
             <div className="relative flex flex-row w-[25%] sm:w-[30%]">
               <img src={avatar4} alt="avatarImg" className="rounded-[50%] w-[50px] h-[50px] top-[5%] absolute left-8" />
@@ -74,7 +70,7 @@ const EventProfile = () => {
           </div>
         </div>
 
-        <div className="w-[32%] sm:w-[90%] sm:mt-[5%] mx-auto">
+        <div className="w-[35%] sm:w-[90%] sm:mt-[5%] mx-auto">
           <p className="my-[2%] text-[20px] text-center hidden sm:block uppercase">Resgister your slot</p>
           <RegistrationForm />
         </div>

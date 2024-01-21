@@ -55,14 +55,6 @@ const router = createBrowserRouter([
         element: <CropPage />
       },
       {
-        path: "/event",
-        element: <EventPage />
-      },
-      {
-        path: "/event/:eventid",
-        element: <EventProfile />
-      },
-      {
         path: "/bot",
         element: <Chatbot />
       },
@@ -104,7 +96,17 @@ const router = createBrowserRouter([
       },
       {
         path: "/training",
-        element: <Training />
+        element: <Training />,
+        children:[
+          {
+            path: "/training/event",
+            element: <EventPage />
+          },
+          {
+            path: "/training/event/:eventid",
+            element: <EventProfile />
+          },
+        ]
       },
       {
         path: "/people",

@@ -36,25 +36,16 @@ const MarketSideNav = () => {
 
   return (
     <div>
-      <div className="fixed left-0 top-[calc(100vh-95vh)] bg-white z-20  flex flex-col justify-around h-[60vh] mt-[2%] pt-[10%]">
-        {/* <div className="flex flex-col gap-1">
-          <h1 className="text-[20px] font-medium text-green-500 flex flex-row">Green&#160;<span className="text-black">Harbor</span></h1>
-          <p className="text-[16px] text-gray-500">Market Place</p>
-        </div> */}
-
-        {/* <div className="border border-gray-300 rounded-[10px] flex flex-row items-center  bg-gray-100 w-[45%] h-[45px]">
-          <Search className="text-[22px] w-[10%]"/>
-          <input type="text" placeholder="Search for Agro Products" className=" border-none focus:outline-none w-[90%] bg-gray-100"/>
-        </div> */}
+      <div className="fixed left-0 top-[calc(100vh-90vh)] sm:top-[86%] bg-white z-20 sm:w-[100%] sm:bottom-0 flex flex-col sm:flex-row sm:justify-evenly justify-around items-center h-[60vh] sm:h-[15vh] mt-[2%] p-2 sm:p-1 sm:px-5 pt-[5%] sm:pt-[0%]">
 
         <Link to={"/market/buy"}>
           <div className={
             sideNav === "buy"
-              ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 cursor-pointer`
-              : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 cursor-pointer`
+              ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-5 cursor-pointer`
+              : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-5 cursor-pointer`
           } onClick={() => setSideNav("buy")}>
-            <Bag className="text-[18px]" />
-            <p className=" text-[14px]">Products</p>
+            <Bag className="text-[18px] sm:text-[16px]" />
+            <p className=" text-[14px] sm:text-[12px]">Products</p>
             {sideNav === "buy" && <hr className="h-[2px] w-[70%]  bg-black" />}
           </div>
         </Link>
@@ -62,11 +53,11 @@ const MarketSideNav = () => {
         <Link to={"/market/additem"}>
           <div className={
             sideNav === "add"
-              ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 cursor-pointer`
-              : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 cursor-pointer`
+              ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-5 cursor-pointer`
+              : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-5 cursor-pointer`
           } onClick={() => setSideNav("add")}>
-            <Add className="text-[18px]" />
-            <p className=" text-[14px]">Add</p>
+            <Add className="text-[18px] sm:text-[16px]" />
+            <p className=" text-[14px] sm:text-[12px]">Add</p>
             {sideNav === "add" && <hr className="h-[2px] w-[70%]  bg-black" />}
           </div>
         </Link>
@@ -75,34 +66,34 @@ const MarketSideNav = () => {
           <div
             className={
               sideNav === "cart"
-                ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 cursor-pointer`
-                : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 cursor-pointer`
+                ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-5 cursor-pointer`
+                : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-5 cursor-pointer`
             }
             onClick={() => setSideNav("cart")}
           >
-            <Cart className="text-[20px]" />
-            <p className=" text-[14px]">Cart</p>
+            <Cart className="text-[20px] sm:text-[18px]" />
+            <p className=" text-[14px] sm:text-[12px]">Cart</p>
             {sideNav === "cart" && <hr className="h-[2px] w-[70%]  bg-black" />}
           </div>
         </Link>
 
         <div className={
           sideNav === "order"
-            ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 cursor-pointer`
-            : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 cursor-pointer`
+            ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-5 sm:p-5 cursor-pointer`
+            : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-5 sm:p-5 cursor-pointer`
         } onClick={() => setSideNav("order")}>
-          <Order className="text-[20px]" />
-          <p className=" text-[14px]">Orders</p>
+          <Order className="text-[20px] sm:text-[18px]" />
+          <p className=" text-[14px] sm:text-[12px]">Orders</p>
           {sideNav === "order" && <hr className="h-[2px] w-[70%]  bg-black" />}
         </div>
 
         <div className={
           sideNav === "menu"
-            ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 cursor-pointer`
-            : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 cursor-pointer`
+            ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-5 cursor-pointer`
+            : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-5 cursor-pointer`
         } onClick={() => setSideNav("menu")}>
-          <Menu className="text-[20px]" />
-          <p className=" text-[14px]">Menu</p>
+          <Menu className="text-[20px] sm:text-[18px]" />
+          <p className=" text-[14px] sm:text-[12px]">Menu</p>
           {sideNav === "menu" && <hr className="h-[2px] w-[70%]  bg-black" />}
         </div>
       </div>

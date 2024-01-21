@@ -18,6 +18,7 @@ const Footer = () => {
             case "/message":
             case "/training":
             case "/market":
+            case "/training/event":
                 return ;
             default:
                 return <FooterImg/>;

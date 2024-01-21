@@ -1,7 +1,7 @@
 import man1 from '../../assets/Images/Mentor/822.jpg';
 import man2 from '../../assets/Images/Mentor/827.jpg';
 import woman1 from '../../assets/Images/Mentor/8659651.jpg';
-import { HomeItem } from '../../assets/HomeItem/HomeItem.js';
+import { HomeItem } from '../Home/HomeItem/HomeItem.js';
 import banner1 from '../../assets/Images/Mentor/5461506.jpg';
 import banner2 from '../../assets/Images/Mentor/7877393.jpg';
 import banner3 from '../../assets/Images/Mentor/7904512.jpg';
