@@ -5,7 +5,6 @@ import { FaStar } from "react-icons/fa6"
 import userImg from "../../assets/Images/man.png";
 import banner from "../../assets/Images/banner.jpg";
 
-
 const UserProfile = () => {
 
   const UserDetails = [

@@ -12,7 +12,7 @@ export const HomeItem = [
     {
         id:1,
         image:paddy2,
-        title:"Modern paddy cultivation technique",
+        title:"Modern paddy cultivation techniques",
         description:"Explore the future of agriculture with our article on modern cotton cultivation, designed to assist traditional farmers in embracing innovative practices. Discover sustainable farming techniques, advanced technology integration, and eco-friendly approaches that enhance yield while minimizing environmental impact. From precision irrigation systems to genetically improved seed varieties, our guide empowers farmers with insights into the latest advancements. Navigate through the transformative landscape of modern cotton farming, fostering increased productivity and profitability. Embrace the synergy of tradition and innovation for a resilient and thriving cotton farming experience.",
         youtubelink:"https://youtu.be/eN-TqqBQOAk?si=shrpF3O_zTPyI3JU",
         userId:"@username03",
@@ -24,7 +24,7 @@ export const HomeItem = [
     {
         id:2,
         image:paddy01,
-        title:"Low Cost paddy cultivation",
+        title:"Low-cost paddy cultivation",
         description:"Explore our comprehensive guide on cultivating low-cost paddy, tailored to support traditional farmers. Learn innovative yet cost-effective techniques, optimizing resources without compromising yield quality. From selecting budget-friendly seeds to efficient water management, our article empowers farmers to enhance productivity sustainably. Discover practical insights on organic pest control and soil enrichment, minimizing expenses while prioritizing environmental stewardship. With this valuable resource, traditional farmers can harness the wisdom of age-old practices combined with modern efficiency, creating a harmonious approach for a successful and economical paddy cultivation. Elevate your farming experience with our expert advice tailored for affordability and sustainability.",
         youtubelink:"https://www.youtube.com/embed/J_mMS3EkHok?si=-c-RgQd5VnaddlyQ",
         userId:"@username01",
@@ -36,7 +36,7 @@ export const HomeItem = [
     {
         id:3,
         image:cotton01,
-        title:"Modern cotton cultivation technique",
+        title:"Modern cotton cultivation techniques",
         description:"Explore the future of agriculture with our article on modern cotton cultivation, designed to assist traditional farmers in embracing innovative practices. Discover sustainable farming techniques, advanced technology integration, and eco-friendly approaches that enhance yield while minimizing environmental impact. From precision irrigation systems to genetically improved seed varieties, our guide empowers farmers with insights into the latest advancements. Navigate through the transformative landscape of modern cotton farming, fostering increased productivity and profitability. Embrace the synergy of tradition and innovation for a resilient and thriving cotton farming experience.",
         youtubelink:"https://youtu.be/eN-TqqBQOAk?si=shrpF3O_zTPyI3JU",
         userId:"@username02",
@@ -60,7 +60,7 @@ export const HomeItem = [
     {
         id:5,
         image:paddy2,
-        title:"Modern paddy cultivation technique",
+        title:"Modern paddy cultivation techniques",
         description:"Explore the future of agriculture with our article on modern cotton cultivation, designed to assist traditional farmers in embracing innovative practices. Discover sustainable farming techniques, advanced technology integration, and eco-friendly approaches that enhance yield while minimizing environmental impact. From precision irrigation systems to genetically improved seed varieties, our guide empowers farmers with insights into the latest advancements. Navigate through the transformative landscape of modern cotton farming, fostering increased productivity and profitability. Embrace the synergy of tradition and innovation for a resilient and thriving cotton farming experience.",
         youtubelink:"https://youtu.be/eN-TqqBQOAk?si=shrpF3O_zTPyI3JU",
         userId:"@username03",
@@ -72,7 +72,7 @@ export const HomeItem = [
     {
         id:6,
         image:paddy01,
-        title:"Low Cost paddy cultivation",
+        title:"Low-cost paddy cultivation",
         description:"Explore our comprehensive guide on cultivating low-cost paddy, tailored to support traditional farmers. Learn innovative yet cost-effective techniques, optimizing resources without compromising yield quality. From selecting budget-friendly seeds to efficient water management, our article empowers farmers to enhance productivity sustainably. Discover practical insights on organic pest control and soil enrichment, minimizing expenses while prioritizing environmental stewardship. With this valuable resource, traditional farmers can harness the wisdom of age-old practices combined with modern efficiency, creating a harmonious approach for a successful and economical paddy cultivation. Elevate your farming experience with our expert advice tailored for affordability and sustainability.",
         youtubelink:"https://www.youtube.com/embed/J_mMS3EkHok?si=-c-RgQd5VnaddlyQ",
         userId:"@username01",
@@ -84,7 +84,7 @@ export const HomeItem = [
     {
         id:7,
         image:cotton01,
-        title:"Modern cotton cultivation technique",
+        title:"Modern cotton cultivation techniques",
         description:"Explore the future of agriculture with our article on modern cotton cultivation, designed to assist traditional farmers in embracing innovative practices. Discover sustainable farming techniques, advanced technology integration, and eco-friendly approaches that enhance yield while minimizing environmental impact. From precision irrigation systems to genetically improved seed varieties, our guide empowers farmers with insights into the latest advancements. Navigate through the transformative landscape of modern cotton farming, fostering increased productivity and profitability. Embrace the synergy of tradition and innovation for a resilient and thriving cotton farming experience.",
         youtubelink:"https://youtu.be/eN-TqqBQOAk?si=shrpF3O_zTPyI3JU",
         userId:"@username02",

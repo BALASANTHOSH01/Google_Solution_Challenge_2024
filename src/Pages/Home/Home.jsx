@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { HomeItem } from "./HomeItem/HomeItem";
 import { LuDot } from "react-icons/lu";
-import botIcon from '../../assets/Images/Chatbot/botIcon.jpg';
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import { RxCross2 } from "react-icons/rx";
 import Reaction from "../../Components/HomeComponent/Reaction/Reaction";
