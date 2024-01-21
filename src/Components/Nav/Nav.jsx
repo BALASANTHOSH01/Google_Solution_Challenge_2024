@@ -32,6 +32,9 @@ const Nav = () => {
                 setNav("people");
                 break;
             case "/market":
+            case `/market/additem`:
+            case `/market/cart`:
+            case `/market/buy`:
                 setNav("market");
                 break;
             case "/training":

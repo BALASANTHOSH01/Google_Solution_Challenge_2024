@@ -1,9 +1,19 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import MessagePanel from "../../Components/MessageComponents/MessagePanel/MessagePanel.jsx";
 import UserList from "../../Components/MessageComponents/UserList/UserList.jsx";
 import Messages from "./MessageData/Messages.js";
+import { useEffect } from "react";
 
 const Message = () => {
+
+    const location = useLocation();
+    const navigation = useNavigate();
+    useEffect(()=>{
+        switch(location.pathname){
+            case "/message":
+                navigation("/message/1");
+        }
+    },[location.pathname])
     document.documentElement.scrollTop = 0;
     return (
         <div className="flex flex-row gap-2 h-screen">

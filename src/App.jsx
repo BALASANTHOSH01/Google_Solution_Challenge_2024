@@ -18,6 +18,9 @@ const App = () => {
       case "/market":
       case "/training":
       case "/bot":
+      case `/market/cart`:
+      case `/market/additem`:
+      case `/market/buy`:
         return;
       default:
         return <Footer/>

@@ -20,6 +20,9 @@ import PeoplePage from './Pages/PeoplePage/PeoplePage.jsx'
 import MessagePanel from './Components/MessageComponents/MessagePanel/MessagePanel.jsx'
 import PeopleProfile from './Components/PeopleComponents/PeopleProfile/PeopleProfile.jsx'
 import MobileMessage from './Pages/Message/MobileMessage/MobileMessage.jsx'
+import AddItem from './Components/MarketComponents/AddItem/AddItem.jsx'
+import MarketCart from './Components/MarketComponents/MarketCart/MarketCart.jsx'
+import MarketProducts from './Components/MarketComponents/MarketProducts/MarketProducts.jsx'
 
 
 const router = createBrowserRouter([
@@ -83,7 +86,21 @@ const router = createBrowserRouter([
       },
       {
         path: "/market",
-        element: <Market />
+        element: <Market />,
+        children:[
+          {
+            path:"/market/additem",
+            element:<AddItem/>
+          },
+          {
+            path:"/market/cart",
+            element:<MarketCart/>
+          },
+          {
+            path:"/market/buy",
+            element:<MarketProducts/>
+          }
+        ]
       },
       {
         path: "/training",
