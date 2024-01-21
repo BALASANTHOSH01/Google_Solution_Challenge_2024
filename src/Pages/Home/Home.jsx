@@ -101,7 +101,7 @@ const Home = () => {
 
                   </div>
 
-                  <div className="flex flex-row gap-2 items-center">
+                  <div className="flex flex-row gap-4 items-center mr-[5%] ">
                     <HiOutlineDotsHorizontal className="font-bold cursor-pointer text-[20px] text-gray-500" />
                     <RxCross2 className="font-bold text-[20px] cursor-pointer text-gray-500" />
                   </div>
@@ -110,7 +110,7 @@ const Home = () => {
                 <Link to={`/croppage/:${item.id}`} onChange={window.scrollTo(0, 0)}  >
                   <div className="mx-auto">
                     <p className="w-[90%] mx-auto Custom-truncate text-[13px] text-gray-500">{item.description}</p>
-                    <img src={item.image} alt="PostImg" className="rounded-[10px] my-[2%] h-[450px] w-[100%]" />
+                    <img src={item.image} alt="PostImg" className="rounded-[10px] my-[2%] h-[450px] sm:h-[300px] w-[100%]" />
                   </div>
                 </Link>
 
