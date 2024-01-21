@@ -22,7 +22,7 @@ const Market = () => {
           <MarketSideNav/>
         </div>
 
-        <div className="w-[90%] ml-[15%]">
+        <div className="w-[90%] ml-[15%] sm:ml-[0] sm:mx-auto">
           <Outlet/>
         </div>
 
