@@ -19,7 +19,7 @@ const TrainingNav = () => {
 
     return (
         <div>
-            <div className="fixed left-0 top-[calc(100vh-90vh)] sm:top-[90%] bg-white z-20 sm:w-[100%] sm:bottom-0 flex flex-col sm:flex-row justify-around h-[60vh] sm:h-[10vh] mt-[2%] p-2">
+            <div className="fixed left-0 top-[calc(100vh-90vh)] sm:top-[calc(100vh-10vh)] bg-white z-20 sm:w-[100%] sm:bottom-0 flex flex-col sm:flex-row justify-around h-[60vh]  mt-[2%] p-2">
 
                 <Link to={"/training/event"}>
                     <div className={trainingnav === "events" ? `flex flex-col text-center text-black px-7 sm:px-3 items-center cursor-pointer` : `flex flex-col text-center text-gray-500 px-7 sm:px-3 items-center cursor-pointer`} onClick={() => setTrainigNav("events")}>
