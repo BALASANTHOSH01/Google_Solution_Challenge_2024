@@ -5,9 +5,7 @@
 
 ## Run Application :
 
-### Before you run this application, you must install Node.js on your machine.
-
-[website_Link](https://nodejs.org/en)
+### Before you run this application, you must install Node.js on your machine.[website_Link](https://nodejs.org/en)
 
 1. Clone Repository: ```git clone https://github.com/BALASANTHOSH01/Google_Solution_Challenge_2024.git```
 
