@@ -3,6 +3,20 @@
 - Prototype Website [Link](https://greenharbor.netlify.app/)
 - Try our "Agro Bot" [Link](https://greenharbor.netlify.app/bot)
 
+## Run Application :
+
+### Before you run this application, you must install Node.js on your machine.
+
+[website_Link](https://nodejs.org/en)
+
+1. Clone Repository: ```git clone https://github.com/BALASANTHOSH01/Google_Solution_Challenge_2024.git```
+
+2. Install node module: `npm install` or `npm i`
+
+3. Run application: `npm run dev`
+
+
+
 ## Goal :
 
 - Our mission is to centralize valuable agricultural resources, making the lives of farmers significantly easier. Despite the incredible advancements in modern technology, many agricultural practices remain rooted in tradition.
