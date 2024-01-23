@@ -27,7 +27,7 @@ const Market = () => {
           <MobileBottomNav/>
         </div>
 
-        <div className="w-[90%] ml-[15%] sm:ml-[0] ">
+        <div className="w-[90%] ml-[15%] sm:ml-[0px] ">
           <Outlet/>
         </div>
 

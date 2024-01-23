@@ -5,15 +5,15 @@ import { MdOutlineVideoLibrary as Video } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const TrainingBottomNav = () => {
-    const [bottomnav, setBottomNav] = useState("event");
+    const [bottomnav, setBottomNav] = useState("events");
     return (
         <div>
-            <div className="hidden sm:block p-3 mx-auto fixed bottom-0 w-[100%] z-50 bg-white">
+            <div className="hidden sm:flex flex-row justify-around p-3 mx-auto fixed bottom-0 w-[100%] z-50 bg-white">
 
                 <Link to={"/training/event"}>
 
                     <div className={bottomnav === "events" ? `flex flex-col text-center text-black px-7 sm:px-3 items-center cursor-pointer` : `flex flex-col text-center text-gray-500 px-7 sm:px-3 items-center cursor-pointer`} onClick={() => setBottomNav("events")}>
-                        <Event className="text-[19px] sm:text-[17px]" />
+                        <Event className="text-[19px] sm:text-[18px]" />
                         <p className="text-[14px] sm:text-[12px]">Events</p>
                         {bottomnav === "events" && <hr className="h-[2px] w-[70%]  bg-black" />}
                     </div>
