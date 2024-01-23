@@ -14,7 +14,6 @@
 3. Run application: `npm run dev`
 
 
-
 ## Goal :
 
 - Our mission is to centralize valuable agricultural resources, making the lives of farmers significantly easier. Despite the incredible advancements in modern technology, many agricultural practices remain rooted in tradition.

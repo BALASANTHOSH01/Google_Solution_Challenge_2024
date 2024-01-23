@@ -2,9 +2,9 @@ import { FaCartArrowDown as Cart } from "react-icons/fa6";
 import { BsPlusSquareFill as Add } from "react-icons/bs";
 import { HiOutlineDotsHorizontal as Menu } from "react-icons/hi";
 import { FaBoxOpen as Order } from "react-icons/fa6";
+import { BsHandbagFill as Bag } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { BsHandbagFill as Bag } from "react-icons/bs";
 
 const MarketSideNav = () => {
   const [sideNav, setSideNav] = useState("buy");
@@ -36,7 +36,7 @@ const MarketSideNav = () => {
 
   return (
     <div>
-      <div className="fixed left-0 top-[calc(100vh-90vh)] sm:top-[calc(100vh-10vh)] bg-white z-20 sm:w-[100%] sm:bottom-[0px] flex flex-col sm:flex-row sm:justify-evenly justify-around items-center h-[60vh] sm:h-[10vh] mt-[2%] p-2 sm:p-1 sm:px-5 pt-[5%] sm:pt-1 sm:py-3">
+      <div className="fixed sm:hidden left-0 top-[calc(100vh-90vh)] bg-white z-20  flex flex-col justify-around items-center h-[60vh]  mt-[2%] p-2 pt-[5%] ">
 
         <Link to={"/market/buy"}>
           <div className={
