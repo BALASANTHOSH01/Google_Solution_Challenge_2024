@@ -56,15 +56,15 @@ const EventProfile = () => {
           </div>
 
           <div className="flex flex-row mx-auto justify-center my-[6%]">
-            <div className="relative flex flex-row w-[25%] sm:w-[30%]">
-              <img src={avatar4} alt="avatarImg" className="rounded-[50%] w-[50px] h-[50px] top-[5%] absolute left-8" />
-              <img src={avatar2} alt="avatarImg" className="rounded-[50%] w-[50px] h-[50px] top-[5%] absolute left-12" />
-              <img src={avatar3} alt="avatarImg" className="rounded-[50%] w-[50px] h-[50px] top-[5%] absolute left-16 " />
-              <img src={avatar1} alt="avatarImg" className="rounded-[50%] w-[50px] h-[50px] top-[5%] absolute left-20" />
+            <div className="relative flex flex-row w-[25%] sm:w-[35%]">
+              <img src={avatar4} alt="avatarImg" className="rounded-[50%] w-[50px] h-[50px] sm:w-[40px] sm:h-[40px] top-[5%] absolute left-8" />
+              <img src={avatar2} alt="avatarImg" className="rounded-[50%] w-[50px] h-[50px] sm:w-[40px] sm:h-[40px] top-[5%] absolute left-12" />
+              <img src={avatar3} alt="avatarImg" className="rounded-[50%] w-[50px] h-[50px] sm:w-[40px] sm:h-[40px] top-[5%] absolute left-16 " />
+              <img src={avatar1} alt="avatarImg" className="rounded-[50%] w-[50px] h-[50px] sm:w-[40px] sm:h-[40px] top-[5%] absolute left-20" />
             </div>
-            <div className="flex flex-col w-[60%] sm:w-[70%] text-left mt-[2%]">
-              <h2 className="text-black text-[18px]">300+ Peoples are already registered</h2>
-              <p className="text-gray-400 text-[13px]">Register for the event and enhance your knowledge.</p>
+            <div className="flex flex-col w-[60%] sm:w-[60%] text-left mt-[2%]">
+              <h2 className="text-black sm:text-[15px] text-[18px]">300+ Peoples are already registered</h2>
+              <p className="text-gray-400 sm:text-[12px] text-[13px]">Register for the event and enhance your knowledge.</p>
             </div>
 
           </div>
