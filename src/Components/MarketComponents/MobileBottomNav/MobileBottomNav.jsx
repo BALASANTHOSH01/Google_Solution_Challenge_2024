@@ -7,7 +7,7 @@ import { BsHandbagFill as Bag } from "react-icons/bs";
 import { useState } from "react";
 
 const MobileBottomNav = () => {
-    const [bottomnav,setBottomNav]=useState();
+    const [bottomnav,setBottomNav]=useState("buy");
     
   return (
     <div >
