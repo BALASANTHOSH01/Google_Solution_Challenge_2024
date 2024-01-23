@@ -34,7 +34,7 @@ const App = () => {
       case "/userprofile":
       case `/people/${peopleid}`:
       case `/croppage/${cropid}`:
-      case `/event/${eventid}`:
+      case `/training/event/${eventid}`:
         return <UserNavBar />;
       case "/bot":
         return;

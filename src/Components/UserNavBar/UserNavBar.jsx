@@ -8,7 +8,7 @@ const UserNavBar = () => {
     const location = useLocation();
 
 
-    const { peopleid, cropid } = useParams();
+    const { peopleid, cropid ,eventid} = useParams();
 
     const PathNameFun = () => {
         switch (location.pathname) {
@@ -16,16 +16,21 @@ const UserNavBar = () => {
                 return `/people`;
             case `/croppage/${cropid}`:
                 return `/`;
+            case `/training/event/${eventid}`:
+                return `/training`;
         }
     }
 
     return (
-        <div className=" flex flex-row justify-between p-2 my-2 sm:my-[1px] sm:shadow-md">
+        <div className=" flex flex-row justify-between p-1 sm:my-[1px] sm:shadow-md">
 
             {/**Left arrow ("/") */}
             <Link to={PathNameFun()} className="ml-[5%]">
+                <div className="flex flex-col text-center font-Nunito">
                 <div className="block box-border justify-center items-center p-3 sm:p-2 rounded-[50%] bg-gray-200  hover:bg-green-300 text-gray-800  sm:hover:bg-green-500   sm:bg-transparent cursor-pointer text-[20px]">
                     <FaArrowLeftLong />
+                </div>
+                <p className="text-gray-500 text-[14px] sm:text-[12px]">Back</p>
                 </div>
             </Link>
 
@@ -37,7 +42,7 @@ const UserNavBar = () => {
                         <div className=" sm:block box-border justify-center items-center p-3 sm:p-2 rounded-[50%] bg-gray-200  hover:bg-green-300 text-gray-800  sm:hover:bg-green-500  sm:bg-transparent cursor-pointer text-[20px] sm:text-[22px]">
                             <HiHome />
                         </div>
-                        <p className="text-gray-500 text-[14px]">Home</p>
+                        <p className="text-gray-500 text-[14px] sm:text-[12px]">Home</p>
                     </div>
                 </Link>
 
@@ -46,7 +51,7 @@ const UserNavBar = () => {
                         <div className=" sm:block box-border justify-center items-center p-3 sm:p-2 rounded-[50%] bg-gray-200  hover:bg-green-300 text-gray-800  sm:hover:bg-green-500  sm:bg-transparent cursor-pointer text-[20px] sm:text-[22px]">
                             <FaRobot />
                         </div>
-                        <p className="text-gray-500 text-[14px]">Bot</p>
+                        <p className="text-gray-500 text-[14px] sm:text-[12px]">Bot</p>
                     </div>
                 </Link>
 
