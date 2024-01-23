@@ -70,7 +70,7 @@ const EventProfile = () => {
           </div>
         </div>
 
-        <div className="w-[35%] sm:w-[90%] sm:mt-[5%] mx-auto">
+        <div className="w-[35%] sm:w-[90%] sm:pb-[4%] sm:my-[7%] mx-auto">
           <p className="my-[2%] text-[20px] text-center hidden sm:block uppercase">Resgister your slot</p>
           <RegistrationForm />
         </div>
