@@ -20,8 +20,8 @@ const EventProfile = () => {
 
   return (
     <div>
-      <div className="flex flex-row sm:flex-col mt-[5%] pb-[10%]">
-        <div className="w-[50%] sm:w-[95%] sm:mt-[5%] rounded-[10px] overflow-hidden">
+      <div className="flex flex-row sm:flex-col  pb-[10%]">
+        <div className="w-[50%] sm:w-[95%] rounded-[10px] overflow-hidden">
           <div className="flex flex-row sm:flex-col justify-evenly items-center p-2">
             <img src={selectedEvent.thumbnail} alt="thumbnail" className="w-[38%] rounded-[10px] sm:w-[80%]" />
 
