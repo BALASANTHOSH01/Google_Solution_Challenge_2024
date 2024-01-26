@@ -4,10 +4,12 @@ import Nav from "./Components/Nav/Nav";
 import { Outlet, useLocation, useParams } from "react-router-dom";
 import UserNavBar from "./Components/UserNavBar/UserNavBar";
 import MessageNav from "./Components/MessageComponents/MessageNav/MessageNav";
+import MarketSideNav from "./Components/MarketComponents/MarketSideNav/MarketSideNav";
+import NewsNav from "./Components/NewsComponents/NewsNav/NewsNav";
 
 const App = () => {
   const location = useLocation();
-  const { cropid,peopleid,eventid,mobilemessageid,messageid } = useParams();
+  const { cropid,peopleid,eventid,mobilemessageid,messageid,productid } = useParams();
   const cropcurrentlocation = location.pathname;
   console.log(cropcurrentlocation);
 
@@ -22,6 +24,7 @@ const App = () => {
       case `/market/cart`:
       case `/market/additem`:
       case `/market/buy`:
+      case `/market/buy/${productid}`:
       case `/training/event/${eventid}`:
         return;
       default:
@@ -38,6 +41,8 @@ const App = () => {
         return <UserNavBar />;
       case "/bot":
         return;
+      case "/news":
+        return <NewsNav/>;
       case `/message/mobile/${mobilemessageid}`:
         return <MessageNav/>;
       default:

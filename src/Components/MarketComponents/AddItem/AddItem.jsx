@@ -4,9 +4,9 @@ const AddItem = () => {
     document.documentElement.scrollTop = 0;
   return (
     <div>
-        <div className="flex flex-col justify-center mx-auto items-center sm:pb-[10%] my-[30%] mt-[10%] ml-[5%]">
+        <div className="flex flex-col justify-center mx-auto items-center sm:pb-[10%]  ">
             <div>
-                <h2 className="text-gray-700 sm:text-[20px] font-medium my-[2%]">Add Your Item</h2>
+                <h2 className="text-green-500 text-[18px] sm:text-[20px] font-medium my-[4%]">Add Your Item</h2>
             </div>
             <form method="POST" className="w-[50%] sm:w-[95%] md:w-[95%] mx-auto text-left">
                 <label htmlFor="item-name" className="text-gray-500">Product&#160;Name&#160;:</label><br/>

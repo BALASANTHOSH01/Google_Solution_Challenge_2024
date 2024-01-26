@@ -14,12 +14,21 @@ const Market = () => {
     }
   },[location.pathname]);
 
+//  const MarketsideNavFun = ()=>{
+//   switch (location.pathname){
+//     case `/market/news`:
+//       return;
+//     default:
+//       return <MarketSideNav/>
+//   }
+//  }
+
   document.documentElement.scrollTop = 0;
   return (
     <div>
       <div className="flex flex-row w-[100%] justify-center">
 
-        <div className=" block relative">
+        <div className="flex-none h-screen">
           <MarketSideNav/>
         </div>
         
@@ -27,7 +36,7 @@ const Market = () => {
           <MobileBottomNav/>
         </div>
 
-        <div className="w-[90%] ml-[15%] sm:ml-[0px] ">
+        <div className=" flex-1 overflow-y-auto">
           <Outlet/>
         </div>
 

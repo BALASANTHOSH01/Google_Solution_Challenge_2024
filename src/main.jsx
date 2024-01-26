@@ -23,6 +23,8 @@ import AddItem from './Components/MarketComponents/AddItem/AddItem.jsx'
 import MarketCart from './Components/MarketComponents/MarketCart/MarketCart.jsx'
 import MarketProducts from './Components/MarketComponents/MarketProducts/MarketProducts.jsx'
 import UserProfile from './Components/UserProfile/UserProfile.jsx'
+import ProductProfile from './Components/MarketComponents/ProductProfile/ProductProfile.jsx';
+import NewsContent from './Components/NewsComponents/NewsContent/NewsContent.jsx'
 
 
 const router = createBrowserRouter([
@@ -59,6 +61,10 @@ const router = createBrowserRouter([
         element: <Chatbot />
       },
       {
+        path:"/news",
+        element:<NewsContent/>,
+      },
+      {
         path: "/message",
         element: <Message />,
         children: [
@@ -82,15 +88,19 @@ const router = createBrowserRouter([
         children:[
           {
             path:"/market/additem",
-            element:<AddItem/>
+            element:<AddItem/>,
           },
           {
             path:"/market/cart",
-            element:<MarketCart/>
+            element:<MarketCart/>,
           },
           {
             path:"/market/buy",
-            element:<MarketProducts/>
+            element:<MarketProducts/>,
+          },
+          {
+            path:"/market/buy/:productid",
+            element:<ProductProfile/>,
           }
         ]
       },
