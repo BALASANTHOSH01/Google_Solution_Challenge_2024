@@ -16,9 +16,9 @@ const Message = () => {
     },[location.pathname])
     document.documentElement.scrollTop = 0;
     return (
-        <div className="flex flex-row gap-2 h-screen p-2 pb-5 ">
+        <div className="flex flex-row gap-2 h-screen p-2 pb-10 ">
 
-            <div className="w-[35%] sm:w-[90%] sm:mx-auto overflow-scroll small-scrollbar sm:my-[10%]">
+            <div className="w-[40%] sm:w-[90%] sm:mx-auto overflow-scroll small-scrollbar sm:my-[10%]">
 
                 <h2 className=" text-[19px] ml-[5%] text-black mb-[5%]">Recent&#160;List</h2>
 
@@ -30,7 +30,7 @@ const Message = () => {
                         {/**User list */}
                         <div >
                             <UserList props={usermsg} />
-                            <hr className="w-[70%] mx-auto bg-gray-400 h-[1px]" />
+                            <hr className="w-[70%] mx-auto bg-gray-200 h-[2px]" />
                         </div>
 
                     </div>
@@ -38,7 +38,7 @@ const Message = () => {
             </div>
 
             {/**Message Panel */}
-            <div className="w-[50%] sm:hidden border border-gray-400 rounded-[10px]">
+            <div className="w-[40%] sm:hidden relative border border-gray-400 rounded-[10px] h-[100vh]">
                 <Outlet />
             </div>
             

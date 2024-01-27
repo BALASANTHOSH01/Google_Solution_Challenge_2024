@@ -14,6 +14,9 @@ const TrainingNav = () => {
             case "/training/event":
                 setTrainigNav("events");
                 break;
+            case "/training/training":
+                setTrainigNav("training");
+                break;
         }
     },[location.pathname])
 
@@ -29,11 +32,13 @@ const TrainingNav = () => {
                     </div>
                 </Link>
 
+                <Link to={"/training/training"}>
                 <div className={trainingnav === "training" ? `flex flex-col text-center text-black px-7 sm:px-3 items-center cursor-pointer` : `flex flex-col text-center text-gray-500 px-7 sm:px-3 items-center cursor-pointer`} onClick={() => setTrainigNav("training")}>
                     <Computer className="text-[23px] sm:text-[18px]" />
                     <p className="text-[14px] sm:text-[12px]">Training</p>
                     {trainingnav === "training" && <hr className="h-[2px] w-[70%]  bg-black" />}
                 </div>
+                </Link>
 
                 <div className={trainingnav === "videos" ? `flex flex-col text-center text-black px-7 sm:px-3 items-center cursor-pointer` : `flex flex-col text-center text-gray-500 px-7 sm:px-3 items-center cursor-pointer`} onClick={() => setTrainigNav("videos")}>
                     <Video className="text-[23px] sm:text-[18px]" />

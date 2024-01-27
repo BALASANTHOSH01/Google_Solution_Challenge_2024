@@ -41,6 +41,7 @@ const Nav = () => {
                 setNav("market");
                 break;
             case "/training":
+            case "/training/training":
             case `/training/event`:
                 setNav("training");
                 break;

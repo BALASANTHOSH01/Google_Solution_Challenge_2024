@@ -77,7 +77,7 @@ const NewsNav = () => {
             <div className='flex flex-row items-center gap-4 justify-center w-[80%] mx-auto my-[2%]'>
 
                 <div className='relative flex flex-row items-center rounded-[3px] border overflow-hidden mr-[5%]'>
-                    <input type='text' id='search' placeholder='SEARCH' className='p-1 px-2   outline-none ' />
+                    <input type='text' id='search' placeholder='SEARCH' className='p-1 px-2 w-[85%]   outline-none ' />
                     <label htmlFor='search' className='text-[18px] font-medium absolute right-[5%] cursor-pointer'>
                         <Search />
                     </label>

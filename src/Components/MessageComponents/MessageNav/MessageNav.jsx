@@ -23,7 +23,7 @@ const MessageNav = () => {
 
                 <Menu className="text-[23px]" />
 
-                <Star className="text-[18px]" />
+                <Star className="text-[18px] text-black" />
             </div>
         </div>
     )
