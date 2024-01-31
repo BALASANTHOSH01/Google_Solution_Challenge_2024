@@ -4,7 +4,7 @@ import UserContent from "../../UserProfile/UserContent/UserContent.jsx";
 
 const PeopleActivity = ({props}) => {
   const Profile = props.profile;
-  const Name = props.Name;
+  const Name = props.name;
   const Username = props.username;
   const About = props.about;
   const [profileactivity, setProfileActivity] = useState("posts");

@@ -12,7 +12,7 @@ const TrainingPageSteps = () => {
             <div className="flex flex-row justify-evenly">
 
                 {/**step-1 Learn */}
-                <div className="w-[28%] p-2 rounded-[10px] overflow-hidden border border-gray-300 bg-gray-100 font-Manrope">
+                <div className="w-[28%] p-2 rounded-[10px] overflow-hidden border border-gray-300 bg-gray-100 font-Manrope cursor-pointer hover:shadow-lg hover:border-none">
                     <div className="mb-[5%]">
                         <Target className="text-[25px] mx-auto my-[3%]" />
                         <h2 className="text-[18px] text-center font-medium my-[2%]">Learn from the <span className="underline hover:text-green-600 cursor-pointer duration-500">Green&#160;Harbor</span></h2>
@@ -25,7 +25,7 @@ const TrainingPageSteps = () => {
                 </div>
 
                  {/**step-1 Work */}
-                 <div className="w-[28%] p-2 rounded-[10px] overflow-hidden border border-gray-300 bg-gray-100 font-Manrope">
+                 <div className="w-[28%] p-2 rounded-[10px] overflow-hidden border border-gray-300 bg-gray-100 font-Manrope cursor-pointer hover:shadow-lg hover:border-none">
                     <div className="mb-[5%]">
                         <Work className="text-[25px] mx-auto my-[3%]" />
                         <h2 className="text-[18px] text-center font-medium my-[2%]">Apply your agricultural mind.</h2>
@@ -38,7 +38,7 @@ const TrainingPageSteps = () => {
                 </div>
 
                  {/**step-1 Earn */}
-                 <div className="w-[28%] p-2 rounded-[10px] overflow-hidden border border-gray-300 bg-gray-100 font-Manrope">
+                 <div className="w-[28%] p-2 rounded-[10px] overflow-hidden border border-gray-300 bg-gray-100 font-Manrope cursor-pointer hover:shadow-lg hover:border-none">
                     <div className="mb-[5%]">
                         <Money className="text-[25px] mx-auto my-[3%]" />
                         <h2 className="text-[18px] text-center font-medium my-[2%]">Earn from your actions.</h2>

@@ -1,21 +1,25 @@
-import  { useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { IoReturnDownBack as Backbtn } from "react-icons/io5";
 import { CiSearch as Search } from "react-icons/ci";
-
+import { AiOutlineMenu as Menu } from "react-icons/ai";
+import { HiHome as Home } from "react-icons/hi2"; //Home Icon
 const NewsNav = () => {
     const [newsNavitem, setNewsNavItem] = useState("region");
     return (
         <div className='p-5 flex flex-col font-Manrope shadow-lg top-0 w-screen z-50 bg-white'>
 
 
-            <Link to={"/"} className='absolute left-[4%] top-[4%]'>
+            <Link to={"/"} className='absolute left-[5%] top-[5%]'>
                 <div>
-                    <div className="  px-2 p-1 bg-black text-[22px] rounded-[5px] cursor-pointer text-white font-bold ">
-                        <Backbtn />
+                    <div className="p-2 hover:bg-gray-200 text-[22px] rounded-[50%] cursor-pointer text-black font-bold ">
+                        <Home />
                     </div>
-                    <p className="text-gray-500 text-[15px] mt-[1%]">Back</p>
                 </div>
+            </Link>
+
+            <Link to={""} className='absolute text-[22px] p-2 rounded-[50%] hover:bg-gray-200 right-[5%] top-[5%]'>
+                <Menu />
             </Link>
 
             {/**Heading */}
@@ -49,6 +53,17 @@ const NewsNav = () => {
                 }
 
                 {
+                    newsNavitem === "business" ?
+                        <p onClick={() => setNewsNavItem("business")} className="cursor-pointer">Business
+                            <hr className='h-[3px]  w-[100%] bg-gray-700' />
+                        </p>
+                        :
+                        <p onClick={() => setNewsNavItem("business")} className="cursor-pointer">Business
+
+                        </p>
+                }
+
+                {
                     newsNavitem === "e-paper" ?
                         <p onClick={() => setNewsNavItem("e-paper")} className="cursor-pointer">e-Paper
                             <hr className='h-[3px]  w-[100%] bg-gray-700' />
@@ -58,19 +73,6 @@ const NewsNav = () => {
 
                         </p>
                 }
-
-                <Link to={"/bot"}>
-                {
-                    newsNavitem === "bot-news" ?
-                        <p onClick={() => setNewsNavItem("bot-news")} className="cursor-pointer">Bot&#160;News
-                            <hr className='h-[3px]  w-[100%] bg-gray-700' />
-                        </p>
-                        :
-                        <p onClick={() => setNewsNavItem("bot-news")} className="cursor-pointer">Bot&#160;News
-
-                        </p>
-                }
-                </Link>
 
             </div>
 
