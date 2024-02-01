@@ -28,7 +28,7 @@ const LogIn = () => {
 
         <div className="flex flex-row justify-between items-center">
           <label htmlFor="password">Password :</label>
-          <p className="text-green-500">forget&#160;password</p>
+          <p className="text-green-500 cursor-pointer">forget&#160;password</p>
         </div>
 
         <input type="password" placeholder="Password" id="password" className="p-2 px-3 rounded-[10px] border border-gray-400 focus:outline-none" required/><br />
@@ -38,7 +38,7 @@ const LogIn = () => {
         <div className=" flex flex-row my-5 gap-3 mx-auto">
           <p>Don&apos;t have an account ?</p>
           <Link to={"/AuthSignUp"}>
-          <p className="text-green-500">SigUp</p>
+          <p className="text-green-500">Sigup</p>
           </Link>
         </div>
 

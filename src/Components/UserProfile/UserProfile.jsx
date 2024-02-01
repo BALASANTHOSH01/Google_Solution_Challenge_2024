@@ -7,6 +7,7 @@ import banner from "../../assets/Images/banner.jpg";
 import { ImPencil as Pencil } from "react-icons/im";
 import Popup from "reactjs-popup";
 import EditProfile from "./EditProfile/EditProfile";
+import { Link } from "react-router-dom";
 
 
 const UserProfile = () => {
@@ -34,23 +35,23 @@ const UserProfile = () => {
                         <img src={UserDetails[0].banner} alt="banner" className="w-[100%] sm:h-[150px] h-[280px] top-0 relative opacity-70 object-cover" />
 
                         <div className="absolute p-2 rounded-[50%] bg-white text-green-500 text-[14px] top-[5%] right-[3%] cursor-pointer hover:text-green-600 duration-300 hover:bg-gray-200">
-                        <Pencil />
+                            <Pencil />
                         </div>
 
                         <Popup trigger={
                             <div className="absolute p-2 rounded-[50%] bg-white text-green-500 text-[14px] top-[5%] right-[3%] cursor-pointer hover:text-green-600 duration-300 hover:bg-gray-200">
-                            <Pencil />
+                                <Pencil />
                             </div>
                         } position={"right center"}>
-                                {
-                                    close=>(
-                                        <div className="bg-gray-300 p-2 rounded-[10px] px-3 cursor-pointer ">
-                                            <label htmlFor="bannerfile" className="cursor-pointer">Upload Image</label>
-                                            <input type="file" id="bannerfile" className="hidden" />
-                                        </div>
-                                    )
-                                }
-                            </Popup>
+                            {
+                                close => (
+                                    <div className="bg-gray-300 p-2 rounded-[10px] px-3 cursor-pointer ">
+                                        <label htmlFor="bannerfile" className="cursor-pointer">Upload Image</label>
+                                        <input type="file" id="bannerfile" className="hidden" />
+                                    </div>
+                                )
+                            }
+                        </Popup>
 
 
                         {/* User info */}
@@ -76,11 +77,11 @@ const UserProfile = () => {
                                                         <h1 className="text-black text-[20px] uppercase font-medium ">Edit Profile</h1>
 
                                                         <div className=" p-1 rounded-[50%] w-[40px] h-[40px] text-center hover:bg-gray-300 cursor-pointer" onClick={close}>
-                                                            <a  className="text-black text-[20px]">&times;</a>
+                                                            <a className="text-black text-[20px]">&times;</a>
                                                         </div>
 
                                                     </div>
-                                                    
+
                                                     <EditProfile />
                                                 </div>
                                             )
@@ -114,12 +115,12 @@ const UserProfile = () => {
 
                             {/**Reach ME, Message, setting */}
                             <div className="flex flex-row gap-6 my-[2%] w-[50%] justify-start font-Manrope items-center cursor-pointer">
-                                <div className="p-[6px] px-4 bg-green-500 text-white font-medium text-[18px] rounded-[25px] text-center">
-                                    <p>Reach&#160;Me</p>
+                                <div className="p-[6px] px-4 bg-green-500 text-white font-medium text-[16px] rounded-[25px] text-center">
+                                    <p>Followers</p>
                                 </div>
 
-                                <div className="p-[6px] px-4 bg-gray-300 text-black font-medium text-[18px] rounded-[25px] text-center cursor-pointer">
-                                    <p>Message</p>
+                                <div className="p-[6px] px-4 bg-gray-300 text-black font-medium text-[16px] rounded-[25px] text-center cursor-pointer">
+                                    <p>Connections</p>
                                 </div>
 
                                 <div className="text-black text-[20px] cursor-pointer">

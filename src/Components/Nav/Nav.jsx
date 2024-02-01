@@ -61,8 +61,6 @@ const Nav = () => {
         <div >
             <div className="flex flex-row items-center justify-around sm:justify-between bg-white p-2 fixed top-0 w-[100%] z-50 shadow-md">
 
-
-
                 <div className=" sm:hidden justify-evenly flex flex-row w-[30%]">
 
                     <Link to={"/news"}>
@@ -79,15 +77,14 @@ const Nav = () => {
                                     <News className="text-green-600 text-[22px]" />
                                     <p className="text-green-600 text-[13px]">News</p>
                                 </div>
-
                         }
                     </Link>
 
                     <div className="  flex flex-row  items-center box-border  border overflow-hidden border-gray-400 rounded-[10px] ">
                         <CiSearch className=" text-gray-500 text-[20px] ml-[2%] mx-auto" />
-                        <input type="search" id="search" placeholder="search" className=" p-2 px-3 w-[90%] ml-[2%] focus:outline-none focus:border-green-500 focus:border-[1px] rounded-[10px]" />
-
+                        <input type="search" id="search" placeholder="search" className=" p-2 px-3 w-[90%] ml-[2%] focus:outline-none focus:border-green-500 focus:border-none rounded-[10px]" />
                     </div>
+
                 </div>
 
                 <div className="flex flex-row sm:gap-7 w-[40%] sm:w-[100%] md:w-[70%] items-center justify-evenly sm:justify-between sm:ml-[2%]">
@@ -106,7 +103,6 @@ const Nav = () => {
                                     <HiHome className="text-gray-500 text-[22px]" />
                                     <p className="text-gray-500 text-[13px]">Home</p>
                                 </div>
-
                         }
                     </Link>
 
