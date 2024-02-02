@@ -11,7 +11,7 @@ const MobileBottomNav = () => {
     
   return (
     <div >
-        <div className="fixed bottom-0 mx-auto z-50 p-2 w-[95%] bg-white flex flex-row justify-around">
+        <div className="fixed bottom-0 mx-auto z-50 p-2 w-[100%] bg-white flex flex-row justify-around">
         <Link to={"/market/buy"}>
           <div className={
             bottomnav === "buy"

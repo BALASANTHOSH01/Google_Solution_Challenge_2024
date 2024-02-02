@@ -6,7 +6,7 @@ import { BsHandbagFill as Bag } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-const MarketSideNav = () => {
+const MarketSideNav = ({ markethover, setMarketHover, marketsidenav, setMarketSideNav }) => {
   const [sideNav, setSideNav] = useState("buy");
 
   const location = useLocation();
@@ -26,17 +26,17 @@ const MarketSideNav = () => {
   }, [location.pathname]);
 
   const navigate = useNavigate();
-  useEffect(()=>{
-    switch(sideNav){
+  useEffect(() => {
+    switch (sideNav) {
       case "buy":
         navigate("/market/buy");
         break;
     }
-  },[sideNav])
+  }, [sideNav])
 
   return (
     <div>
-      <div className="sticky sm:hidden left-0 top-[calc(100vh-90vh)] bg-white z-20  flex flex-col gap-4 items-center h-[50vh]  mt-[2%] p-2 pt-[5%] mr-[2%]">
+      <div className="flex flex-row left-[40%] top-[12%] absolute bg-white border mx-auto items-center text-black" onMouseLeave={() =>setMarketSideNav(false)} onMouseOver={() => setMarketSideNav(true)}>
 
         <Link to={"/market/buy"}>
           <div className={
@@ -63,16 +63,16 @@ const MarketSideNav = () => {
         </Link>
 
         {/* <Link to={"/market/news"}>
-        <div className={
-          sideNav === "news"
-            ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
-            : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
-        } onClick={() => setSideNav("news")}>
-          <News className="text-[20px] sm:text-[18px]" />
-          <p className=" text-[14px] sm:text-[12px]">News</p>
-          {sideNav === "news" && <hr className="h-[2px] w-[70%]  bg-black" />}
-        </div>
-        </Link> */}
+<div className={
+  sideNav === "news"
+    ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
+    : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
+} onClick={() => setSideNav("news")}>
+  <News className="text-[20px] sm:text-[18px]" />
+  <p className=" text-[14px] sm:text-[12px]">News</p>
+  {sideNav === "news" && <hr className="h-[2px] w-[70%]  bg-black" />}
+</div>
+</Link> */}
 
         <Link to={"/market/cart"}>
           <div

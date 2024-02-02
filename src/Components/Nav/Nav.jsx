@@ -11,6 +11,8 @@ import { useEffect, useState } from "react";
 import { CiMenuFries } from "react-icons/ci";
 import { SiAlwaysdata as News } from "react-icons/si";
 // import botIcon from "../../assets/Images/Chatbot/botIcon.jpg"; //bot icon
+
+import MarketSideNav from "../MarketComponents/MarketSideNav/MarketSideNav";
 const Nav = () => {
 
     const location = useLocation();
@@ -57,8 +59,13 @@ const Nav = () => {
         setNav(element);
     }
 
+    const [markethover,setMarketHover]=useState(false);
+    const handleHover = (data) =>{
+        setMarketHover(data);
+    };
+
     return (
-        <div >
+        <div className="">
             <div className="flex flex-row items-center justify-around sm:justify-between bg-white p-2 fixed top-0 w-[100%] z-50 shadow-md">
 
                 <div className=" sm:hidden justify-evenly flex flex-row w-[30%]">
@@ -120,7 +127,18 @@ const Nav = () => {
                         }
                     </Link>
 
-                    <Link to={"/market"}>
+                    {/**
+                     * 
+                     
+                     onMouseLeave={()=>{
+                        setTimeout(function(){
+                            setMarketHover(false);
+                        },300);
+                    }} onMouseOver={()=>setMarketHover(true)}
+
+                     */}
+
+                    <Link to={"/market"} >
                         {
                             nav === "market" ? <div className="flex flex-col text-center items-center text-black cursor-pointer" onClick={() => handleNav("market")}>
                                 <FaCartArrowDown className=" text-[23px]" />
@@ -213,6 +231,10 @@ const Nav = () => {
                     </div>
                 </Link>
             </div>
+
+            {
+                markethover === true && <MarketSideNav handleHover={handleHover}  />
+            }
         </div>
     )
 }

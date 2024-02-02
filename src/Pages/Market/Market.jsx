@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from "react-router-dom"
+import { Outlet, useLocation, useNavigate  } from "react-router-dom"
 import MarketSideNav from "../../Components/MarketComponents/MarketSideNav/MarketSideNav"
 import { useEffect } from "react";
 import MobileBottomNav from "../../Components/MarketComponents/MobileBottomNav/MobileBottomNav";
@@ -7,10 +7,11 @@ import MobileBottomNav from "../../Components/MarketComponents/MobileBottomNav/M
 const Market = () => {
   
   const location = useLocation();
+  const navigate = useNavigate();
   useEffect(()=>{
     switch(location.pathname){
       case "/market":
-        return;
+        return navigate("/market/buy");
     }
   },[location.pathname]);
 
@@ -27,10 +28,6 @@ const Market = () => {
   return (
     <div>
       <div className="flex flex-row w-[100%] justify-center">
-
-        <div className="flex-none h-screen">
-          <MarketSideNav/>
-        </div>
         
         <div className="sm:block hidden">
           <MobileBottomNav/>
