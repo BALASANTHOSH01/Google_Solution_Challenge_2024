@@ -2,10 +2,16 @@ import { TbAward } from "react-icons/tb";
 import ItemData from "../AddItem/ItemData/ItemData.js";
 import { RxCross2 } from "react-icons/rx";
 import { Link } from "react-router-dom";
+import ProductHero from "../ProductHero/ProductHero.jsx";
 
 const MarketProducts = () => {
   document.documentElement.scrollTop = 0;
   return (
+   <div className="flex flex-col">
+    <div>
+      <ProductHero/>
+    </div>
+
     <div className=" flex flex-wrap sm:flex-col justify-evenly sm:my-[5%] sm:mx-auto w-[100%]" >
         <h2 className="text-gray-700 sm:block hidden font-medium text-[20px] my-[3%]">Products</h2>
         
@@ -28,6 +34,7 @@ const MarketProducts = () => {
         </Link>
         ))}
       </div>
+   </div>
   );
 };
 

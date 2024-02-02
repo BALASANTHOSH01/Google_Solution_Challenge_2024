@@ -16,6 +16,7 @@ const ItemData = [
         email:"example@gmail.com",
         description:"The IdeaPad Slim 1 was designed to be used on the go for those who like learning all the time and hence it is only 19.9 mm thin and weighs only 1.65 kg, now you can learn wherever you want and whenever you want",
         price:100,
+        noofitems:106,
         rating:{
             ratingid:1,
             star:4.5,
@@ -25,7 +26,7 @@ const ItemData = [
         specification:{
             itemName:"Rotary Tille",
             type:"Machine",
-            noofStocks:2,
+            noofStocks:254,
         },
         offer:[
             {
