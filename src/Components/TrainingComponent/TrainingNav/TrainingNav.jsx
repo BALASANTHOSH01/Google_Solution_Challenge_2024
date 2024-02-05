@@ -18,31 +18,37 @@ const TrainingNav = () => {
                 setTrainigNav("training");
                 break;
         }
-    },[location.pathname])
+    },[location.pathname]);
 
     return (
         <div>
-            <div className="fixed left-0 top-[calc(100vh-90vh)] sm:hidden bg-white z-20 flex flex-col  justify-around h-[60vh]  mt-[2%] p-2">
+            <div className="flex flex-row bg-white mx-auto items-center text-black">
 
                 <Link to={"/training/event"}>
-                    <div className={trainingnav === "events" ? `flex flex-col text-center text-black px-7 sm:px-3 items-center cursor-pointer` : `flex flex-col text-center text-gray-500 px-7 sm:px-3 items-center cursor-pointer`} onClick={() => setTrainigNav("events")}>
-                        <Event className="text-[19px] sm:text-[17px]" />
-                        <p className="text-[14px] sm:text-[12px]">Events</p>
+                    <div className={trainingnav === "events" ? `flex flex-col text-center text-black p-4 px-10 items-center cursor-pointer` : `flex flex-col text-center text-gray-500 p-4 px-10 items-center cursor-pointer`} onClick={() => setTrainigNav("events")}>
+
+                        {/* <Event className="text-[19px] sm:text-[17px]" /> */}
+
+                        <p className="text-[16px] ">Events</p>
                         {trainingnav === "events" && <hr className="h-[2px] w-[70%]  bg-black" />}
                     </div>
                 </Link>
 
                 <Link to={"/training/training"}>
                 <div className={trainingnav === "training" ? `flex flex-col text-center text-black px-7 sm:px-3 items-center cursor-pointer` : `flex flex-col text-center text-gray-500 px-7 sm:px-3 items-center cursor-pointer`} onClick={() => setTrainigNav("training")}>
-                    <Computer className="text-[23px] sm:text-[18px]" />
-                    <p className="text-[14px] sm:text-[12px]">Training</p>
+
+                    {/* <Computer className="text-[23px] sm:text-[18px]" /> */}
+
+                    <p className="text-[16px] ">Training</p>
                     {trainingnav === "training" && <hr className="h-[2px] w-[70%]  bg-black" />}
                 </div>
                 </Link>
 
                 <div className={trainingnav === "videos" ? `flex flex-col text-center text-black px-7 sm:px-3 items-center cursor-pointer` : `flex flex-col text-center text-gray-500 px-7 sm:px-3 items-center cursor-pointer`} onClick={() => setTrainigNav("videos")}>
-                    <Video className="text-[23px] sm:text-[18px]" />
-                    <p className="text-[14px] sm:text-[12px]">Videos</p>
+
+                    {/* <Video className="text-[23px] sm:text-[18px]" /> */}
+
+                    <p className="text-[16px] ">Videos</p>
                     {trainingnav === "videos" && <hr className="h-[2px] w-[70%]  bg-black" />}
                 </div>
 

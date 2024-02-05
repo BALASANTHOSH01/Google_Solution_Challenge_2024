@@ -12,9 +12,7 @@ const MarketProducts = () => {
         <ProductHero />
       </div>
 
-        <h1 className="my-[2%] font-medium ml-[5%]">Products</h1>
       <div className=" flex flex-wrap gap-3 justify-evenly sm:my-[5%] sm:mx-auto w-[100%]" >
-
 
         {ItemData.map((item) => (
           <Link to={`/market/buy/${item.id}`} key={item.id} className="w-[20%] mb-[2%] sm:w-[40%] my-[2%] hover:shadow-lg rounded-[10px] cursor-pointer sm:mx-auto">

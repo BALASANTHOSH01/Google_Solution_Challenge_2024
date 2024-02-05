@@ -6,18 +6,50 @@ import user from "../../assets/Images/man.png"; //user Image
 import { CiSearch } from "react-icons/ci"; //Seach icon
 import { RiMessage2Fill } from "react-icons/ri";//Message icon
 import { FaRobot } from "react-icons/fa";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { CiMenuFries } from "react-icons/ci";
 import { SiAlwaysdata as News } from "react-icons/si";
-// import botIcon from "../../assets/Images/Chatbot/botIcon.jpg"; //bot icon
-
 import MarketSideNav from "../MarketComponents/MarketSideNav/MarketSideNav";
+import TrainingNav from "../TrainingComponent/TrainingNav/TrainingNav";
+
+
 const Nav = () => {
 
     const location = useLocation();
+    const Navigate = useNavigate();
     const { messageid, peopleid, mobilemessageid } = useParams();
 
+    {/** handle the Main Nav elements */ }
+    const [nav, setNav] = useState("home");
+    const handleNav = (element) => {
+        setNav(element);
+    }
+
+    {/** Show the SubNav */ }
+    const [subnav, setSubNav] = useState(false);
+    const ShowNav = () => {
+        setSubNav(!subnav);
+    };
+    
+
+    {/** Avoid too many re-rendering & Page reload */ }
+    const NavToFun = () => {
+        location.pathname === `/training/event` ? null : `/training/event`;
+        location.pathname === `/market/buy` ? null : `/market/buy`;
+    }
+
+    {/** Show SubNav depends upon the active NavItem */ }
+    const showSubNav = () => {
+        switch (nav) {
+            case "market":
+                return subnav && <MarketSideNav />;
+            case "training":
+                return subnav && <TrainingNav/>;
+        }
+    }
+
+    {/** Set NavItem active depends upon the pathname of the application */ }
     useEffect(() => {
         const Path = location.pathname;
         switch (Path) {
@@ -52,24 +84,30 @@ const Nav = () => {
                 break;
         }
 
-    }, [location.pathname])
+    }, [location.pathname, messageid, mobilemessageid, peopleid]);
 
-    const [nav, setNav] = useState("home");
-    const handleNav = (element) => {
-        setNav(element);
-    }
+    {/** Navigate to the page that which NavItem is selected */ }
+    useEffect(() => {
+        setSubNav(false);
+        switch (nav) {
+            case "market":
+                Navigate("/market/buy");
+                break;
+            case "training":
+                Navigate("/training");
+                break;
 
-    const [markethover,setMarketHover]=useState(false);
-    const handleHover = (data) =>{
-        setMarketHover(data);
-    };
+        }
+    }, [nav]);
+
 
     return (
-        <div className="">
-            <div className="flex flex-row items-center justify-around sm:justify-between bg-white p-2 fixed top-0 w-[100%] z-50 shadow-md">
+        <div className=" bg-white p-2 fixed top-0 w-[100%] z-50 shadow-md">
+            <div className="flex flex-row items-center justify-around sm:justify-between">
 
                 <div className=" sm:hidden justify-evenly flex flex-row w-[30%]">
 
+                    {/** News */}
                     <Link to={"/news"}>
                         {
                             nav === "news" ?
@@ -87,6 +125,7 @@ const Nav = () => {
                         }
                     </Link>
 
+                    {/** search bar */}
                     <div className="  flex flex-row  items-center box-border  border overflow-hidden border-gray-400 rounded-[10px] ">
                         <CiSearch className=" text-gray-500 text-[20px] ml-[2%] mx-auto" />
                         <input type="search" id="search" placeholder="search" className=" p-2 px-3 w-[90%] ml-[2%] focus:outline-none focus:border-green-500 focus:border-none rounded-[10px]" />
@@ -96,101 +135,97 @@ const Nav = () => {
 
                 <div className="flex flex-row sm:gap-7 w-[40%] sm:w-[100%] md:w-[70%] items-center justify-evenly sm:justify-between sm:ml-[2%]">
 
-                    <Link to={"/"}>
+                    {/** Home */}
+                    <Link to={"/"} onClick={() => handleNav("home")}>
                         {
                             nav === "home" ?
                                 <div>
-                                    <div className="flex flex-col text-center items-center text-black cursor-pointer" onClick={() => handleNav("home")}>
+                                    <div className="flex flex-col text-center items-center text-black cursor-pointer">
                                         <HiHome className=" text-[21px]" />
                                         <p className=" text-[13px]">Home</p>
                                     </div>
                                     <hr className="w-[100%] h-[2.5px] bg-black " />
                                 </div>
-                                : <div className="flex flex-col text-center items-center cursor-pointer" onClick={() => handleNav("home")}>
+                                : <div className="flex flex-col text-center items-center cursor-pointer">
                                     <HiHome className="text-gray-500 text-[22px]" />
                                     <p className="text-gray-500 text-[13px]">Home</p>
                                 </div>
                         }
                     </Link>
 
-                    <Link to={"/training"}>
+                    {/**Training */}
+                    <Link to={NavToFun} onClick={() => handleNav("training")}  onDoubleClick={() => ShowNav()}>
                         {
-                            nav === "training" ? <div className="flex flex-col text-center items-center text-black cursor-pointer" onClick={() => handleNav("training")}>
+                            nav === "training" ? <div className="flex flex-col text-center items-center text-black cursor-pointer">
                                 <MdOutlineOndemandVideo className=" text-[23px]" />
                                 <p className=" text-[13px] md:text-[11px]">Training</p>
                                 <hr className="w-[100%] h-[2.5px] bg-black " />
                             </div>
-                                : <div className="flex flex-col text-center items-center cursor-pointer" onClick={() => handleNav("training")}>
+                                : <div className="flex flex-col text-center items-center cursor-pointer" >
                                     <MdOutlineOndemandVideo className="text-gray-500 text-[23px]" />
                                     <p className="text-gray-500 text-[13px] md:text-[11px]">Training</p>
                                 </div>
                         }
                     </Link>
 
-                    {/**
-                     * 
-                     
-                     onMouseLeave={()=>{
-                        setTimeout(function(){
-                            setMarketHover(false);
-                        },300);
-                    }} onMouseOver={()=>setMarketHover(true)}
-
-                     */}
-
-                    <Link to={"/market"} >
+                    {/** Market */}
+                    <Link to={NavToFun} onDoubleClick={() => ShowNav()} onClick={() => handleNav("market")} >
                         {
-                            nav === "market" ? <div className="flex flex-col text-center items-center text-black cursor-pointer" onClick={() => handleNav("market")}>
+                            nav === "market" ? <div className="flex flex-col text-center items-center text-black cursor-pointer" >
                                 <FaCartArrowDown className=" text-[23px]" />
                                 <p className=" text-[13px] md:text-[11px]">Market</p>
                                 <hr className="w-[100%] h-[2.5px] bg-black " />
-                            </div> : <div className="flex flex-col text-center items-center cursor-pointer" onClick={() => handleNav("market")}>
+                            </div> : <div className="flex flex-col text-center items-center cursor-pointer" >
                                 <FaCartArrowDown className="text-gray-500 text-[23px]" />
                                 <p className="text-gray-500 text-[13px] md:text-[11px]">Market</p>
                             </div>
                         }
                     </Link>
 
-                    <Link to={"/people"}>
+                    {/**People */}
+                    <Link to={"/people"} onClick={() => handleNav("people")}>
                         {
                             nav === "people" ?
-                                <div className="flex flex-col text-center items-center text-black" onClick={() => handleNav("people")}>
+                                <div className="flex flex-col text-center items-center text-black" >
                                     <IoIosPeople className=" text-[23px]" />
                                     <p className=" text-[13px] md:text-[11px]">People</p>
                                     <hr className="w-[100%] h-[2.5px] bg-black " />
-                                </div> : <div className="flex flex-col text-center items-center cursor-pointer" onClick={() => handleNav("people")}>
+                                </div> : <div className="flex flex-col text-center items-center cursor-pointer">
                                     <IoIosPeople className="text-gray-500 text-[23px]" />
                                     <p className="text-gray-500 text-[13px] md:text-[11px]">People</p>
                                 </div>
                         }
                     </Link>
 
-                    <Link to={"/message"}>
+                    {/**Message */}
+                    <Link to={"/message"} onClick={() => handleNav("message")}>
                         {
-                            nav === "message" ? <div className="flex flex-col text-center items-center text-black cursor-pointer" onClick={() => handleNav("message")}>
+                            nav === "message" ? <div className="flex flex-col text-center items-center text-black cursor-pointer" >
                                 <RiMessage2Fill className=" text-[20px]" />
                                 <p className=" text-[13px] md:text-[11px] mt-[2px]">Message</p>
                                 <hr className="w-[100%] h-[2.5px] bg-black " />
-                            </div> : <div className="flex flex-col text-center items-center cursor-pointer" onClick={() => handleNav("message")}>
+                            </div> : <div className="flex flex-col text-center items-center cursor-pointer" >
                                 <RiMessage2Fill className="text-gray-500 text-[20px]" />
                                 <p className="text-gray-500 text-[13px] md:text-[11px] mt-[2px]">Message</p>
                             </div>
                         }
                     </Link>
 
-                    <Link to={"/userprofile"} className="sm:hidden">
+                    {/** userProfile */}
+                    <Link to={"/userprofile"} className="sm:hidden" onClick={() => handleNav("user")}>
                         {
-                            nav === "user" ? <div className="flex flex-col text-center items-center text-black cursor-pointer" onClick={() => handleNav("user")}>
+                            nav === "user" ? <div className="flex flex-col text-center items-center text-black cursor-pointer" >
                                 <img src={user} alt="user" className="w-[25px] h-[25px] sm:w-[25px] sm:h-[25px] cursor-pointer relative" />
                                 <p className=" text-[13px] md:text-[11px] ">Profile</p>
                                 <hr className="w-[100%] h-[2.5px] bg-black " />
-                            </div> : <div className="flex flex-col text-center items-center cursor-pointer" onClick={() => handleNav("user")}>
+                            </div> : <div className="flex flex-col text-center items-center cursor-pointer" >
                                 <img src={user} alt="user" className="w-[26px] h-[26px] sm:w-[25px] sm:h-[25px] cursor-pointer relative" />
                                 <p className=" text-gray-500 text-[13px] md:text-[11px] ">Profile</p>
                             </div>
                         }
                     </Link>
 
+                    {/** Mobile Menu */}
                     {
                         nav === "usermenu" ? <div className="sm:block hidden items-center relative cursor-pointer" onClick={() => handleNav("usermenu")}>
                             <CiMenuFries className=" text-[22px] text-black" />
@@ -222,6 +257,8 @@ const Nav = () => {
                     }
 
                 </div>
+
+                {/** Bot */}
                 <Link to={'/bot'} className="sm:w-[20%]  sm:hidden">
 
                     <div className="flex flex-col text-center items-center text-green-600  cursor-pointer hover:text-gray-400" onClick={() => handleNav("bot")}>
@@ -232,9 +269,13 @@ const Nav = () => {
                 </Link>
             </div>
 
-            {
-                markethover === true && <MarketSideNav handleHover={handleHover}  />
-            }
+            {/** SubNav for the active NavItem */}
+            <div className="w-[25%] sm:hidden mx-auto">
+                {
+                    showSubNav()
+                }
+            </div>
+
         </div>
     )
 }

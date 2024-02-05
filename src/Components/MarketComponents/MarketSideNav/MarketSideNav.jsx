@@ -6,7 +6,7 @@ import { BsHandbagFill as Bag } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-const MarketSideNav = ({ markethover, setMarketHover, marketsidenav, setMarketSideNav }) => {
+const MarketSideNav = () => {
   const [sideNav, setSideNav] = useState("buy");
 
   const location = useLocation();
@@ -32,11 +32,18 @@ const MarketSideNav = ({ markethover, setMarketHover, marketsidenav, setMarketSi
         navigate("/market/buy");
         break;
     }
-  }, [sideNav])
+  }, [sideNav]);
+
+ 
+
+  // useEffect(()=>{
+  //   handleHover(true);
+  //   return () => handleHover(false);
+  // },[handleHover]);
 
   return (
     <div>
-      <div className="flex flex-row left-[40%] top-[12%] absolute bg-white border mx-auto items-center text-black" onMouseLeave={() =>setMarketSideNav(false)} onMouseOver={() => setMarketSideNav(true)}>
+      <div className="flex flex-row bg-white sm:border mx-auto items-center text-black">
 
         <Link to={"/market/buy"}>
           <div className={
@@ -44,8 +51,8 @@ const MarketSideNav = ({ markethover, setMarketHover, marketsidenav, setMarketSi
               ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
               : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
           } onClick={() => setSideNav("buy")}>
-            <Bag className="text-[18px] sm:text-[16px]" />
-            <p className=" text-[14px] sm:text-[12px]">Products</p>
+            <Bag className="hidden sm:block sm:text-[16px]" />
+            <p className=" text-[16px] sm:text-[12px]">Products</p>
             {sideNav === "buy" && <hr className="h-[2px] w-[70%]  bg-black" />}
           </div>
         </Link>
@@ -56,23 +63,11 @@ const MarketSideNav = ({ markethover, setMarketHover, marketsidenav, setMarketSi
               ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
               : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
           } onClick={() => setSideNav("add")}>
-            <Add className="text-[18px] sm:text-[16px]" />
-            <p className=" text-[14px] sm:text-[12px]">Add</p>
+            <Add className="hidden sm:block sm:text-[16px]" />
+            <p className=" text-[16px] sm:text-[12px]">Add</p>
             {sideNav === "add" && <hr className="h-[2px] w-[70%]  bg-black" />}
           </div>
         </Link>
-
-        {/* <Link to={"/market/news"}>
-<div className={
-  sideNav === "news"
-    ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
-    : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
-} onClick={() => setSideNav("news")}>
-  <News className="text-[20px] sm:text-[18px]" />
-  <p className=" text-[14px] sm:text-[12px]">News</p>
-  {sideNav === "news" && <hr className="h-[2px] w-[70%]  bg-black" />}
-</div>
-</Link> */}
 
         <Link to={"/market/cart"}>
           <div
@@ -83,8 +78,8 @@ const MarketSideNav = ({ markethover, setMarketHover, marketsidenav, setMarketSi
             }
             onClick={() => setSideNav("cart")}
           >
-            <Cart className="text-[20px] sm:text-[18px]" />
-            <p className=" text-[14px] sm:text-[12px]">Cart</p>
+            <Cart className="hidden sm:block sm:text-[18px]" />
+            <p className=" text-[16px] sm:text-[12px]">Cart</p>
             {sideNav === "cart" && <hr className="h-[2px] w-[70%]  bg-black" />}
           </div>
         </Link>
@@ -94,8 +89,8 @@ const MarketSideNav = ({ markethover, setMarketHover, marketsidenav, setMarketSi
             ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
             : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
         } onClick={() => setSideNav("order")}>
-          <Order className="text-[20px] sm:text-[18px]" />
-          <p className=" text-[14px] sm:text-[12px]">Orders</p>
+          <Order className="hidden sm:block sm:text-[18px]" />
+          <p className=" text-[16px] sm:text-[12px]">Orders</p>
           {sideNav === "order" && <hr className="h-[2px] w-[70%]  bg-black" />}
         </div>
 
@@ -104,8 +99,8 @@ const MarketSideNav = ({ markethover, setMarketHover, marketsidenav, setMarketSi
             ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
             : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
         } onClick={() => setSideNav("menu")}>
-          <Menu className="text-[20px] sm:text-[18px]" />
-          <p className=" text-[14px] sm:text-[12px]">Menu</p>
+          <Menu className="hidden sm:block sm:text-[18px]" />
+          <p className=" text-[16px] sm:text-[12px]">Menu</p>
           {sideNav === "menu" && <hr className="h-[2px] w-[70%]  bg-black" />}
         </div>
 

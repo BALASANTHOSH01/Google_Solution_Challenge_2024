@@ -17,13 +17,10 @@ const Training = () => {
   return (
     <div>
       <div className="flex flex-row relative">
-        <div className="w-[14%] sm:w-[0%]" >
-          <TrainingNav />
-        </div>
         <div>
           <TrainingBottomNav/>
         </div>
-        <div className="w-[80%] sm:w-[100%]">
+        <div className="w-[90%] sm:w-[100%]">
           <Outlet />
         </div>
       </div>

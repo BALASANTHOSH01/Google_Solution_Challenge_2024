@@ -13,25 +13,37 @@ const ProductProfile = () => {
     return (
         <div>
 
-            <div className="flex md:block flex-row w-[95%] p-3 justify-between">
-                <div className="w-[30%] overflow-hidden ">
+            <div className="flex flex-row sm:flex-col mx-auto w-[95%] p-3 justify-between">
+                <div className="w-[30%] sm:w-[100%] mx-auto overflow-hidden ">
 
-                    {/**Product Image */}
-                    <img src={product.file} alt="ProductImage" className="w-[100%] rounded-[10px]" />
+                    <div className="hidden sm:block ml-[5%]">
+                        {/**Mobile Bread screm */}
+                        <BreadScrem name={product.name} />
+                    </div>
 
-                    <div className="p-2 flex flex-row gap-3 my-[5%]">
+                    <div className="flex flex-col w-[100%] justify-around sm:flex-row ">
+
+                        {/**Product Image */}
+                        <img src={product.file} alt="ProductImage" className="w-[100%] sm:w-[60%] sm:mx-auto sm:gap-5 rounded-[5px]" />
+
+                    </div>
+
+                    <div className="p-2 flex flex-row gap-3 sm:justify-between my-[5%]">
 
                         {/**Add to cart */}
-                        <button className="px-2 p-2 rounded-[3px] text-white font-semibold bg-orange-500 flex flex-row gap-1 items-center cursor-pointer w-[50%] justify-center"><Cart />Add&#160;To&#160;Cart</button>
+                        <button className="px-2 p-3 sm:text-[17px] hover:opacity-80 duration-200 rounded-[3px] text-white font-semibold bg-orange-500 flex flex-row gap-1 items-center cursor-pointer w-[50%] justify-center"><Cart />Add&#160;To&#160;Cart</button>
 
                         {/**Buy Now */}
-                        <button className="px-2 p-2 rounded-[3px] text-white font-semibold bg-green-500 flex flex-row gap-1 items-center cursor-pointer w-[50%] justify-center"><Bag />Buy&#160;Now</button>
+                        <button className="px-2 p-3 sm:text-[17px] hover:opacity-80 duration-200 rounded-[3px] text-white font-semibold bg-green-500 flex flex-row gap-1 items-center cursor-pointer w-[50%] justify-center"><Bag />Buy&#160;Now</button>
                     </div>
                 </div>
+
                 <div className="w-[60%] flex flex-col gap-2 p-2 text-[17px]">
 
-                    {/**Bread screm */}
-                    <BreadScrem name={product.name} />
+                    <div className="sm:hidden block">
+                        {/**Bread screm */}
+                        <BreadScrem name={product.name} />
+                    </div>
 
                     {/**Product name */}
                     <h2 className="text-[25px]">{product.name}</h2>
@@ -121,8 +133,8 @@ const ProductProfile = () => {
                 </div>
             </div>
 
-            <ProductStory/>
-            <ProductDetails/>
+            <ProductStory />
+            <ProductDetails />
         </div>
     )
 }

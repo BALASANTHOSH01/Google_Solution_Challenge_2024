@@ -1,5 +1,6 @@
 import { IoIosArrowForward as GreaterArrow } from "react-icons/io";
-import { IoReturnDownBack as Backbtn } from "react-icons/io5";
+
+import { IoChevronBackSharp as Backbtn } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 const BreadScrem = ({ name }) => {
@@ -17,7 +18,7 @@ const BreadScrem = ({ name }) => {
 
       <Link to={"/market/buy"}>
         <div>
-          <div className="  px-2 p-1 bg-black text-[18px] rounded-[10px] cursor-pointer text-white font-bold ">
+          <div className=" p-2 hover:opacity-80 bg-black text-[18px] rounded-[5px] cursor-pointer text-white font-bold ">
             <Backbtn />
           </div>
           <p className="text-gray-500 text-[15px] mt-[1%]">Back</p>
