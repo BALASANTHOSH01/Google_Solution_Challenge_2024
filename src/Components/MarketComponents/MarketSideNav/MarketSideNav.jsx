@@ -48,8 +48,8 @@ const MarketSideNav = () => {
         <Link to={"/market/buy"}>
           <div className={
             sideNav === "buy"
-              ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
-              : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
+              ? `flex text-black flex-col text-center items-center justify-center p-3 px-7 sm:p-2 cursor-pointer`
+              : `flex text-gray-500 flex-col text-center items-center justify-center p-3 px-7 sm:p-2 cursor-pointer`
           } onClick={() => setSideNav("buy")}>
             <Bag className="hidden sm:block sm:text-[16px]" />
             <p className=" text-[16px] sm:text-[12px]">Products</p>
@@ -60,8 +60,8 @@ const MarketSideNav = () => {
         <Link to={"/market/additem"}>
           <div className={
             sideNav === "add"
-              ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
-              : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
+              ? `flex text-black flex-col text-center items-center justify-center p-3 px-7 sm:p-2 cursor-pointer`
+              : `flex text-gray-500 flex-col text-center items-center justify-center p-3 px-7 sm:p-2 cursor-pointer`
           } onClick={() => setSideNav("add")}>
             <Add className="hidden sm:block sm:text-[16px]" />
             <p className=" text-[16px] sm:text-[12px]">Add</p>
@@ -73,8 +73,8 @@ const MarketSideNav = () => {
           <div
             className={
               sideNav === "cart"
-                ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
-                : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
+                ? `flex text-black flex-col text-center items-center justify-center p-3 px-7 sm:p-2 cursor-pointer`
+                : `flex text-gray-500 flex-col text-center items-center justify-center p-3 px-7 sm:p-2 cursor-pointer`
             }
             onClick={() => setSideNav("cart")}
           >
@@ -86,8 +86,8 @@ const MarketSideNav = () => {
 
         <div className={
           sideNav === "order"
-            ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
-            : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
+            ? `flex text-black flex-col text-center items-center justify-center p-3 px-7 sm:p-2 cursor-pointer`
+            : `flex text-gray-500 flex-col text-center items-center justify-center p-3 px-7 sm:p-2 cursor-pointer`
         } onClick={() => setSideNav("order")}>
           <Order className="hidden sm:block sm:text-[18px]" />
           <p className=" text-[16px] sm:text-[12px]">Orders</p>
@@ -96,8 +96,8 @@ const MarketSideNav = () => {
 
         <div className={
           sideNav === "menu"
-            ? `flex text-black flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
-            : `flex text-gray-500 flex-col text-center items-center justify-center p-4 px-10 sm:p-2 cursor-pointer`
+            ? `flex text-black flex-col text-center items-center justify-center p-3 px-7 sm:p-2 cursor-pointer`
+            : `flex text-gray-500 flex-col text-center items-center justify-center p-3 px-7 sm:p-2 cursor-pointer`
         } onClick={() => setSideNav("menu")}>
           <Menu className="hidden sm:block sm:text-[18px]" />
           <p className=" text-[16px] sm:text-[12px]">Menu</p>

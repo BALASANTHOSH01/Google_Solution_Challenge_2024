@@ -46,6 +46,13 @@ body{
     overflow: hidden;
 }
 
+/* select{
+    appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 2px;
+} */
+
 /** Moving Notification**/
 .Moving-notification{
     position: fixed;

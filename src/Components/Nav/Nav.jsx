@@ -270,10 +270,12 @@ const Nav = () => {
             </div>
 
             {/** SubNav for the active NavItem */}
-            <div className="w-[25%] sm:hidden mx-auto">
+            <div className=" fixed left-[47%]  h-full sm:hidden ">
+                <div className="absolute bg-white top-0 mx-auto shadow-md rounded-b-[10px] overflow-hidden">
                 {
                     showSubNav()
                 }
+                </div>
             </div>
 
         </div>

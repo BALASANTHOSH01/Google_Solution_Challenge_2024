@@ -20,7 +20,7 @@ const Training = () => {
         <div>
           <TrainingBottomNav/>
         </div>
-        <div className="w-[90%] sm:w-[100%]">
+        <div className="w-[95%] mx-auto sm:w-[100%]">
           <Outlet />
         </div>
       </div>

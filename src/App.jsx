@@ -54,7 +54,7 @@ const App = () => {
     <div>
       {NavBarfun()}
 
-      <div className="mt-[7%] md:mt-[10%]">
+      <div className="mt-[7%] md:mt-[10%] ">
       <Outlet />
       </div>
 

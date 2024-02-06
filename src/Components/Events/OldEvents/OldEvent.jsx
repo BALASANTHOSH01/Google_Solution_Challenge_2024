@@ -22,8 +22,8 @@ const OldEvent = () => {
                 </div>
 
                 <p className="flex flex-row items-center mx-auto text-gray-600 text-[14px] my-[3%] ">Creator:&#160;<span className="text-green-500 font-semibold">{events.creator}</span></p>
-                <div className="w-[100%] bg-green-500 text-white p-2 text-center bottom-0 rounded-[10px] cursor-pointer">
-                  <p>Register</p>
+                <div className="w-[100%] bg-red-500 text-white p-2 text-center bottom-0 rounded-[10px] cursor-pointer">
+                  <p>Expired</p>
                 </div>
               </div>
               </Link>

@@ -25,7 +25,18 @@ export default {
       backgroundImage:{
         bgwave:"url('./src/assets/Images/Chatbot/img.png')",
         botLogo:"url('./src/assets/Images/Chatbot/botIcon.jpg')",
-      }
+      },
+      // typography:{
+      //   DEFAULT:{
+      //     css:{
+      //       select:{
+      //         "appearance": "none",
+      //         "-webkit-appearance": "none",
+      //         "-moz-appearance": "none",
+      //       }
+      //     }
+      //   }
+      // }
     },
     
   },
