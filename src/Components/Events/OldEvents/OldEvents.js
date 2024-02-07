@@ -48,7 +48,7 @@ const OldEvents = [
         id:4,
         thumbnail:modernCultivation,
         thumbnail2:AIagriculture,
-        title:"Modern technique for better cultivation.",
+        title:"Techniques for cultivation.",
         description:"Using modern methods, equipments, techniques we'r going to do the good agriculture.",
         date:"Feb-02,2024",
         location:"Coimbatore",

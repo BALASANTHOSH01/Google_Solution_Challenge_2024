@@ -83,15 +83,13 @@ const EventPage = () => {
     //   </div>
     // </div>
     <div>
-      <div className="flex flex-col justify-center items-center text-[35px] font-extrabold font-Nunito">
+      <div className="flex flex-col justify-center items-center text-[35px] font-extrabold font-Nunito sm:text-[25px] sm:mt-[4%]">
         <h1>Explore your events and Get register</h1>
-        {/* <p>And</p>
-        <p>Get register</p> */}
       </div>
 
       <div className="flex flex-row justify-around px-3 my-[2%] text-[20px]">
 
-        <p className=" tracking-normal">Select your events</p>
+        <p className=" tracking-normal sm:hidden">Select your events</p>
 
         <select className=" outline-none cursor-pointer p-2 text-center border rounded-[10px] bg-gray-100 text-black hover:bg-gray-200" onChange={(e)=>setEventType(e.target.value)} value={eventtype}>
 

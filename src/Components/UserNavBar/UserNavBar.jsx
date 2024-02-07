@@ -22,7 +22,7 @@ const UserNavBar = () => {
     }
 
     return (
-        <div className=" flex flex-row justify-between p-1 sm:my-[1px] sm:shadow-md">
+        <div className=" flex flex-row justify-between p-1 mt-[2%] sm sm:my-[1px] sm:shadow-md">
 
             {/**Left arrow ("/") */}
             <Link to={PathNameFun()} className="ml-[5%]">
