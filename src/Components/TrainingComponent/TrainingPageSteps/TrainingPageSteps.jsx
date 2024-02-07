@@ -9,10 +9,10 @@ import { IoAccessibilitySharp as Work } from "react-icons/io5";
 const TrainingPageSteps = () => {
     return (
         <div>
-            <div className="flex flex-row justify-evenly">
+            <div className="flex flex-row sm:flex-col sm:gap-5 justify-evenly">
 
                 {/**step-1 Learn */}
-                <div className="w-[28%] p-2 rounded-[10px] overflow-hidden border border-gray-300 bg-gray-100 font-Manrope cursor-pointer hover:shadow-lg">
+                <div className="w-[28%] sm:w-[70%] mx-auto p-2 rounded-[10px] overflow-hidden border border-gray-300 bg-gray-100 font-Manrope cursor-pointer hover:shadow-lg">
                     <div className="mb-[5%]">
                         <Target className="text-[25px] mx-auto my-[3%]" />
                         <h2 className="text-[18px] text-center font-medium my-[2%]">Learn from the <span className="underline hover:text-green-600 cursor-pointer duration-500">Green&#160;Harbor</span></h2>
@@ -25,7 +25,7 @@ const TrainingPageSteps = () => {
                 </div>
 
                  {/**step-2 Work */}
-                 <div className="w-[28%] p-2 rounded-[10px] overflow-hidden border border-gray-300 bg-gray-100 font-Manrope cursor-pointer hover:shadow-lg ">
+                 <div className="w-[28%] sm:w-[70%] mx-auto p-2 rounded-[10px] overflow-hidden border border-gray-300 bg-gray-100 font-Manrope cursor-pointer hover:shadow-lg ">
                     <div className="mb-[5%]">
                         <Work className="text-[25px] mx-auto my-[3%]" />
                         <h2 className="text-[18px] text-center font-medium my-[2%]">Apply your agricultural mind.</h2>
@@ -38,7 +38,7 @@ const TrainingPageSteps = () => {
                 </div>
 
                  {/**step-3 Earn */}
-                 <div className="w-[28%] p-2 rounded-[10px] overflow-hidden border border-gray-300 bg-gray-100 font-Manrope cursor-pointer hover:shadow-lg ">
+                 <div className="w-[28%] sm:w-[70%] mx-auto p-2 rounded-[10px] overflow-hidden border border-gray-300 bg-gray-100 font-Manrope cursor-pointer hover:shadow-lg ">
                     <div className="mb-[5%]">
                         <Money className="text-[25px] mx-auto my-[3%]" />
                         <h2 className="text-[18px] text-center font-medium my-[2%]">Earn from your actions.</h2>
