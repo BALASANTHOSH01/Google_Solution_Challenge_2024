@@ -41,7 +41,7 @@ const Footer = () => {
                     </Link>
 
                     <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>Agro&#160;News</motion.li>
-                    <Link to={'/event'}>
+                    <Link to={'/training/event'}>
                     <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>Event</motion.li>
                     </Link>
                     <Link to={'/mentor'}>
