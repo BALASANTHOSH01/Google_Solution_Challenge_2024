@@ -1,7 +1,7 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import TrainingNav from "../../Components/TrainingComponent/TrainingNav/TrainingNav";
 import { useEffect } from "react";
-import TrainingBottomNav from "../../Components/TrainingComponent/TrainingBottomNav/TrainingBottomNav";
+import TrainingBottomNav from "../../Components/TrainingComponent/TrainingNav/TrainingBottomNav/TrainingBottomNav";
 
 const Training = () => {
   const location = useLocation();

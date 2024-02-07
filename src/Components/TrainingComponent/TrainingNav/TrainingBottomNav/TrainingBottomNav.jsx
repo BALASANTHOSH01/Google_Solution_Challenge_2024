@@ -1,11 +1,51 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { BsCalendar2Event as Event } from "react-icons/bs";
 import { RiComputerFill as Computer } from "react-icons/ri";
 import { MdOutlineVideoLibrary as Video } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const TrainingBottomNav = () => {
-    const [bottomnav, setBottomNav] = useState("events");
+    const [bottomnav, setBottomNav] = useState(()=>{
+        return localStorage.getItem("bottomnav") || "events";
+    });
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    // const BottomNavCallBack = useCallback(()=>{
+    //     switch(location.pathname){
+    //         case "/training/event":
+    //             setBottomNav("events");
+    //             break;
+    //         case "/training/training":
+    //             setBottomNav("training");
+    //             break;
+    //     }
+
+    // },[location.pathname]);
+
+    useEffect(() => {
+        // Update localStorage with the current bottomnav value
+        localStorage.setItem("bottomnav", bottomnav);
+    }, [bottomnav]);
+
+    useEffect(() => {
+        // Set bottomnav based on current URL
+        switch(location.pathname) {
+            case "/training/event":
+                setBottomNav("events");
+                break;
+            case "/training/training":
+                setBottomNav("training");
+                break;
+            case "/training/videos":
+                setBottomNav("videos");
+                break;
+            default:
+                setBottomNav("events"); // Default to "Events" if URL doesn't match
+                break;
+        }
+    }, [location.pathname]);
+
     return (
         <div>
             <div className="hidden sm:flex flex-row justify-around p-3 mx-auto fixed bottom-0 w-[100%] z-50 bg-white">
