@@ -8,7 +8,7 @@ const UserNavBar = () => {
     const location = useLocation();
 
 
-    const { peopleid, cropid ,eventid} = useParams();
+    const { peopleid, cropid ,eventid,oldeventid} = useParams();
 
     const PathNameFun = () => {
         switch (location.pathname) {
@@ -18,11 +18,13 @@ const UserNavBar = () => {
                 return `/`;
             case `/training/event/${eventid}`:
                 return `/training`;
+            case `/training/event/oldevent/${oldeventid}`:
+                return `/training`;
         }
     }
 
     return (
-        <div className=" flex flex-row justify-between p-1 mt-[2%] sm sm:my-[1px] sm:shadow-md">
+        <div className=" flex flex-row justify-between p-1 mt-[2%] sm:my-[1px] sm:shadow-md">
 
             {/**Left arrow ("/") */}
             <Link to={PathNameFun()} className="ml-[5%]">

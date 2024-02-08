@@ -36,4 +36,4 @@ const UpComingEvent = () => {
   )
 }
 
-export default UpComingEvent
+export default UpComingEvent;

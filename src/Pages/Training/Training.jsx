@@ -1,4 +1,4 @@
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
 import TrainingNav from "../../Components/TrainingComponent/TrainingNav/TrainingNav";
 import { useEffect } from "react";
 import TrainingBottomNav from "../../Components/TrainingComponent/TrainingNav/TrainingBottomNav/TrainingBottomNav";
@@ -6,6 +6,7 @@ import TrainingBottomNav from "../../Components/TrainingComponent/TrainingNav/Tr
 const Training = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const {eventid}=useParams();
   
   useEffect(()=>{
     switch(location.pathname){
@@ -13,14 +14,16 @@ const Training = () => {
         navigate("/training/event");
         break;
     }
-  },[location.pathname])
+  },[location.pathname]);
+
+
   return (
     <div>
       <div className="flex flex-row relative">
         <div>
           <TrainingBottomNav/>
         </div>
-        <div className="w-[95%] mx-auto sm:w-[100%]">
+        <div className={`mx-auto sm:w-[100%] ${location.pathname === eventid ? `w-[100%]` : `w-[95%]`}`}>
           <Outlet />
         </div>
       </div>

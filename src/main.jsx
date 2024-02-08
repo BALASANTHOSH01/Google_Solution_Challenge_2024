@@ -26,6 +26,7 @@ import UserProfile from './Components/UserProfile/UserProfile.jsx'
 import ProductProfile from './Components/MarketComponents/ProductProfile/ProductProfile.jsx';
 import NewsContent from './Components/NewsComponents/NewsContent/NewsContent.jsx'
 import TrainingPage from "./Pages/Training/TrainingPage/TrainingPage.jsx";
+import OldEventProfile from './Pages/EventPage/OldEventProfile/OldEventProfile.jsx'
 
 const router = createBrowserRouter([
   {
@@ -115,6 +116,10 @@ const router = createBrowserRouter([
           {
             path: "/training/event/:eventid",
             element: <EventProfile />
+          },
+          {
+            path:"/training/event/oldevent/:oldeventid",
+            element:<EventProfile/>,
           },
           {
             path:"/training/training",

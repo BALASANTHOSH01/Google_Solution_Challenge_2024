@@ -9,7 +9,7 @@ import NewsNav from "./Components/NewsComponents/NewsNav/NewsNav";
 
 const App = () => {
   const location = useLocation();
-  const { cropid,peopleid,eventid,mobilemessageid,messageid,productid } = useParams();
+  const { cropid,peopleid,eventid,mobilemessageid,messageid,productid,oldeventid } = useParams();
   const cropcurrentlocation = location.pathname;
   console.log(cropcurrentlocation);
 
@@ -38,6 +38,7 @@ const App = () => {
       case `/people/${peopleid}`:
       case `/croppage/${cropid}`:
       case `/training/event/${eventid}`:
+      case `/training/event/oldevent/${oldeventid}`:
         return <UserNavBar />;
       case "/bot":
         return;
@@ -54,7 +55,7 @@ const App = () => {
     <div>
       {NavBarfun()}
 
-      <div className="mt-[7%] md:mt-[10%] ">
+      <div className={`${eventid ? `mt-[3%]  md:mt-[6%]` : `mt-[7%]  md:mt-[10%]`}`}>
       <Outlet />
       </div>
 

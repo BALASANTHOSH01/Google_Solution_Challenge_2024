@@ -8,7 +8,7 @@ const OldEvent = () => {
       <div className=" grid md:grid-cols-3 grid-cols-4 sm:flex sm:flex-col sm:gap-5 gap-3  ">
         {
           OldEvents.map((events) => (
-            <Link key={events.id} to={`/training/event/${events.id}`} className="w-[100%] sm:w-[70%] mx-auto h-full p-2 hover:opacity-75 bg-black rounded-[15px] border" >
+            <Link key={events.id} to={`/training/event/oldevent/${events.id}`} className="w-[100%] sm:w-[70%] mx-auto h-full p-2 hover:opacity-75 bg-black rounded-[15px] border" >
   
               <div className={` p-2 flex-auto  sm:h-full h-full relative`}>
 
