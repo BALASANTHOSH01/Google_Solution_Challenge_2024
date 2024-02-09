@@ -10,8 +10,8 @@ import { RxCross2 as Cross } from "react-icons/rx";
 const NewsNav = () => {
     const [newsNavitem, setNewsNavItem] = useState("region");
 
-    const [newsmenu,setNewsMenu]=useState(false);
-    const NewsMenuToggle = () =>{
+    const [newsmenu, setNewsMenu] = useState(false);
+    const NewsMenuToggle = () => {
         setNewsMenu(!newsmenu);
     }
 
@@ -27,9 +27,9 @@ const NewsNav = () => {
                 </div>
             </Link>
 
-            <div className='absolute text-[22px] p-2 rounded-[50%] hover:bg-gray-200 right-[5%] top-[5%] cursor-pointer duration-500 ease-out' onClick={()=>{NewsMenuToggle()}}>
+            <div className='absolute text-[22px] p-2 rounded-[50%] hover:bg-gray-200 right-[5%] top-[5%] cursor-pointer duration-500 ease-out' onClick={() => { NewsMenuToggle() }}>
                 {
-                    newsmenu ?  <Cross className='text-red-500'/> : <Menu /> 
+                    newsmenu ? <Cross className='text-red-500' /> : <Menu />
                 }
             </div>
 
@@ -102,15 +102,20 @@ const NewsNav = () => {
                     <p>Free Trial</p>
                 </div>
 
-                <Link to={"/AuthLogIn"} className='flex flex-row gap-3'>
+                <div className='flex flex-row gap-3'>
+
                     <button className='p-1 px-2 w-[100px] font-medium uppercase rounded-[3px] bg-green-500 text-white hover:bg-transparent hover:ease-in-out hover:text-black hover:border hover:border-green-500 hover:duration-700'>Subscribe</button>
-                    <button className='p-1 px-2 w-[100px] hover:bg-green-500 hover:text-white hover:ease-in-out hover:duration-700 font-medium uppercase rounded-[3px] bg-transparent text-black border border-green-500'>Login</button>
-                </Link>
+
+                    <Link to={"/AuthLogIn"}>
+                        <button className='p-1 px-2 w-[100px] hover:bg-green-500 hover:text-white hover:ease-in-out hover:duration-700 font-medium uppercase rounded-[3px] bg-transparent text-black border border-green-500'>Login</button>
+                    </Link>
+                    
+                </div>
 
             </div>
 
             {
-                newsmenu && <NewsMenuContent/>
+                newsmenu && <NewsMenuContent />
             }
         </div>
     )

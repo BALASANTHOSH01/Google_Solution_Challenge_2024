@@ -7,21 +7,21 @@ import { Link, useLocation } from 'react-router-dom';
 
 const Footer = () => {
 
-    const FooterImg = ()=>{
+    const FooterImg = () => {
         return (
             <img src={logo} alt='Logo' className='w-[7%] mx-auto rounded-[50%]' />
         );
     }
     const location = useLocation();
-    const FooterImgFun = ()=>{
-        switch(location.pathname){
+    const FooterImgFun = () => {
+        switch (location.pathname) {
             case "/message":
             case "/training":
             case "/market":
             case "/training/event":
-                return ;
+                return;
             default:
-                return <FooterImg/>;
+                return <FooterImg />;
         }
     }
 
@@ -40,18 +40,21 @@ const Footer = () => {
                         <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>Home</motion.li>
                     </Link>
 
-                    <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>Agro&#160;News</motion.li>
-                    <Link to={'/training/event'}>
-                    <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>Event</motion.li>
+
+                    <Link to={"/news"}>
+                        <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>News</motion.li>
                     </Link>
-                    <Link to={'/mentor'}>
-                    <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>Mentor</motion.li>
+                    <Link to={'/training/event'}>
+                        <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>Event</motion.li>
+                    </Link>
+                    <Link >
+                        <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>Mentor</motion.li>
                     </Link>
 
                     <Link to={'/about'} >
                         <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>About&#160;Us</motion.li>
                     </Link>
-                    
+
                 </div>
 
                 <div className='flex gap-[4%] mx-auto justify-center mt-7 mb-7'>
