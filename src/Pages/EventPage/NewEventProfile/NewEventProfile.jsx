@@ -15,8 +15,8 @@ const NewEventProfile = () => {
     document.documentElement.scrollTop = 0;
   return (
     <div>
-    <div>
-      <img src={BannerImg} alt="banner" className="w-full object-cover h-[50vh] p-1" />
+    <div className="">
+      <img src={BannerImg} alt="banner" className="w-full sm:w-[98%] sm:mx-auto object-cover sm:h-[70vh] h-[50vh] p-1" />
 
       <div className="flex flex-col gap-0 w-[90%] mt-[2%] mx-auto p-2">
 
@@ -25,10 +25,10 @@ const NewEventProfile = () => {
           <p className="text-[25px] uppercase text-black tracking-wide font-medium">{selectedEvent.title}</p>
         </div>
 
-        <div className="flex flex-row justify-between ">
+        <div className="flex flex-row sm:flex-col justify-between ">
 
           {/** Timing details */}
-          <div className="flex flex-row gap-5 items-start my-[1%] text-[14px]">
+          <div className="flex flex-row sm:flex-col gap-5 sm:gap-2 sm:my-[4%] items-start my-[1%] text-[14px]">
 
             {/** Starts On */}
             <div className="flex flex-row gap-1 items-center">
@@ -74,7 +74,7 @@ const NewEventProfile = () => {
     <div className="text-[14px] flex flex-col gap- mt-[4%]">
 
       <div className="flex flex-col gap-2 ">
-        <h1 className="text-[17px] py-2 px-1 bg-green-100 text-green-700 font-medium">About this Event</h1>
+        <h1 className="text-[17px] py-2 px-1 bg-green-100 text-green-700 font-medium sm:text-center">About this Event</h1>
         <div className="px-3 flex flex-col my-[1%] gap-3 py-2">
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil qui error magnam laboriosam fugiat, voluptates sunt aperiam quas enim! Dicta nulla aliquam non autem blanditiis! Ipsam, eum repudiandae. Consequatur, autem?
@@ -87,7 +87,7 @@ const NewEventProfile = () => {
       </div>
 
       <div className="flex flex-col gap-2">
-        <h1 className="text-[17px] py-2 px-1 bg-green-100 text-green-700 font-medium">What You Will Gain From This Event</h1>
+        <h1 className="text-[17px] py-2 px-1 bg-green-100 text-green-700 font-medium sm:text-center">What You Will Gain From This Event</h1>
 
         <ul className="list-disc px-8 py-2 flex flex-col my-[1%] gap-2">
           <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam?</li>
@@ -99,7 +99,7 @@ const NewEventProfile = () => {
       </div>
 
       <div>
-        <div className="flex flex-row py-2 px-1 bg-green-100 text-green-700 font-medium items-center gap-1 text-[17px]">
+        <div className="flex flex-row py-2 px-1 bg-green-100 text-green-700 font-medium items-center gap-1 text-[17px] sm:justify-center">
           <h1>Reach Mentor</h1>
           <p>{selectedEvent.creator}</p>
           <p className="">(&#160;LinkedIn&#160;)</p>
@@ -113,12 +113,12 @@ const NewEventProfile = () => {
       </div>
 
       <div>
-        <h1 className="text-[17px] py-2 px-1 bg-green-100 text-green-700 font-medium">What our Learners have to say</h1>
+        <h1 className="text-[17px] py-2 px-1 bg-green-100 text-green-700 font-medium sm:text-center">What our Learners have to say</h1>
 
-        <div className="flex flex-row justify-between p-2 my-[3%]">
+        <div className="flex flex-row sm:flex-col sm:justify-center sm:gap-6 justify-between p-2 my-[3%] sm:mb-[20%]">
           {
             LearnerCommand.map((commands) => (
-              <div key={commands.id} className=" shadow-lg rounded-[5px] p-2 bg-gray-100 border w-[380px]">
+              <div key={commands.id} className=" shadow-lg rounded-[5px] p-2 bg-gray-100 border w-[380px] sm:hover:shadow-md sm:w-[340px] sm:mx-auto">
 
                 <div className="flex flex-row gap-3 items-start p-2">
 

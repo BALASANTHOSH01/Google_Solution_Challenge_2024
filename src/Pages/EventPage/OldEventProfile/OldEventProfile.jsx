@@ -13,7 +13,7 @@ const OldEventProfile = () => {
     return (
         <div>
             <div>
-                <img src={selectedEvent.banner} alt="banner" className="w-full object-cover h-[50vh] p-1 opacity-75" />
+                <img src={selectedEvent.banner} alt="banner"  className="w-full sm:w-[98%] sm:mx-auto object-cover sm:h-[70vh] h-[50vh] p-1"  />
 
                 <div className="flex flex-col gap-0 w-[90%] mt-[2%] mx-auto p-2">
 
@@ -22,10 +22,10 @@ const OldEventProfile = () => {
                         <p className="text-[25px] uppercase text-black tracking-wide font-medium">{selectedEvent.title}</p>
                     </div>
 
-                    <div className="flex flex-row justify-between ">
+                    <div className="flex flex-row sm:flex-col justify-between ">
 
                         {/** Timing details */}
-                        <div className="flex flex-row gap-5 items-start my-[1%] text-[14px]">
+                        <div className="flex flex-row sm:flex-col gap-5 sm:gap-2 sm:my-[4%] items-start my-[1%] text-[14px]">
 
                             {/** Starts On */}
                             <div className="flex flex-row gap-1 items-center">

@@ -1,5 +1,6 @@
-import TrainingPageHero from "../../../Components/TrainingComponent/TrainingPageHero/TrainingPageHero";
-import TrainingPageSteps from "../../../Components/TrainingComponent/TrainingPageSteps/TrainingPageSteps";
+import TrainingMainPage from "../../../Components/TrainingComponent/SubTrainingComponent/TrainingMainPage/TrainingMainPage";
+import TrainingPageHero from "../../../Components/TrainingComponent/SubTrainingComponent/TrainingPageHero/TrainingPageHero"; 
+import TrainingPageSteps from "../../../Components/TrainingComponent/SubTrainingComponent/TrainingPageSteps/TrainingPageSteps"; 
 
 const TrainingPage = () => {
   return (
@@ -12,6 +13,10 @@ const TrainingPage = () => {
           <h1 className="my-[5%] text-[35px] text-black font-medium 
           ">Take the first steps towards your vision.</h1>
           <TrainingPageSteps/>
+        </div>
+
+        <div>
+          <TrainingMainPage/>
         </div>
     </div>
   )

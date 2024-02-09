@@ -1,6 +1,6 @@
-import Learn from "../../../assets/Images/Training/ManThinking.jpg";
-import Apply from "../../../assets/Images/Training/ManwithCrops.jpg";
-import Earn from "../../../assets/Images/Training/ManwithMoney.jpg";
+import Learn from "../../../../assets/Images/Training/TrainingSteps/ManThinking.jpg";
+import Apply from "../../../../assets/Images/Training/TrainingSteps/ManwithCrops.jpg";
+import Earn from "../../../../assets/Images/Training/TrainingSteps/ManwithMoney.jpg";
 
 import { TbTargetArrow as Target } from "react-icons/tb";
 import { FaMoneyCheckDollar as Money } from "react-icons/fa6";

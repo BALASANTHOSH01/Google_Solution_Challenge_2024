@@ -2,7 +2,7 @@ import { AiFillLinkedin } from 'react-icons/ai';
 import { AiFillInstagram } from 'react-icons/ai';
 import { RiTwitterXLine } from 'react-icons/ri';
 import { motion } from 'framer-motion';
-import logo from '../../assets/Images/logo.png';
+import logo from '../../assets/Images/logo.jpg';
 import { Link, useLocation } from 'react-router-dom';
 
 const Footer = () => {
