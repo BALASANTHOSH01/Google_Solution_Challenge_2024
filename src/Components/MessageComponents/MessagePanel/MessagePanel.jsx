@@ -4,6 +4,11 @@ import { useParams } from "react-router-dom";
 import Messages from "../../../Pages/Message/MessageData/Messages.js";
 import DefaultImg from "../../../assets/Images/Mentor/822.jpg";
 import { IoMdStarOutline as Star } from "react-icons/io";
+import { IoSend as SendIcon } from "react-icons/io5";
+import { motion } from "framer-motion";
+
+
+
 const MessagePanel = () => {
 
   const { messageid } = useParams();
@@ -17,6 +22,7 @@ const MessagePanel = () => {
 
         {/**Message Top Menu */}
         <div className="flex flex-row items-center justify-between p-2 ">
+          {/** Available on mobile */}
           <div className="flex flex-col text-left ml-[15%]">
             <h3 className="text-[15px]">
               {
@@ -64,8 +70,15 @@ const MessagePanel = () => {
           </div>
         </div>
 
+        <div className="absolute bottom-0 w-full">
+        <div className="relative">
+        <textarea cols={30} rows={4} className="border border-gray-300 rounded-[10px] p-2 text-[15px] bg-gray-100  resize-none bottom-0 outline-none w-[100%] " placeholder="Enter your message"></textarea>
+
+        <SendIcon  className="absolute bottom-[15%] bg-black text-white p-2 border border-gray-400 text-[30px] cursor-pointer rounded-[50%] right-[2%]  "/>
         
-        <textarea cols={30} rows={4} className="border border-gray-300 rounded-[10px] p-2 text-[15px] bg-gray-100 absolute resize-none bottom-0 outline-none w-[100%] " placeholder="Enter your message"></textarea>
+        </div>
+        </div>
+
 
       </div>
     </div>
