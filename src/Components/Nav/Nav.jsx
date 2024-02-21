@@ -15,6 +15,7 @@ import TrainingNav from "../TrainingComponent/TrainingNav/TrainingNav";
 import { IoSettingsSharp as SettingIcon } from "react-icons/io5";
 import { MdOutlineArrowDropDown as DropdownIcon } from "react-icons/md";
 import Setting from "../NavSetting/Setting";
+import { RxCross2 as CrossIcon } from "react-icons/rx";
 
 
 const Nav = () => {
@@ -35,10 +36,19 @@ const Nav = () => {
         setSubNav(!subnav);
     };
 
-    const [profileSetting,setProfileSetting]=useState(false);
-    const handleProfileSetting = () =>{
-        setProfileSetting((prev)=>!prev);
-    }
+    const [profileSetting, setProfileSetting] = useState(false);
+    useEffect(() => {
+        if (nav !== "user") {
+            setProfileSetting(false)
+        }
+    }, [nav]);
+    const handleProfileSetting = () => {
+        setProfileSetting((prev) => !prev);
+
+    };
+
+    const [mobileMenu, setMobileMenu] = useState(false);
+
 
 
     {/** Avoid too many re-rendering & Page reload */ }
@@ -234,64 +244,71 @@ const Nav = () => {
                     </Link> */}
 
                     {/** userProfile */}
-                    <div  className="sm:hidden" onClick={() => handleNav("user")}>
-                        {
-                            nav === "user" ? <div className="flex flex-col text-center items-center text-black cursor-pointer">
+                    <div className="sm:hidden" onClick={() => handleNav("user")}>
+                        <div className="flex flex-col text-center items-center text-black cursor-pointer">
 
-                                <Link to={"/userprofile"}>
+                            <Link to={"/userprofile"}>
                                 <img src={user} alt="user" className="w-[25px] h-[25px] sm:w-[25px] sm:h-[25px] cursor-pointer relative" />
-                                </Link>
+                            </Link>
 
-                                <div className="flex flex-row  items-center" onClick={()=>handleProfileSetting()}>
-                                    <p className=" text-[13px] md:text-[11px] ">Me</p>
-                                    <DropdownIcon className="text-gray-500 hover:text-black" />
-                                </div>
-                                <hr className="w-[100%] h-[2px] bg-black " />
-                            </div> : <div className="flex flex-col text-center items-center cursor-pointer" >
-
-                                <Link to={"/userprofile"}>
-                                <img src={user} alt="user" className="w-[26px] h-[26px] sm:w-[25px] sm:h-[25px] cursor-pointer relative" />
-                                </Link>
-
-                                <div className="flex flex-row  items-center" onClick={()=>handleProfileSetting()}>
-                                    <p className=" text-gray-500 text-[13px] md:text-[11px] ">Me</p>
-                                    <DropdownIcon className="text-gray-500 hover:text-black" />
-                                </div>
+                            <div className="flex flex-row  items-center" onClick={() => handleProfileSetting()}>
+                                <p className=" text-[13px] md:text-[11px] ">Me</p>
+                                <DropdownIcon className="text-gray-500 hover:text-black" />
                             </div>
-                        }
+
+                        </div>
                     </div>
 
-                    {profileSetting && <Setting/>}
+                    {profileSetting && <Setting />}
 
                     {/** Mobile Menu */}
+
                     {
-                        nav === "usermenu" ? <div className="sm:block hidden items-center relative cursor-pointer" onClick={() => handleNav("usermenu")}>
-                            <CiMenuFries className=" text-[22px] text-black" />
-                            <p className=" text-gray-500 text-[13px] md:text-[11px]">Menu</p>
+                        nav === "usermenu" ? <div className="sm:block hidden items-center relative cursor-pointer" onClick={() => {
+                            handleNav("usermenu");
+                            setMobileMenu((prev) => !prev);
+                        }}>
+                            {
+                                mobileMenu===false ? <CiMenuFries className=" text-[22px] text-black" /> : <CrossIcon className=" text-[22px] text-gray-500" />
+                            }
+
+                            <p className=" text-black text-[13px] md:text-[11px]">Menu</p>
                             <hr className="w-[100%] h-[2.5px] bg-black " />
-
-                            <div className="flex flex-col p-2 bg-white rounded-[10px] absolute top-[60px] right-[5%] border">
-
-                                <Link to={"/userprofile"}>
-                                    <p className="text-[17px] text-gray-600 py-3 px-10 my-[4px] hover:bg-gray-200 rounded-[10px]">User</p>
-                                </Link>
-
-                                <Link to={"/bot"}>
-                                    <p className="text-[17px] text-gray-600 py-3 px-10 my-[4px] hover:bg-gray-200 rounded-[10px]">Bot</p>
-                                </Link>
-
-                                <Link to={"/AuthSignUp"}>
-                                    <p className="text-[17px] text-gray-600 py-3 px-10 my-[4px] hover:bg-gray-200 rounded-[10px]">Signup</p>
-                                </Link>
-
-                                <Link to={"/about"}>
-                                    <p className="text-[17px] text-gray-600 py-3 px-10 my-[4px] hover:bg-gray-200 rounded-[10px]">About</p>
-                                </Link>
-                            </div>
-                        </div> : <div className="sm:block hidden items-center relative cursor-pointer" onClick={() => handleNav("usermenu")}>
-                            <CiMenuFries className=" text-[22px] text-gray-500" />
+                        </div> : <div className="sm:block hidden items-center relative cursor-pointer" onClick={() => {
+                            handleNav("usermenu");
+                            setMobileMenu((prev) => !prev);
+                        }} >
+                            {
+                                mobileMenu===false ? <CiMenuFries className=" text-[22px] text-gray-500" /> : <CrossIcon className=" text-[22px] text-black" />
+                            }
+                            
+                            
                             <p className=" text-gray-500 text-[13px] md:text-[11px]">Menu</p>
                         </div>
+                    }
+
+
+                    {mobileMenu && 
+                    
+                    <div className="flex flex-col p-2 bg-white rounded-[10px] absolute top-[60px] right-[5%] border">
+
+                        <Link to={"/userprofile"}>
+                            <p className="text-[17px] text-gray-600 py-3 px-10 my-[4px] hover:bg-gray-200 rounded-[10px]">User</p>
+                        </Link>
+
+                        <Link to={"/bot"}>
+                            <p className="text-[17px] text-gray-600 py-3 px-10 my-[4px] hover:bg-gray-200 rounded-[10px]">Bot</p>
+                        </Link>
+
+                        <Link to={"/AuthSignUp"}>
+                            <p className="text-[17px] text-gray-600 py-3 px-10 my-[4px] hover:bg-gray-200 rounded-[10px]">Signup</p>
+                        </Link>
+
+                        <Link to={"/about"}>
+                            <p className="text-[17px] text-gray-600 py-3 px-10 my-[4px] hover:bg-gray-200 rounded-[10px]">About</p>
+                        </Link>
+                    </div>
+                    
                     }
 
                 </div>

@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 
 const UserDetails = (userdata) => {
     return (
@@ -19,28 +20,40 @@ const UserDetails = (userdata) => {
         </div>
     )
 }
+
+
 const Setting = (userdata) => {
-    const [userData,setUserData]=useState(false);
-    const handleUserData
+    const [userData, setUserData] = useState(false);
+    const handleUserData = () => {
+        userData && setUserData(prev => !prev);
+    }
+    handleUserData();
     return (
-        <div className="absolute w-[350px] h-auto p-2 rounded-[10px] border border-gray-400 top-[30%] right-[20%] bg-white">
+        <div className="absolute w-[300px] h-auto p-2 rounded-[10px] border border-gray-400 top-[130%] right-[15%] bg-white pl-[2%]">
             <div>
-                { userdata && UserDetails(userdata)}
+                {userData && UserDetails(userdata)}
             </div>
 
-            <div className="text-[15px] text-gray-400 flex flex-col gap-2 mt-[3%]">
-                <h1 className="text-black text-[18px]">Account</h1>
-                <p>Settings</p>
-                <p>Help</p>
-                <p>Language</p>
+            <div className="text-[15px] text-gray-400 flex flex-col gap-2 my-[3%]">
+                <h1 className="text-black text-[16px] font-medium">Account</h1>
+                <p className=" cursor-pointer">Settings</p>
+                <p className=" cursor-pointer">Help</p>
+                <p className=" cursor-pointer">Language</p>
             </div>
 
-            <div className=" text-grey-400 text-[15px] flex flex-col gap-2 ">
-                <h1 className="text-black text-[18px]">Manage</h1>
-                <p>Posts & Activity</p>
+            <div className="text-[15px] text-gray-400 flex flex-col gap-2 my-[3%]">
+                <h1 className="text-black text-[16px] font-medium">Manage</h1>
+                <p className=" cursor-pointer">Posts & Activity</p>
             </div>
-            <hr className="bg-gray-400 h-[1px] w-[90%]"/>
-                <p>Signout</p>
+            <hr className="bg-gray-400 h-[1px] w-[90%]" />
+            <p className=" cursor-pointer text-gray-400 text-[15px] my-[2%]">Signout</p>
+
+            <div className="flex flex-row gap-2 items-center text-[15px] text-gray-400">
+                <p>Create new account : </p>
+                <Link to={"/AuthSignUp"} className="text-green-500">
+                Register
+                </Link>
+            </div>
         </div>
     )
 }
