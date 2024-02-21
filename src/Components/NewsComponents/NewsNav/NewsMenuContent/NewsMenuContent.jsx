@@ -4,7 +4,7 @@ const NewsMenuContent = () => {
   return (
     <div>
         <hr className="bg-gray-500  w-[70%] mx-auto"/>
-        <div className="flex flex-wrap mx-auto justify-around text-green-600 text-[18px] p-2 w-[50%]">
+        <div className="flex flex-wrap mx-auto justify-around text-green-600 text-[18px] sm:text-[16px] p-2 w-[50%] sm:w-[100%]">
             <div className=" cursor-pointer">
                 <p>Business</p>
             </div>

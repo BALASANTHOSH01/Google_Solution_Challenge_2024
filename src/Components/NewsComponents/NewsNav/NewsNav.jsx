@@ -19,7 +19,7 @@ const NewsNav = () => {
         <div className='p-5 flex flex-col font-Manrope shadow-lg top-0 w-screen z-50 bg-white'>
 
 
-            <Link to={"/"} className='absolute left-[5%] top-[5%]'>
+            <Link to={"/"} className='absolute sm:hidden left-[5%] top-[5%]'>
                 <div>
                     <div className="p-2 hover:bg-gray-200 text-[22px] rounded-[50%] cursor-pointer text-black font-bold ">
                         <Home />
@@ -27,20 +27,29 @@ const NewsNav = () => {
                 </div>
             </Link>
 
-            <div className='absolute text-[22px] p-2 rounded-[50%] hover:bg-gray-200 right-[5%] top-[5%] cursor-pointer duration-500 ease-out' onClick={() => { NewsMenuToggle() }}>
+            <div className='absolute sm:hidden text-[22px] p-2 rounded-[50%] hover:bg-gray-200 right-[5%] top-[5%] cursor-pointer duration-500 ease-out' onClick={() => { NewsMenuToggle() }}>
                 {
                     newsmenu ? <Cross className='text-red-500' /> : <Menu />
                 }
             </div>
 
             {/**Heading */}
-            <div className='flex flex-row gap-2 font-semibold text-[50px] mx-auto font-Manrope'>
-                <h1 className='text-green-700'>Green</h1>
-                <h1 className='text-black'>Harbor</h1>
+
+            <div className='flex flex-row items-center justify-between'>
+                <div className='flex flex-row gap-2 font-semibold sm:text-[30px] text-[50px] mx-auto font-Manrope'>
+                    <h1 className='text-green-700'>Green</h1>
+                    <h1 className='text-black'>Harbor</h1>
+                </div>
+
+                <div className='sm:block hidden cursor-pointer text-[20px]' onClick={() => { NewsMenuToggle() }}>
+                    {
+                        newsmenu ? <Cross className='text-red-500' /> : <Menu />
+                    }
+                </div>
             </div>
 
             {/**Nav items */}
-            <div className='flex flex-row justify-evenly my-[2%] font-semibold text-[20px] w-[50%] mx-auto font-Manrope'>
+            <div className='sm:hidden flex flex-row justify-evenly my-[2%] font-semibold text-[20px] w-[50%] mx-auto font-Manrope'>
 
                 {
                     newsNavitem === "region" ?
@@ -90,7 +99,7 @@ const NewsNav = () => {
             {/**Search, Subscribe and Login */}
             <div className='flex flex-row items-center gap-4 justify-center w-[80%] mx-auto my-[2%]'>
 
-                <div className='relative flex flex-row items-center rounded-[3px] border overflow-hidden mr-[5%]'>
+                <div className='relative sm:hidden flex flex-row items-center rounded-[3px] border overflow-hidden mr-[5%]'>
                     <input type='text' id='search' placeholder='SEARCH' className='p-1 px-2 w-[85%]   outline-none ' />
                     <label htmlFor='search' className='text-[18px] font-medium absolute right-[5%] cursor-pointer'>
                         <Search />
@@ -109,7 +118,7 @@ const NewsNav = () => {
                     <Link to={"/AuthLogIn"}>
                         <button className='p-1 px-2 w-[100px] hover:bg-green-500 hover:text-white hover:ease-in-out hover:duration-700 font-medium uppercase rounded-[3px] bg-transparent text-black border border-green-500'>Login</button>
                     </Link>
-                    
+
                 </div>
 
             </div>
