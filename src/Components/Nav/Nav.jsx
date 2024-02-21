@@ -12,6 +12,9 @@ import { CiMenuFries } from "react-icons/ci";
 import { SiAlwaysdata as News } from "react-icons/si";
 import MarketSideNav from "../MarketComponents/MarketSideNav/MarketSideNav";
 import TrainingNav from "../TrainingComponent/TrainingNav/TrainingNav";
+import { IoSettingsSharp as SettingIcon } from "react-icons/io5";
+import { MdOutlineArrowDropDown as DropdownIcon } from "react-icons/md";
+import Setting from "../NavSetting/Setting";
 
 
 const Nav = () => {
@@ -31,7 +34,12 @@ const Nav = () => {
     const ShowNav = () => {
         setSubNav(!subnav);
     };
-    
+
+    const [profileSetting,setProfileSetting]=useState(false);
+    const handleProfileSetting = () =>{
+        setProfileSetting((prev)=>!prev);
+    }
+
 
     {/** Avoid too many re-rendering & Page reload */ }
     const NavToFun = () => {
@@ -45,7 +53,7 @@ const Nav = () => {
             case "market":
                 return subnav && <MarketSideNav />;
             case "training":
-                return subnav && <TrainingNav/>;
+                return subnav && <TrainingNav />;
         }
     }
 
@@ -154,7 +162,7 @@ const Nav = () => {
                     </Link>
 
                     {/**Training */}
-                    <Link to={NavToFun} onClick={() => handleNav("training")}  onDoubleClick={() => ShowNav()}>
+                    <Link to={NavToFun} onClick={() => handleNav("training")} onDoubleClick={() => ShowNav()}>
                         {
                             nav === "training" ? <div className="flex flex-col text-center items-center text-black cursor-pointer">
                                 <MdOutlineOndemandVideo className=" text-[23px]" />
@@ -211,19 +219,49 @@ const Nav = () => {
                         }
                     </Link>
 
-                    {/** userProfile */}
-                    <Link to={"/userprofile"} className="sm:hidden" onClick={() => handleNav("user")}>
+                    {/**Setting */}
+                    {/* <Link  onClick={() => handleNav("setting")}>
                         {
-                            nav === "user" ? <div className="flex flex-col text-center items-center text-black cursor-pointer" >
-                                <img src={user} alt="user" className="w-[25px] h-[25px] sm:w-[25px] sm:h-[25px] cursor-pointer relative" />
-                                <p className=" text-[13px] md:text-[11px] ">Profile</p>
+                            nav === "setting" ? <div className="flex flex-col text-center items-center text-black cursor-pointer" >
+                                <SettingIcon className=" text-[20px]" />
+                                <p className=" text-[13px] md:text-[11px] mt-[2px]">Setting</p>
                                 <hr className="w-[100%] h-[2.5px] bg-black " />
                             </div> : <div className="flex flex-col text-center items-center cursor-pointer" >
-                                <img src={user} alt="user" className="w-[26px] h-[26px] sm:w-[25px] sm:h-[25px] cursor-pointer relative" />
-                                <p className=" text-gray-500 text-[13px] md:text-[11px] ">Profile</p>
+                                <SettingIcon className="text-gray-500 text-[20px]" />
+                                <p className="text-gray-500 text-[13px] md:text-[11px] mt-[2px]">Setting</p>
                             </div>
                         }
-                    </Link>
+                    </Link> */}
+
+                    {/** userProfile */}
+                    <div  className="sm:hidden" onClick={() => handleNav("user")}>
+                        {
+                            nav === "user" ? <div className="flex flex-col text-center items-center text-black cursor-pointer">
+
+                                <Link to={"/userprofile"}>
+                                <img src={user} alt="user" className="w-[25px] h-[25px] sm:w-[25px] sm:h-[25px] cursor-pointer relative" />
+                                </Link>
+
+                                <div className="flex flex-row  items-center" onClick={()=>handleProfileSetting()}>
+                                    <p className=" text-[13px] md:text-[11px] ">Me</p>
+                                    <DropdownIcon className="text-gray-500 hover:text-black" />
+                                </div>
+                                <hr className="w-[100%] h-[2px] bg-black " />
+                            </div> : <div className="flex flex-col text-center items-center cursor-pointer" >
+
+                                <Link to={"/userprofile"}>
+                                <img src={user} alt="user" className="w-[26px] h-[26px] sm:w-[25px] sm:h-[25px] cursor-pointer relative" />
+                                </Link>
+
+                                <div className="flex flex-row  items-center" onClick={()=>handleProfileSetting()}>
+                                    <p className=" text-gray-500 text-[13px] md:text-[11px] ">Me</p>
+                                    <DropdownIcon className="text-gray-500 hover:text-black" />
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                    {profileSetting && <Setting/>}
 
                     {/** Mobile Menu */}
                     {
@@ -272,9 +310,9 @@ const Nav = () => {
             {/** SubNav for the active NavItem */}
             <div className=" fixed left-[47%]  h-full sm:hidden ">
                 <div className="absolute bg-white top-0 mx-auto shadow-md rounded-b-[10px] overflow-hidden">
-                {
-                    showSubNav()
-                }
+                    {
+                        showSubNav()
+                    }
                 </div>
             </div>
 
