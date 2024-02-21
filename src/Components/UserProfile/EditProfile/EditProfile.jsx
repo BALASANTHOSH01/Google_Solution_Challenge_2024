@@ -79,7 +79,7 @@ const EditProfile = () => {
 
         </div>
 
-        <button type="submit" className=" font-medium text-white bg-green-500 rounded-[25px] px-3 py-2 w-[30%] float-right hover:bg-transparent hover:border hover:border-green-500 hover:text-black duration-200 hover:ease-in">Submit</button>
+        <button type="submit" className=" font-medium text-white bg-green-500 rounded-[25px] px-3 py-2 w-[30%] float-right hover:bg-transparent hover:border hover:border-green-500 hover:text-black duration-200 hover:ease-in">Save</button>
 
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { MdArrowCircleRight } from "react-icons/md";
 import { RiHome2Fill } from "react-icons/ri";
@@ -8,6 +8,9 @@ import run from './Chatbot.js';
 import LogoImg from '../../assets/Images/Chatbot/botIcon.jpg';
 import userImg from '../../assets/Images/Chatbot/user.jpg';
 import Markdown from 'react-markdown';
+import { BarWave } from "react-cssfx-loading";
+// Better way to reduce bundle size
+// import BarWave from "react-cssfx-loading/lib/BarWave";
 
 const Chatbot = () => {
 
@@ -119,6 +122,14 @@ const Chatbot = () => {
     setIsLoading(false);
   }
 
+  useEffect(()=>{
+    const scrollHeight = document.querySelector("#output-box");
+    if(scrollHeight){
+      scrollHeight.scrollTop = scrollHeight.scrollHeight;
+    }
+    
+  },[chatHistory]);
+
   const chatHistoryFun = () => {
     return chatHistory.map((msg, index) => {
       const isUser = index % 2 === 0;
@@ -158,8 +169,9 @@ const Chatbot = () => {
 
 
       {/**AI OUTPUT ----------->   */}
-      <div className="mt-[8%] sm:mt-[13%] w-[85%] sm:w-[95%] mx-auto sm:pb-[25%] pb-[14%]">
+      <div className="mt-[8%] sm:mt-[13%] w-[85%] sm:w-[95%] mx-auto sm:pb-[25%] pb-[14%]" id="output-box">
         {chatHistoryFun()}
+        {isloading && <BarWave color="green" style={{margin:"20% auto"}} width="100px" height="60px"/>}
       </div>
 
       {/**Loader */}

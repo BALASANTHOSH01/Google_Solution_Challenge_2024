@@ -5,13 +5,24 @@ import news from "../../../assets/Images/About/searching.jpg";
 import modernAgriculture from '../../../assets/Images/About/droneWatering.jpg';
 import awarness from "../../../assets/Images/About/mentor.jpg";
 import support from "../../../assets/Images/About/smartFarming.jpg";
+import { useEffect, useState } from 'react';
 const AboutHero = () => {
+  const [readmore,setReadMore]=useState(false);
+  const [showReadBtn,setShowReadBtn]=useState(true);
+  useEffect(()=>{
+    if(readmore){
+       setTimeout(()=>setShowReadBtn(false),0);
+    } 
+  },[readmore]);
+
   return (
-    <div className='bg-white font-Nunito tracking-wide sm:mt-[17%]'>
+    <div className={`bg-white font-Nunito tracking-wide sm:mt-[17%] ${!readmore && `mb-[20%]`}`}>
+
       <div className='flex flex-row sm:flex-col w-[90%] items-center justify-center'>
         <h1 className='text-center text-black text-[30px] w-[50%] font-medium font-Nunito '>About&#160;<span className='text-green-500'>Agro&#160;Assistent</span></h1>
         <img src={hero} alt="Img" className='w-[40%] sm:w-[80%] sm:mx-auto rounded-[10px]' />
       </div>
+
       <div className='w-[80%] sm:w-[95%] block mx-auto my-[4%]'>
         <p className='text-[25px] sm:text-[22px] block mx-auto'>Why&#160;Agro&#160;Assistent&#160;?</p>
         <p className='w-[70%] text-[20px]  sm:w-[90%] sm:text-[18px]  text-gray-600 mx-auto my-[2%]'>
@@ -19,7 +30,16 @@ const AboutHero = () => {
         </p>
       </div>
 
-      <div className='my-[3%] w-[80%] mx-auto'>
+      
+      { showReadBtn &&
+         <div className=' absolute right-[50%] left-[45%] w-[150px] text-center mx-auto rounded-[25px] p-2 px-3 hover:shadow-md cursor-pointer bg-green-500' onClick={()=>setReadMore((prev)=>!prev)}>
+         <button className=' font-medium text-white'>Read {readmore ? "Less" : "More"}</button>
+       </div>
+      }
+
+      {
+        readmore && <>
+          <div className='my-[3%] w-[80%] mx-auto'>
         <p className='text-[30px] block mx-auto my-[2%] underline'>Goals&#160;:</p>
         <ul>
           <li className='text-[22px] block mx-auto underline'>1.Modern&#160;Agriculture&#160;Practice&#160;:</li>
@@ -78,6 +98,8 @@ const AboutHero = () => {
         <p className='w-[70%] sm:w-[100%]  text-[20px] sm:text-[15px] text-gray-600 mx-auto my-[2%]'>The Source code is in my Github Repository.</p>
         </div>
       </div>
+        </>
+      }
     </div>
   )
 }

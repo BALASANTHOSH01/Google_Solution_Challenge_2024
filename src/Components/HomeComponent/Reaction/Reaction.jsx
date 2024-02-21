@@ -38,7 +38,7 @@ const Reaction = () => {
 
                 <div className="flex text-[20px] flex-row items-center text-gray-500 gap-2 cursor-pointer" onClick={()=>CommandToggle}  >
                     <AiFillMessage />
-                    <p className="text-[14px] font-medium">Command</p>
+                    <p className="text-[14px] font-medium">Comment</p>
                 </div>
 
                 <div className="flex text-[20px] flex-row items-center text-gray-500 gap-2 cursor-pointer" onClick={()=>ShareToggle} >
