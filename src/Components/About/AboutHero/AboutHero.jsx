@@ -6,6 +6,7 @@ import modernAgriculture from '../../../assets/Images/About/droneWatering.jpg';
 import awarness from "../../../assets/Images/About/mentor.jpg";
 import support from "../../../assets/Images/About/smartFarming.jpg";
 import { useEffect, useState } from 'react';
+
 const AboutHero = () => {
   const [readmore,setReadMore]=useState(false);
   const [showReadBtn,setShowReadBtn]=useState(true);
