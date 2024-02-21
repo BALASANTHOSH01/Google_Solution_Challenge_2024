@@ -65,7 +65,7 @@ const Footer = () => {
                 </div>
             </div>
             <hr />
-            <p className=' text-gray-500 mb-3 mt-3'>©All the rights are reserved for 2024</p>
+            <p className=' text-gray-500 mb-3 mt-3'>© 2024 Green Harbor. All rights reserved</p>
             <hr className='mb-7' />
 
         </div>
