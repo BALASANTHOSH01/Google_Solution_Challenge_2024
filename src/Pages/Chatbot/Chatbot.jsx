@@ -40,6 +40,23 @@ const Chatbot = () => {
     }
   }
 
+  const handleLoading =()=>{
+    if(isloading){
+      return <BarWave color="green" style={{margin:"20% auto"}} width="100px" height="60px"/>
+    }
+  }
+
+  // useEffect(()=>{
+  //   if(isloading){
+  //    setTimeout(()=>{
+  //      setIsLoading(!isloading);
+       
+  //    },10000);
+  //   }
+  //  },[])
+
+  
+
   //For correct space and gap in the output
   const CustomMarkdown = {
     //Heading method
@@ -171,13 +188,9 @@ const Chatbot = () => {
       {/**AI OUTPUT ----------->   */}
       <div className="mt-[8%] sm:mt-[13%] w-[85%] sm:w-[95%] mx-auto sm:pb-[25%] pb-[14%]" id="output-box">
         {chatHistoryFun()}
-        {isloading && <BarWave color="green" style={{margin:"20% auto"}} width="100px" height="60px"/>}
+        {handleLoading()}
       </div>
 
-      {/**Loader */}
-      {/* <div className=" absolute flex justify-center items-center mx-auto">
-        {isloading && <Loader/>}
-      </div> */}
 
       {/**AI ICON */}
       {
