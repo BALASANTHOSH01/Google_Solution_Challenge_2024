@@ -3,7 +3,7 @@ import { IoMdAdd as Add } from "react-icons/io";
 const EditProfile = () => {
   return (
     <div>
-      <div>
+      <div className=" py-[2%] mb-[7%]">
         <hr className="bg-gray-400 h-[1px] w-[100%] " />
 
         {/**Basic Details */}
@@ -78,6 +78,8 @@ const EditProfile = () => {
           </div>
 
         </div>
+
+        <button type="submit" className=" font-medium text-white bg-green-500 rounded-[25px] px-3 py-2 w-[30%] float-right hover:bg-transparent hover:border hover:border-green-500 hover:text-black duration-200 hover:ease-in">Submit</button>
 
       </div>
     </div>

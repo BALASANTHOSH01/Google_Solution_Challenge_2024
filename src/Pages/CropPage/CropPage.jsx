@@ -21,6 +21,7 @@ const CropPage = () => {
     const title = cropcontent.title;
     const description = cropcontent.description;
     const createdAt = cropcontent.createdAt;
+    const youtubelink = cropcontent.youtubelink;
     const tags = cropcontent.tags;
 
     document.documentElement.scrollTop = 0;
@@ -39,7 +40,7 @@ const CropPage = () => {
           </div>
 
 
-          <iframe width="80%" height="400" src="https://www.youtube.com/embed/J_mMS3EkHok?si=-c-RgQd5VnaddlyQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className="mx-auto rounded-[10px] sm:w-[90%] my-[4%]"></iframe>
+          <iframe width="80%" height="400" src={`${youtubelink}`} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className="mx-auto rounded-[10px] sm:w-[90%] my-[4%]"></iframe>
 
           <h2 className="text-black text-[16px] sm:w-[90%] w-[80%] mx-auto font-semibold my-[3%] uppercase">Tags :</h2>
 

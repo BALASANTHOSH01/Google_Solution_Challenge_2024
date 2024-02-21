@@ -12,6 +12,7 @@ const Footer = () => {
             <img src={logo} alt='Logo' className='w-[7%] mx-auto rounded-[50%]' />
         );
     }
+    
     const location = useLocation();
     const FooterImgFun = () => {
         switch (location.pathname) {
@@ -47,7 +48,7 @@ const Footer = () => {
                     <Link to={'/training/event'}>
                         <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>Event</motion.li>
                     </Link>
-                    <Link >
+                    <Link to={"/people"}>
                         <motion.li whileTap={{ scale: 0.6 }} className=' list-none cursor-pointer hover:text-green-500'>Mentor</motion.li>
                     </Link>
 

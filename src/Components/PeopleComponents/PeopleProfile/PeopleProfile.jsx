@@ -1,9 +1,13 @@
-import {  useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import peoples from "../../../Pages/PeoplePage/PeopleData/Peoples.js";
 import { FaStar } from "react-icons/fa";
 import { TbAward } from "react-icons/tb";
 import { BsThreeDots } from "react-icons/bs";
 import PeopleActivity from "../PeopleActivity/PeopleActivity.jsx";
+import { MdOutlineNotificationAdd as NotificationIcon } from "react-icons/md";
+import { MdNotificationsActive as NotificationON } from "react-icons/md";
+import { MdOutlineDone as DoneIcon } from "react-icons/md";
+import { useEffect, useState } from "react";
 
 const PeopleProfile = () => {
 
@@ -11,6 +15,37 @@ const PeopleProfile = () => {
     const { peopleid } = useParams();
     const clearedpeopleid = peopleid.replace(":", "");
     const peopleDetails = peoples.find((people) => Number(people.id) === Number(clearedpeopleid));
+
+    const [notification, setNotification] = useState(false);
+    const [showNotification,setShowNotification] = useState(false);
+    const handleNotification = () => {
+        setNotification(!notification);
+        setShowNotification(!showNotification);
+    }
+
+    const notificationIsOn = () => {
+        if(showNotification){
+            return (
+                <div className=" ml-[40%] absolute w-[180px] h-auto flex flex-row gap-3 bg-green-200  items-center rounded-[25px] px-0" >
+                    <div className='p-1 bg-green-500 text-white rounded-[50%] text-[14px]' >
+                        <DoneIcon />
+                    </div>
+    
+                    <p className="text-[14px]" >Notification is ON</p>
+                </div>
+            );
+        }
+    }   
+
+    // useEffect(()=>{
+    //     let timeout;
+    //     if(showNotification){
+    //         timeout = setTimeout(setShowNotification(!showNotification),  5000);
+    //     }
+
+    //     return ()=>clearTimeout(timeout);
+
+    // },[showNotification]);
 
     if (peopleDetails) {
         const name = peopleDetails.name;
@@ -20,8 +55,8 @@ const PeopleProfile = () => {
         const banner = peopleDetails.banner;
         const tags = peopleDetails.tags;
         const username = peopleDetails.username;
-        
-        document.documentElement.scrollTop = 0;
+
+        // document.documentElement.scrollTop = 0;
         return (
             <div className="w-[75%] sm:w-[100%] mx-auto my-[5%] sm:mt-[0px]  relative h-full text-black ">
                 <div className=" bg-white overflow-hidden sm:rounded-[0px] rounded-[10px]">
@@ -37,7 +72,26 @@ const PeopleProfile = () => {
                         <div className="flex flex-row justify-between items-center">
 
                             {/**User Name */}
-                            <h1 className="text-[25px]  font-medium">{name}</h1>
+                            <div className="flex flex-row relative items-center gap-6">
+
+                                <h1 className="text-[25px]  font-medium">{name}</h1>
+
+                                {
+                                    notification === false && <NotificationIcon onClick={() => handleNotification()} className="text-[23px] cursor-pointer" />
+                                }
+
+                                {
+                                    notification &&
+                                    <div className="flex flex-row">
+
+                                        <NotificationON onClick={() => handleNotification()}  className="text-[23px] cursor-pointer" />
+                                        { notificationIsOn()}
+                                    </div>
+                                }
+
+
+
+                            </div>
 
                             {/**Expert Level */}
                             <div className="flex flex-row items-center gap-3 mr-[5%]">
@@ -84,7 +138,7 @@ const PeopleProfile = () => {
                     </div>
 
                 </div>
-                <PeopleActivity props={peopleDetails}/>
+                <PeopleActivity props={peopleDetails} />
             </div>
         )
     } else {
