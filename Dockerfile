@@ -1,13 +1,29 @@
-FROM node:21-alpine
+# Base image with Node.js and npm
+FROM node:21-alpine AS builder
 
+# Set working directory
 WORKDIR /app
 
-COPY package*.json .
+# Copy package.json and package-lock.json
+COPY package*.json ./
 
+# Install dependencies
 RUN npm install
 
+# Copy remaining project files
 COPY . .
 
-EXPOSE 5173
+# Build with Vite
+RUN npm run build
 
-CMD ["npm","run","dev"]
+# Final image (for serving)
+FROM nginx:latest
+
+# Copy built assets from builder stage
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+# Expose static web server port
+EXPOSE 5417
+
+# Serve the built React app
+CMD ["nginx", "-g", "daemon off;"]
